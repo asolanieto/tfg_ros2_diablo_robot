@@ -2,7 +2,7 @@
 
 Este repositorio contiene el paquete de desarrollo para el Trabajo de Fin de Grado (TFG) centrado en la simulación, control y odometría del robot Diablo (robot híbrido con ruedas y patas) utilizando el middleware ROS 2 Humble y el simulador Webots**.
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
 El objetivo es desarrollar un driver completo en C++ que interface la API de Webots con el ecosistema ROS 2, permitiendo la visualización de sensores (LiDAR), el cálculo de odometría diferencial y, posteriormente, la navegación autónoma.
 
@@ -16,7 +16,7 @@ El objetivo es desarrollar un driver completo en C++ que interface la API de Web
   - Corrección de *Frames* y *Mirroring*.
 - **Transformadas (TF2):** Árbol de transformadas completo (`odom` -> `base_link` -> `lidar_link`).
 
-## ⚙️ Requisitos Previos
+## Requisitos Previos
 
 - **Sistema Operativo:** Ubuntu 22.04 LTS (Jammy Jellyfish).
 - **ROS 2:** Distribución Humble Hawksbill.
