@@ -6,7 +6,7 @@ Este repositorio contiene el paquete de desarrollo para el Trabajo de Fin de Gra
 
 El objetivo es desarrollar un driver completo en C++ que interface la API de Webots con el ecosistema ROS 2, permitiendo la visualización de sensores (LiDAR), el cálculo de odometría diferencial y, posteriormente, la navegación autónoma.
 
-### Características Implementadas
+Características Implementadas
 - **Driver C++ (`diablo_driver`):** Nodo de alto rendimiento que comunica directamente con los motores y sensores de Webots.
 - **Odometría Diferencial:** Cálculo cinemático (`dead reckoning`) basado en encoders simulados.
 - **Sincronización Temporal:** Implementación estricta de `use_sim_time` para sincronizar el reloj de ROS 2 con el paso de simulación de Webots.
@@ -16,7 +16,7 @@ El objetivo es desarrollar un driver completo en C++ que interface la API de Web
   - Corrección de *Frames* y *Mirroring*.
 - **Transformadas (TF2):** Árbol de transformadas completo (`odom` -> `base_link` -> `lidar_link`).
 
-## Requisitos Previos
+Requisitos Previos
 
 - **Sistema Operativo:** Ubuntu 22.04 LTS (Jammy Jellyfish).
 - **ROS 2:** Distribución Humble Hawksbill.
