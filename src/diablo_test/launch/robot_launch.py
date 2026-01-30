@@ -36,11 +36,31 @@ def generate_launch_description():
         arguments=['0', '0', '0.15', '3.1416', '0', '0', 'base_link', 'lidar_link'],
         parameters=[{'use_sim_time': True}]
     )
+
+    # 4. Nodo SLAM Toolbox con parámetros ajustados
+    slam_node = Node(
+        package='slam_toolbox',
+        executable='async_slam_toolbox_node',
+        name='slam_toolbox',
+        output='screen',
+        parameters=[
+            {'use_sim_time': True},           # Sincronización temporal
+            {'base_frame': 'base_link'},      # Nombre del frame
+            {'odom_frame': 'odom'},
+            {'map_frame': 'map'},
+            {'scan_topic': '/scan'},
+            {'transform_timeout': 0.5},       # TOLERANCIA: Espera 0.5s si la TF llega tarde
+            {'map_update_interval': 1.0},     # Actualiza el mapa cada segundo
+            {'max_laser_range': 20.0}         # Rango máximo confiable del láser
+        ]
+    )
+
     
     return LaunchDescription([
         webots,
         my_robot_driver, 
         lidar_tf,
+        slam_node,
         
         launch.actions.RegisterEventHandler(
             event_handler=launch.event_handlers.OnProcessExit(
