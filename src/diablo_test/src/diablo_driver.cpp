@@ -12,6 +12,7 @@
 #include <webots/Lidar.hpp>
 
 #include <algorithm>
+#include <vector>
 #include <memory>
 #include <cmath>
 
@@ -19,7 +20,7 @@ using std::placeholders::_1;
 
 // Parámetros del robot Diablo
 const double WHEEL_RADIUS = 0.10;
-const double TRACK_WIDTH = 0.35;
+const double TRACK_WIDTH = 0.5805; // Ajustado para la simulación mediante tunning
 
 class DiabloDriver : public rclcpp::Node
 {
@@ -189,24 +190,41 @@ private:
 
     void publish_lidar(rclcpp::Time timestamp)
     {
-        if (!lidar_) return;
+        if (!lidar_) return; // No hay LiDAR
+        
+        // Vector para almacenar los rangos
         auto scan_msg = sensor_msgs::msg::LaserScan();
+
+        // Vector temporal del Header
         scan_msg.header.stamp = timestamp;
         scan_msg.header.frame_id = "lidar_link";
 
+        // Rellenar los campos del mensaje LaserScan con configuración geométrica del LiDAR
         scan_msg.angle_min = 0;
         scan_msg.angle_max = 2 * M_PI;
+
+        // Calculo incremento angular
         scan_msg.angle_increment = 2 * M_PI / lidar_->getHorizontalResolution();
+
+        // Otros parámetros
         scan_msg.time_increment = (double)time_step_ / 1000.0 / lidar_->getHorizontalResolution();
         scan_msg.scan_time = (double)time_step_ / 1000.0;
         scan_msg.range_min = lidar_->getMinRange();
         scan_msg.range_max = lidar_->getMaxRange();
 
+        // Obtener la imagen de rangos desde Webots
         const float *range_image = lidar_->getRangeImage();
+
         if (range_image) {
-            // Copiamos los rangos (distancias)
-            scan_msg.ranges.assign(range_image, range_image + lidar_->getHorizontalResolution());
-            
+            // Copiamos los rangos del puntero a un vector
+            std::vector<float> ranges_vec(range_image, range_image + lidar_->getHorizontalResolution());  
+
+            // Invertimos los rangos para evitar que RViz los interprete al revés
+            std::reverse(ranges_vec.begin(), ranges_vec.end());
+
+            // Guardamos datos corregidos en el mensaje
+            scan_msg.ranges = ranges_vec;
+
             // Rellenamos el array de intensidad con valor 1.0 para que RViz funcione
             scan_msg.intensities.resize(lidar_->getHorizontalResolution(), 1.0f);
         }
