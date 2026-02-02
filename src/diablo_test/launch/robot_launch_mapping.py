@@ -7,7 +7,6 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from webots_ros2_driver.webots_launcher import WebotsLauncher
 from launch.substitutions import LaunchConfiguration
-from launch.actions import TimerAction      # Para retrasar el inicio de EasyNavigation
 
 def generate_launch_description():
     
@@ -33,7 +32,7 @@ def generate_launch_description():
         additional_env={'WEBOTS_CONTROLLER_URL': 'DiabloOriginal'},
         parameters=[
             {'robot_description': urdf_path},
-            {'use_sim_time': False} # Tiempo simulado para que funcione RViz
+            {'use_sim_time': True} # Tiempo simulado para que funcione RViz
         ]
     )
 
@@ -43,24 +42,26 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='lidar_tf_publisher',
         arguments=['0', '0', '0.15', '3.1416', '0', '0', 'base_link', 'lidar_link'],
-        parameters=[{'use_sim_time': False}]
+        parameters=[{'use_sim_time': True}]
     )
+
+    # 4. Nodo SLAM Toolbox para el mapeado inicial
     
-
-    # 4. EasyNavigation Node
-    easynav_node = Node(
-        package='easynav_system',
-        executable='system_main',
-        name='easynav_node',
+    slam_node = Node(
+        package='slam_toolbox',
+        executable='async_slam_toolbox_node',
+        name='slam_toolbox',
         output='screen',
-        parameters=[easynav_config_path,
-                    {'use_sim_time': False}] 
-    )
-
-    # Retrasar el inicio de EasyNavigation para asegurar que Webots y el robot estén listos
-    delayed_easynav = TimerAction(
-        period=10.0, 
-        actions=[easynav_node]
+        parameters=[
+            {'use_sim_time': True},           # Sincronización temporal
+            {'base_frame': 'base_link'},      # Nombre del frame
+            {'odom_frame': 'odom'},
+            {'map_frame': 'map'},
+            {'scan_topic': '/scan'},
+            {'transform_timeout': 0.5},       # TOLERANCIA: Espera 0.5s si la TF llega tarde
+            {'map_update_interval': 1.0},     # Actualiza el mapa cada segundo
+            {'max_laser_range': 20.0}         # Rango máximo confiable del láser
+        ]
     )
 
     
@@ -68,7 +69,7 @@ def generate_launch_description():
         webots,
         my_robot_driver, 
         lidar_tf,
-        delayed_easynav,
+        slam_node,
         
         launch.actions.RegisterEventHandler(
             event_handler=launch.event_handlers.OnProcessExit(

@@ -58,6 +58,7 @@ install(DIRECTORY
   worlds
   meshes
   textures
+  config
   DESTINATION share/${PROJECT_NAME}
 )
 
