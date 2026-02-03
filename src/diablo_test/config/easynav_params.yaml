@@ -3,18 +3,10 @@ easynav_node:
     use_sim_time: false
     update_frequency: 10.0
 
-    # GESTOR DE MAPAS (Sustituye a nav2_map_server)
-    # EasyNav carga el mapa directamente en su memoria.
-    map_manager_id: "OccupancyGridMapManager"
-    map_manager_plugin: "easynav_plugins::OccupancyGridMapManager"
-    
-    OccupancyGridMapManager:
-      yaml_filename: "/home/adri/tfg_ws/src/diablo_test/maps/mapa_tfg.yaml" # Mapa global de SLAM
-      map_topic: "/map"          # Topic donde publicar el mapa
-      subscribe_to_updates: false  # Se pone a true para que el mapa se actualice con las observaciones del robot
 
     # LOCALIZADOR (Sustituye a nav2_amcl)
     # Usa un plugin que implementa AMCL dentro de EasyNav.
+    
     localizer_id: "AmclLocalizer"
     localizer_plugin: "easynav_plugins::AmclLocalizer"
 
@@ -48,3 +40,21 @@ easynav_node:
 
     # Parámetros del Robot
     robot_radius: 0.25          # Radio del robot para no chocar
+
+
+
+# GESTOR DE MAPAS (Sustituye a nav2_map_server)
+
+maps_manager_node:
+  ros__parameters:
+    use_sim_time: false
+
+    # Aquí definimos la lista de tipos
+    map_types: ["OccupancyGridMapManager"]
+
+    # Y aquí la configuración del plugin
+    OccupancyGridMapManager:
+      plugin: "easynav_plugins::OccupancyGridMapManager"
+      yaml_filename: "/home/adri/tfg_ws/src/diablo_test/maps/mapa_tfg.yaml"
+      map_topic: "/map"
+      subscribe_to_updates: false # En false para estático

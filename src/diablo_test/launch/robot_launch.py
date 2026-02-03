@@ -59,15 +59,14 @@ def generate_launch_description():
 
     # Retrasar el inicio de EasyNavigation para asegurar que Webots y el robot estén listos
     delayed_easynav = TimerAction(
-        period=10.0, 
-        actions=[easynav_node]
+        period=5.0, 
+        actions=[easynav_node, lidar_tf]
     )
 
     
     return LaunchDescription([
         webots,
         my_robot_driver, 
-        lidar_tf,
         delayed_easynav,
         
         launch.actions.RegisterEventHandler(
