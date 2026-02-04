@@ -1,25 +1,32 @@
-easynav_node:
+system_node:
   ros__parameters:
     use_sim_time: false
     update_frequency: 10.0
 
-
     # LOCALIZADOR (Sustituye a nav2_amcl)
     # Usa un plugin que implementa AMCL dentro de EasyNav.
-    
-    localizer_id: "AmclLocalizer"
-    localizer_plugin: "easynav_plugins::AmclLocalizer"
+    localizer_id: "AMCLLocalizer"
+    localizer_plugin: "easynav_navmap_localizer/AMCLLocalizer"
 
-    AmclLocalizer: # Parámetros específicos de filtrado de partículas (AMCL)
-      min_particles: 500
-      max_particles: 2000
-      alpha1: 0.2  # Ruido odometría (rotación -> rotación)
-      alpha2: 0.2  # Ruido odometría (rotación -> traslación)
-      alpha3: 0.2  # Ruido odometría (traslación -> traslación)
-      alpha4: 0.2  # Ruido odometría (traslación -> rotación)
-      initial_pose_x: 0.0
-      initial_pose_y: 0.0
-      initial_pose_a: 0.0
+    AMCLLocalizer:
+      plugin: "easynav_navmap_localizer/AMCLLocalizer"
+      
+      num_particles: 500         
+      initial_pose:
+        x: 0.0
+        y: 0.0
+        yaw: 0.0
+        std_dev_xy: 0.3
+        std_dev_yaw: 0.2
+      
+      # Configuración de ruido (Odom)
+      noise_translation: 0.05
+      noise_rotation: 0.05
+      
+      # ¿Usar TF o Topic? Default es false (usa topic /odom)
+      compute_odom_from_tf: false
+
+
 
     # PLANIFICADOR
     planner_id: "GridPlanner"   # Algoritmo Dijkstra en una cuadrícula
@@ -43,18 +50,56 @@ easynav_node:
 
 
 
+# GESTOR DE SENSORES (Sustituye a nav2_sensor_bridge)
+# Traduce los datos de los sensores al formato que EasyNav entiende
+# Necesario para que el localizador funcione. Crea una nube de puntos a partir del LIDAR.
+sensors_node:
+  ros__parameters:
+    use_sim_time: false
+    # Definimos qué sensores tenemos
+    sensor_types: ["lidar"]
+
+    # Configuración del "traductor"
+    lidar:
+      # NOTA: Este nombre de plugin es una suposición estándar en EasyNav. 
+      # Si falla, necesitaremos buscar el README de easynav_sensors.
+      plugin: "easynav_extra_plugins/LaserScanSensor" 
+      sensor_topic: "/scan"  # Tu topic real
+      sensor_frame: "lidar_link"
+
+
+
+
+
+
+
 # GESTOR DE MAPAS (Sustituye a nav2_map_server)
 
 maps_manager_node:
   ros__parameters:
     use_sim_time: false
 
-    # Aquí definimos la lista de tipos
-    map_types: ["OccupancyGridMapManager"]
+    map_types: ["NavMapMapsManager"]
 
-    # Y aquí la configuración del plugin
-    OccupancyGridMapManager:
-      plugin: "easynav_plugins::OccupancyGridMapManager"
-      yaml_filename: "/home/adri/tfg_ws/src/diablo_test/maps/mapa_tfg.yaml"
-      map_topic: "/map"
-      subscribe_to_updates: false # En false para estático
+    # Configuración del NavMap
+    NavMapMapsManager:
+      plugin: "easynav_navmap_maps_manager/NavMapMapsManager"
+      
+      # El nombre del paquete donde está el mapa
+      package: "diablo_test" 
+      
+      # Ruta relativa dentro del paquete
+      occmap_path_file: "maps/mapa_tfg.yaml" 
+      
+      # Frecuencia de publicación
+      freq: 5.0
+      
+      # Filtros opcionales
+      filters: ["inflation"]
+
+      # 2. Definimos la configuración de ese filtro
+      inflation:
+        plugin: "easynav_navmap_maps_manager/NavMapMapsManager/InflationFilter"
+        inflation_radius: 0.2       # Radio de inflado
+        cost_scaling_factor: 3.0    # Cómo cae el coste con la distancia
+        inscribed_radius: 0.3       # Radio de seguridad crítico

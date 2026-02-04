@@ -59,6 +59,7 @@ install(DIRECTORY
   meshes
   textures
   config
+  maps
   DESTINATION share/${PROJECT_NAME}
 )
 

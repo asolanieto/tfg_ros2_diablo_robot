@@ -1,5 +1,6 @@
 import os
 import launch
+import sys # Para el bridge
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -8,6 +9,7 @@ from ament_index_python.packages import get_package_share_directory
 from webots_ros2_driver.webots_launcher import WebotsLauncher
 from launch.substitutions import LaunchConfiguration
 from launch.actions import TimerAction      # Para retrasar el inicio de EasyNavigation
+from launch.actions import ExecuteProcess  # Para ejecutar el bridge
 
 def generate_launch_description():
     
@@ -51,10 +53,15 @@ def generate_launch_description():
     easynav_node = Node(
         package='easynav_system',
         executable='system_main',
-        name='easynav_node',
         output='screen',
         parameters=[easynav_config_path,
                     {'use_sim_time': False}] 
+    )
+
+    # Nodo Puente para visualizar el NavMap en RViz
+    navmap_bridge_cmd = ExecuteProcess(
+        cmd=['python3', '/home/adri/tfg_ws/src/diablo_test/src/navmap_bridge.py'],
+        output='screen'
     )
 
     # Retrasar el inicio de EasyNavigation para asegurar que Webots y el robot estén listos
@@ -68,6 +75,7 @@ def generate_launch_description():
         webots,
         my_robot_driver, 
         delayed_easynav,
+        navmap_bridge_cmd,
         
         launch.actions.RegisterEventHandler(
             event_handler=launch.event_handlers.OnProcessExit(
