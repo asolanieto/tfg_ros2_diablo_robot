@@ -55,7 +55,17 @@ def generate_launch_description():
         executable='system_main',
         output='screen',
         parameters=[easynav_config_path,
-                    {'use_sim_time': False}] 
+                    {'use_sim_time': False}], 
+        remappings=[
+            # Conectamos el mapa
+            ('/map', '/maps_manager_node/NavMapMapsManager/map'),
+            
+            # Conectamos la posición inicial
+            ('/initialpose', '/initialpose'),
+
+            # Forzamos al localizador a leer el láser puenteado
+            ('/scan', '/scan_bridged') 
+        ]
     )
 
     # Nodo Puente para visualizar el NavMap en RViz
@@ -63,6 +73,12 @@ def generate_launch_description():
         cmd=['python3', '/home/adri/tfg_ws/src/diablo_test/src/navmap_bridge.py'],
         output='screen'
     )
+
+    # Nodo Puente para traducir el timestamp del LaserScan y que EasyNav lo acepte
+    scan_bridge_cmd = ExecuteProcess(
+    cmd=['python3', '/home/adri/tfg_ws/src/diablo_test/src/scan_bridge.py'],
+    output='screen'
+)
 
     # Retrasar el inicio de EasyNavigation para asegurar que Webots y el robot estén listos
     delayed_easynav = TimerAction(
@@ -76,6 +92,7 @@ def generate_launch_description():
         my_robot_driver, 
         delayed_easynav,
         navmap_bridge_cmd,
+        scan_bridge_cmd,
         
         launch.actions.RegisterEventHandler(
             event_handler=launch.event_handlers.OnProcessExit(

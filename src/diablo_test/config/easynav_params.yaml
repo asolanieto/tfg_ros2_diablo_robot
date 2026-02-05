@@ -3,30 +3,7 @@ system_node:
     use_sim_time: false
     update_frequency: 10.0
 
-    # LOCALIZADOR (Sustituye a nav2_amcl)
-    # Usa un plugin que implementa AMCL dentro de EasyNav.
-    localizer_id: "AMCLLocalizer"
-    localizer_plugin: "easynav_navmap_localizer/AMCLLocalizer"
-
-    AMCLLocalizer:
-      plugin: "easynav_navmap_localizer/AMCLLocalizer"
-      
-      num_particles: 500         
-      initial_pose:
-        x: 0.0
-        y: 0.0
-        yaw: 0.0
-        std_dev_xy: 0.3
-        std_dev_yaw: 0.2
-      
-      # Configuración de ruido (Odom)
-      noise_translation: 0.05
-      noise_rotation: 0.05
-      
-      # ¿Usar TF o Topic? Default es false (usa topic /odom)
-      compute_odom_from_tf: false
-
-
+    robot_footprint_frame: "base_link" # EasyNav necesita saber el marco de referencia del robot asi que asignamos el mismo que el del robot.
 
     # PLANIFICADOR
     planner_id: "GridPlanner"   # Algoritmo Dijkstra en una cuadrícula
@@ -50,25 +27,64 @@ system_node:
 
 
 
+
 # GESTOR DE SENSORES (Sustituye a nav2_sensor_bridge)
 # Traduce los datos de los sensores al formato que EasyNav entiende
 # Necesario para que el localizador funcione. Crea una nube de puntos a partir del LIDAR.
 sensors_node:
   ros__parameters:
     use_sim_time: false
-    # Definimos qué sensores tenemos
-    sensor_types: ["lidar"]
+    
+    # LISTA DE SENSORES
+    sensors: ["lidar_frontal"]
 
-    # Configuración del "traductor"
-    lidar:
-      # NOTA: Este nombre de plugin es una suposición estándar en EasyNav. 
-      # Si falla, necesitaremos buscar el README de easynav_sensors.
-      plugin: "easynav_extra_plugins/LaserScanSensor" 
-      sensor_topic: "/scan"  # Tu topic real
-      sensor_frame: "lidar_link"
+    # CONFIGURACIÓN DE CADA SENSOR
+    lidar_frontal:
+      topic: "/scan_bridged" 
+      # Tipo de mensaje exacto
+      type: "sensor_msgs/msg/LaserScan" 
+      
+      # El grupo se autodetecta, pero forzamos 'points' por seguridad
+      group: "points" 
+    
+    # Tiempo para olvidar lecturas viejas
+    forget_time: 1.0
 
 
 
+
+# LOCALIZADOR (Sustituye a nav2_amcl)
+
+localizer_node:
+  ros__parameters:
+    use_sim_time: false
+    
+    # El nodo busca qué plugin cargar
+    localizer_types: ["AMCLLocalizer"]
+
+    # Configuración del plugin
+    AMCLLocalizer:
+      plugin: "easynav_navmap_localizer/AMCLLocalizer"
+      num_particles: 400
+      initial_pose:
+        x: 0.0
+        y: 0.0
+        yaw: 0.0
+        std_dev_xy: 0.1
+        std_dev_yaw: 0.1
+      
+      downsampled_cloud_size: 0.1   # Cada cuánto reducir la nube de puntos para acelerar el proceso
+      noise_translation: 0.1
+      noise_rotation: 0.2
+      noise_translation_to_rotation: 0.15
+
+      # Esto crea un campo de probabilidad alrededor de las paredes.
+      # Si el láser se va un poco, este campo lo atrae de vuelta al sitio.
+      inflation_stddev: 0.3
+      inflation_prob_min: 0.05
+      
+
+      compute_odom_from_tf: true
 
 
 
@@ -92,7 +108,7 @@ maps_manager_node:
       occmap_path_file: "maps/mapa_tfg.yaml" 
       
       # Frecuencia de publicación
-      freq: 5.0
+      freq: 1.0
       
       # Filtros opcionales
       filters: ["inflation"]

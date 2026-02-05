@@ -32,9 +32,9 @@ class NavMapBridge(Node):
 
         self.last_map = None
         
-        # 4. Timer para republicar constantemente (EL TRUCO)
-        # Republicamos a 0.1Hz con la hora ACTUAL para que RViz nunca lo rechace
-        self.timer = self.create_timer(0.1, self.timer_callback)
+        # 4. Timer para republicar constantemente
+        # Republicamos cada 10s con la hora ACTUAL para que RViz nunca lo rechace
+        self.timer = self.create_timer(10.0, self.timer_callback)
         
         self.get_logger().info("NavMap Bridge iniciado. Esperando mapa 3D...")
 
