@@ -5,25 +5,58 @@ system_node:
 
     robot_footprint_frame: "base_link" # EasyNav necesita saber el marco de referencia del robot asi que asignamos el mismo que el del robot.
 
-    # PLANIFICADOR
-    planner_id: "GridPlanner"   # Algoritmo Dijkstra en una cuadrícula
-    # Otras posibilidades son "RapidlyExploringRandomTree" o "BreadthFirstSearch"
-    planner_plugin: "easynav_plugins::GridPlanner" 
 
-    # EL CONTROLADOR (Local Planner)
-    controller_id: "VectorPursuit"  # Algoritmo tipo follow-the-carrot
-    # Otras posibilidades son "DynamicWindowApproach" o "PID simple"
-    controller_plugin: "easynav_plugins::VectorPursuitController"
 
-    # Parámetros específicos del Controlador (VectorPursuit)
-    VectorPursuit:
-      desired_linear_vel: 0.5   # Velocidad máxima (m/s)
-      lookahead_dist: 0.6       # "Mira" 60cm por delante de la línea
-      rotation_correction_threshold: 0.5 # Si el error de ángulo es grande, gira en el sitio
-      max_angular_vel: 1.0      # Velocidad de giro máxima (rad/s)
 
-    # Parámetros del Robot
-    robot_radius: 0.25          # Radio del robot para no chocar
+
+# PLANIFICADOR (Configurado según easynav_navmap_planner)
+planner_node:
+  ros__parameters:
+    use_sim_time: false
+    
+    # Nombre clave que usará el nodo
+    planner_types: ["AStarPlanner"]
+
+    AStarPlanner:
+      # El plugin correcto para el mapa de triángulos
+      plugin: "easynav_navmap_planner/AStarPlanner" 
+      
+      # Parámetros
+      cost_factor: 1.0        # Prioridad a la distancia vs coste del terreno
+      continuous_replan: true # Recalcula si el robot se desvía
+
+      layer: "inflated_obstacles" # Capa del mapa que el planificador usará para calcular el camino
+
+
+
+# CONTROLADOR: Model Predictive Controller (MPC)
+controller_node:
+  ros__parameters:
+    use_sim_time: false
+    
+    # Nombre que usaremos para cargar el plugin
+    controller_types: ["MPCController"]
+
+    # Configuración específica del MPC
+    MPCController:
+      plugin: "easynav_mpc_controller/MPCController"
+
+      # PARÁMETROS DE PREDICCIÓN
+      # Cuántos pasos hacia el futuro calcula.
+      # Ponemos 20 para predecir 2 segundos completos.
+      horizon_steps: 20  
+      dt: 0.1            # Cada paso es 0.1 segundos (20 * 0.1 = 2.0s horizonte)
+
+      # SEGURIDAD
+      # Radio de colisión. ESTO ES UNA ESTIMACIÓN, hay que ajustarlo.
+      safety_radius: 0.5
+
+      # VELOCIDADES
+      max_linear_velocity: 0.35   # 35 cm/s
+      max_angular_velocity: 0.6   # Giro controlado
+
+      # DEBUG
+      verbose: false
 
 
 
@@ -74,14 +107,19 @@ localizer_node:
         std_dev_yaw: 0.1
       
       downsampled_cloud_size: 0.1   # Cada cuánto reducir la nube de puntos para acelerar el proceso
-      noise_translation: 0.1
-      noise_rotation: 0.2
+      noise_translation: 0.05
+      noise_rotation: 0.15
       noise_translation_to_rotation: 0.15
-
+      
+      # Le decimos la capa explícitamente.
+      map_layer: "obstacles"
       # Esto crea un campo de probabilidad alrededor de las paredes.
       # Si el láser se va un poco, este campo lo atrae de vuelta al sitio.
       inflation_stddev: 0.3
       inflation_prob_min: 0.05
+
+      # Damos más margen de tiempo
+      transform_tolerance: 2.0
       
 
       compute_odom_from_tf: true
@@ -111,11 +149,16 @@ maps_manager_node:
       freq: 1.0
       
       # Filtros opcionales
+      # ACTIVAMOS EL FILTRO
       filters: ["inflation"]
 
-      # 2. Definimos la configuración de ese filtro
+      
       inflation:
         plugin: "easynav_navmap_maps_manager/NavMapMapsManager/InflationFilter"
-        inflation_radius: 0.2       # Radio de inflado
-        cost_scaling_factor: 3.0    # Cómo cae el coste con la distancia
-        inscribed_radius: 0.3       # Radio de seguridad crítico
+        enabled: true
+        # Ya no importa 'source_layer' porque el código lo autodetecta, 
+        # pero deja la config de radios bien ajustada:
+        inscribed_radius: 0.30  # Radio del robot (Zona Letal)
+        inflation_radius: 0.55  # Radio total (Zona de Coste). TIENE QUE SER MAYOR.
+        cost_scaling_factor: 5.0 # Cuánto penaliza el coste a medida que te acercas a los obstáculos
+        output_layer: "inflated_obstacles"
