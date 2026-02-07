@@ -158,7 +158,7 @@ maps_manager_node:
         enabled: true
         # Ya no importa 'source_layer' porque el código lo autodetecta, 
         # pero deja la config de radios bien ajustada:
-        inscribed_radius: 0.30  # Radio del robot (Zona Letal)
-        inflation_radius: 0.55  # Radio total (Zona de Coste). TIENE QUE SER MAYOR.
-        cost_scaling_factor: 5.0 # Cuánto penaliza el coste a medida que te acercas a los obstáculos
+        inscribed_radius: 0.50  # Radio del robot (Zona Letal)
+        inflation_radius: 1.5  # Radio total (Zona de Coste). TIENE QUE SER MAYOR.
+        cost_scaling_factor: 0.8 # Cuánto penaliza el coste a medida que te acercas a los obstáculos
         output_layer: "inflated_obstacles"
