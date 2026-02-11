@@ -36,10 +36,8 @@ class NavMapBridge(Node):
         # Republicamos cada 10s con la hora ACTUAL para que RViz nunca lo rechace
         self.timer = self.create_timer(10.0, self.timer_callback)
         
-        self.get_logger().info("NavMap Bridge iniciado. Esperando mapa 3D...")
 
     def map_callback(self, msg):
-        self.get_logger().info(f"¡Mapa 3D Recibido! ({len(msg.navcels_v0)} triángulos)")
         self.last_map = msg
 
     def timer_callback(self):

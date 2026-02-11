@@ -63,8 +63,18 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}
 )
 
+# install(PROGRAMS
+#   src/scan_bridge.py
+#   src/navmap_bridge.py
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 
+install(
+  DIRECTORY src/
+  DESTINATION share/${PROJECT_NAME}/src
+  FILES_MATCHING PATTERN "*.py"
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
