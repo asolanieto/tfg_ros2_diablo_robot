@@ -82,6 +82,10 @@ def generate_launch_description():
         name='system_main',
         output='screen',
         arguments=['--ros-args', '--params-file', easynav_config_path],
+        parameters=[
+            easynav_config_path,
+            {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
+        ],
         remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
     )
 

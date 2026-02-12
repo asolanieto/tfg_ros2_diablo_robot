@@ -95,6 +95,7 @@ planner_node:
       plugin: "easynav_costmap_planner/CostmapPlanner"
       continuous_replan: true 
       goal_tolerance: 0.1
+      transform_tolerance: 2.0
       layer: "inflation"
       robot_radius: 0.35 # Para que el planner tenga en cuenta el tamaño del robot al planificar rutas seguras. 
 
@@ -108,6 +109,7 @@ maps_manager_node:
       plugin: "easynav_costmap_maps_manager/CostmapMapsManager"
       freq: 5.0 
       publish_frequency: 1.0 
+      transform_tolerance: 2.0
       resolution: 0.05
       filters: ["obstacle"]
       
@@ -124,12 +126,14 @@ maps_manager_node:
       #   cost_scaling_factor: 5.0
 
 # --- LOCALIZER NODE ---
-localizer_node:
+/localizer_node:
   ros__parameters:
-    use_sim_time: false
-    localizer_types: ["DummyLocalizer"]
-    DummyLocalizer:
-      plugin: "easynav_localizer/DummyLocalizer"
+    use_sim_time: false # Ojo con esto
+    localizer_types: ["easynav_simple_localizer/AMCLLocalizer"]
+
+    easynav_simple_localizer/AMCLLocalizer:
+      plugin: "easynav_simple_localizer/AMCLLocalizer"
+      # Los parametros de particulas ya dan igual, el codigo los ignora
 
 # --- CONTROLLER NODE ---
 controller_node:
@@ -140,5 +144,22 @@ controller_node:
       plugin: "easynav_mpc_controller/MPCController"
       horizon_steps: 20
       dt: 0.1
-      max_v: 0.5
-      max_w: 1.0
+      max_linear_velocity: 0.5
+      max_angular_velocity: 1.0
+      transform_tolerance: 1.0
+
+
+# --- SENSOR NODE ---
+sensors_node:
+  ros__parameters:
+    use_sim_time: false
+    forget_time: 1.0
+    
+    # 1. LISTA DE IDENTIFICADORES (Nombres arbitrarios que tú das)
+    sensors: ["lidar_frontal"]
+
+    # 2. CONFIGURACIÓN DE CADA SENSOR DE LA LISTA
+    lidar_frontal:
+      topic: "/scan"                       # El topic real de tu robot
+      type: "sensor_msgs/msg/LaserScan"    # O "sensor_msgs/msg/PointCloud2" si usas nube
+      # group: "points"                    # Opcional: El nodo lo deduce por el tipo      
