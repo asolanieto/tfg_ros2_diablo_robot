@@ -97,7 +97,7 @@ planner_node:
       goal_tolerance: 0.1
       transform_tolerance: 2.0
       layer: "inflation"
-      robot_radius: 0.35 # Para que el planner tenga en cuenta el tamaño del robot al planificar rutas seguras. 
+      robot_radius: 0.5 # Para que el planner tenga en cuenta el tamaño del robot al planificar rutas seguras. 
 
 # --- MAPS MANAGER NODE ---
 maps_manager_node:
@@ -111,19 +111,19 @@ maps_manager_node:
       publish_frequency: 1.0 
       transform_tolerance: 2.0
       resolution: 0.05
-      filters: ["obstacle"]
+      filters: ["obstacle","inflation"]
       
       obstacle:
         plugin: "easynav_costmap_maps_manager/CostmapMapsManager/ObstaclesFilter"
         enabled: true
         topic: "/map" 
         
-      # inflation:
-      #   plugin: "easynav_costmap_maps_manager/CostmapMapsManager/InflationFilter"
-      #   enabled: true
-      #   inscribed_radius: 0.35
-      #   inflation_radius: 1.0 
-      #   cost_scaling_factor: 5.0
+      inflation:
+        plugin: "easynav_costmap_maps_manager/CostmapMapsManager/InflationFilter"
+        enabled: true
+        inscribed_radius: 0.35
+        inflation_radius: 0.7 
+        cost_scaling_factor: 8.0 # A mas alto menos gordos los obstaculos
 
 # --- LOCALIZER NODE ---
 /localizer_node:
@@ -147,6 +147,9 @@ controller_node:
       max_linear_velocity: 0.5
       max_angular_velocity: 1.0
       transform_tolerance: 1.0
+
+      fallback_goal_pos_tol: 0.20 # Distancia a la que el robot considerará que ha llegado al objetivo.
+      fallback_goal_yaw_tol: 0.20 # Ángulo (en radianes) a la que el robot considerará que ha alcanzado la orientación deseada.
 
 
 # --- SENSOR NODE ---
