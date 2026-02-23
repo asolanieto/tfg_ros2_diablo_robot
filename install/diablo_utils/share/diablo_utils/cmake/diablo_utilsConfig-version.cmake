@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/diablo_utils/ament_cmake_core/diablo_utilsConfig-version.cmake

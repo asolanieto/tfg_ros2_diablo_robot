@@ -1,4 +1,0 @@
-Invoking command in '/home/diablo/diablo_ws/build/diablo_test': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/diablo/diablo_ws/src/diablo_test -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/diablo/diablo_ws/install/diablo_test
-Invoked command in '/home/diablo/diablo_ws/build/diablo_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/diablo/diablo_ws/src/diablo_test -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/diablo/diablo_ws/install/diablo_test
-Invoking command in '/home/diablo/diablo_ws/build/diablo_test': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_test -- -j4 -l4
-Invoked command in '/home/diablo/diablo_ws/build/diablo_test' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_test -- -j4 -l4

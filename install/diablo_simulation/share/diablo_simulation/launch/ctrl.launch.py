@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/diablo_simulation/launch/ctrl.launch.py

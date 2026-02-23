@@ -1,4 +1,0 @@
-/home/diablo/diablo_ws/install/diablo_test/share/diablo_test/src/bridges/odom_bridge.py
-/home/diablo/diablo_ws/install/diablo_test/share/diablo_test/src/bridges/joint_bridge.py
-/home/diablo/diablo_ws/install/diablo_test/share/diablo_test/src/bridges/scan_bridge.py
-/home/diablo/diablo_ws/install/diablo_test/share/diablo_test/src/bridges/navmap_bridge.py

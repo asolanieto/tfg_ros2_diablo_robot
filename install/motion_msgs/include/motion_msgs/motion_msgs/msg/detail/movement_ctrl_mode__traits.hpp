@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/motion_msgs/rosidl_generator_cpp/motion_msgs/msg/detail/movement_ctrl_mode__traits.hpp

@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/diablo_ctrl/ament_cmake_core/diablo_ctrlConfig-version.cmake

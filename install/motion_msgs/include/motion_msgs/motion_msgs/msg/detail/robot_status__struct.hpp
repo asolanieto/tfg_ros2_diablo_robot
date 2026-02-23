@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/motion_msgs/rosidl_generator_cpp/motion_msgs/msg/detail/robot_status__struct.hpp

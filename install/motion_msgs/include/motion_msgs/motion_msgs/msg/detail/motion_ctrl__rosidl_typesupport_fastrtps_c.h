@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/motion_msgs/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/motion_ctrl__rosidl_typesupport_fastrtps_c.h

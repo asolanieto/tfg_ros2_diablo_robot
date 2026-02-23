@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/motion_msgs/rosidl_generator_c/motion_msgs/msg/leg_motors.h

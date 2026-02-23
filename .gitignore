@@ -1,0 +1,15 @@
+# Carpetas de compilación de ROS 2
+build/
+install/
+log/
+
+# Archivos de Python
+__pycache__/
+*.pyc
+
+# Archivos de C++ y SO
+*.o
+*.so
+*.os
+*.a
+.vscode/

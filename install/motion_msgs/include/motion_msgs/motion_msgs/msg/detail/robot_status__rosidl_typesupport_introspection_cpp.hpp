@@ -1,1 +1,0 @@
-/home/diablo/diablo_ws/build/motion_msgs/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp
