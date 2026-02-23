@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from motion_msgs/msg/MovementCtrlData.msg
+// generated code does not contain a copyright notice
+
+
+module motion_msgs {
+  module msg {
+    struct MovementCtrlData {
+      double forward;
+
+      double left;
+
+      double up;
+
+      double roll;
+
+      double pitch;
+
+      double leg_split;
+    };
+  };
+};

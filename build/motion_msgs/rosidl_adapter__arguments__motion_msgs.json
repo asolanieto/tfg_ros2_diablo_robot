@@ -1,0 +1,11 @@
+{
+  "package_name": "motion_msgs",
+  "non_idl_tuples": [
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/CtrlPlot.msg",
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/LegMotors.msg",
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/MotionCtrl.msg",
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/RobotStatus.msg",
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/MovementCtrlData.msg",
+    "/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs:msg/MovementCtrlMode.msg"
+  ]
+}

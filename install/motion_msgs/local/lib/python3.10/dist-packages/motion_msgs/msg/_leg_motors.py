@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_generator_py/motion_msgs/msg/_leg_motors.py

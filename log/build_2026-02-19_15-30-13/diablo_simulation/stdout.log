@@ -1,0 +1,44 @@
+running develop
+running egg_info
+creating diablo_simulation.egg-info
+writing diablo_simulation.egg-info/PKG-INFO
+writing dependency_links to diablo_simulation.egg-info/dependency_links.txt
+writing entry points to diablo_simulation.egg-info/entry_points.txt
+writing requirements to diablo_simulation.egg-info/requires.txt
+writing top-level names to diablo_simulation.egg-info/top_level.txt
+writing manifest file 'diablo_simulation.egg-info/SOURCES.txt'
+reading manifest file 'diablo_simulation.egg-info/SOURCES.txt'
+writing manifest file 'diablo_simulation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/diablo/diablo_ws/install/diablo_simulation/lib/python3.10/site-packages/diablo-simulation.egg-link (link to .)
+
+Installed /home/diablo/diablo_ws/build/diablo_simulation
+running symlink_data
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/ament_index
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/ament_index/resource_index
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/ament_index/resource_index/packages
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/resource/diablo_simulation -> /home/diablo/diablo_ws/install/diablo_simulation/share/ament_index/resource_index/packages
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/package.xml -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/launch
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/launch/ctrl.launch.py -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/launch
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/launch/display.launch.py -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/launch
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/launch/gazebo.launch.py -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/launch
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/urdf/diablo_simulation.urdf -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/urdf/materials.xacro -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/urdf/diablo_simulation.trans -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/urdf/diablo_simulation.gazebo -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/urdf/diablo_simulation.xacro -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/urdf
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/leg2_right_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/leg2_left_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/wheel_left_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/motor_right_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/motor_left_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/leg_left_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/base_link.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/leg_right_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/meshes/wheel_right_link_1.stl -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/meshes
+creating /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/config
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/config/ctrl.rviz -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/config
+symbolically linking /home/diablo/diablo_ws/build/diablo_simulation/config/display.rviz -> /home/diablo/diablo_ws/install/diablo_simulation/share/diablo_simulation/config

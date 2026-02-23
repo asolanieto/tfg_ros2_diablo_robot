@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/motion_msgs/ament_cmake_core/motion_msgsConfig-version.cmake

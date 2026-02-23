@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from motion_msgs/msg/MovementCtrlMode.msg
+// generated code does not contain a copyright notice
+
+
+module motion_msgs {
+  module msg {
+    struct MovementCtrlMode {
+      boolean pitch_ctrl_mode;
+
+      boolean roll_ctrl_mode;
+
+      boolean height_ctrl_mode;
+
+      boolean stand_mode;
+
+      boolean jump_mode;
+
+      boolean split_mode;
+    };
+  };
+};

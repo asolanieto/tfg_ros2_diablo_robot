@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "motion_msgs__py",
+		"source" : "/home/diablo/diablo_ws/build/motion_msgs/motion_msgs__py"
+	}
+}

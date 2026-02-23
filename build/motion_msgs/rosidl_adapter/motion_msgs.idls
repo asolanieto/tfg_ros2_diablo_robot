@@ -1,0 +1,6 @@
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/CtrlPlot.idl
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/LegMotors.idl
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/MotionCtrl.idl
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/RobotStatus.idl
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/MovementCtrlData.idl
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_adapter/motion_msgs:msg/MovementCtrlMode.idl

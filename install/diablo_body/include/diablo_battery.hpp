@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/src/diablo_ros2/diablo_ception/diablo_body/include/diablo_battery.hpp

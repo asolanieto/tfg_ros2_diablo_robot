@@ -16,11 +16,6 @@ def generate_launch_description():
     slam_config = os.path.join(package_dir, 'config', 'slam_localization.yaml') 
     mux_config_path = os.path.join(package_dir, 'config', 'mux_params.yaml')
 
-    # 1. Webots
-    webots = WebotsLauncher(
-        world=world_path,
-        mode='realtime'
-    )
 
     # 2. Driver
     my_robot_driver = Node(

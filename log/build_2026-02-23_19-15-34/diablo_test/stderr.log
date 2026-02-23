@@ -1,0 +1,11 @@
+[31mCMake Error at CMakeLists.txt:43 (target_compile_features):
+  Cannot specify compile features for target "diablo_controller" which is not
+  built by this project.
+
+[0m
+[31mCMake Error at /opt/ros/humble/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+  ament_target_dependencies() the first argument must be a valid target name
+Call Stack (most recent call first):
+  CMakeLists.txt:44 (ament_target_dependencies)
+
+[0m

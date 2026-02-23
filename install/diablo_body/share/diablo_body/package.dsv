@@ -1,0 +1,11 @@
+source;share/diablo_body/hook/cmake_prefix_path.ps1
+source;share/diablo_body/hook/cmake_prefix_path.dsv
+source;share/diablo_body/hook/cmake_prefix_path.sh
+source;share/diablo_body/hook/ld_library_path_lib.ps1
+source;share/diablo_body/hook/ld_library_path_lib.dsv
+source;share/diablo_body/hook/ld_library_path_lib.sh
+source;share/diablo_body/local_setup.bash
+source;share/diablo_body/local_setup.dsv
+source;share/diablo_body/local_setup.ps1
+source;share/diablo_body/local_setup.sh
+source;share/diablo_body/local_setup.zsh

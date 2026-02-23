@@ -1,0 +1,9 @@
+source;share/diablo_simulation/hook/pythonpath.ps1
+source;share/diablo_simulation/hook/pythonpath.dsv
+source;share/diablo_simulation/hook/pythonpath.sh
+source;share/diablo_simulation/hook/ament_prefix_path.ps1
+source;share/diablo_simulation/hook/ament_prefix_path.dsv
+source;share/diablo_simulation/hook/ament_prefix_path.sh
+source;../../build/diablo_simulation/share/diablo_simulation/hook/pythonpath_develop.ps1
+source;../../build/diablo_simulation/share/diablo_simulation/hook/pythonpath_develop.dsv
+source;../../build/diablo_simulation/share/diablo_simulation/hook/pythonpath_develop.sh

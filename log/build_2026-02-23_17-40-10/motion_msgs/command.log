@@ -1,0 +1,4 @@
+Invoking command in '/home/diablo/diablo_ws/build/motion_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/motion_msgs -- -j4 -l4
+Invoked command in '/home/diablo/diablo_ws/build/motion_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/motion_msgs -- -j4 -l4
+Invoking command in '/home/diablo/diablo_ws/build/motion_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/diablo/diablo_ws/build/motion_msgs
+Invoked command in '/home/diablo/diablo_ws/build/motion_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/diablo/diablo_ws/build/motion_msgs

@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_generator_py/motion_msgs/msg/_motion_ctrl_s.c

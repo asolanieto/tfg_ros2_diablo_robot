@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/diablo_test/ament_cmake_core/diablo_testConfig-version.cmake

@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/src/diablo_ros2/diablo_visualise/diablo_simulation/launch/gazebo.launch.py

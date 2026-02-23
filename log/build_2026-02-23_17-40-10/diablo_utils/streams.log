@@ -1,0 +1,40 @@
+[0.054s] Invoking command in '/home/diablo/diablo_ws/build/diablo_utils': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/motion_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_utils -- -j4 -l4
+[0.288s] [35m[1mConsolidate compiler generated dependencies of target diablo_utils_core[0m
+[0.389s] [100%] Built target diablo_utils_core
+[0.429s] Invoked command in '/home/diablo/diablo_ws/build/diablo_utils' returned '0': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/motion_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_utils -- -j4 -l4
+[0.439s] Invoking command in '/home/diablo/diablo_ws/build/diablo_utils': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/motion_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/diablo/diablo_ws/build/diablo_utils
+[0.468s] -- Install configuration: ""
+[0.470s] -- Execute custom install script
+[0.476s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/VulcanSerial/Exception.hpp
+[0.477s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/VulcanSerial/SerialPort.hpp
+[0.479s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/onboard_sdk_uart_protocol.h
+[0.481s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_crc.hpp
+[0.482s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_ddj_m15.hpp
+[0.484s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_hal.hpp
+[0.486s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_header.hpp
+[0.487s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_movement.hpp
+[0.489s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_telemetry.hpp
+[0.490s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_vehicle.hpp
+[0.492s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_virtual_rc.hpp
+[0.495s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/lib/libdiablo_utils_core.so
+[0.498s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/library_path.sh
+[0.499s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/library_path.dsv
+[0.503s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/package_run_dependencies/diablo_utils
+[0.505s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/parent_prefix_path/diablo_utils
+[0.506s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/ament_prefix_path.sh
+[0.508s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/ament_prefix_path.dsv
+[0.510s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/path.sh
+[0.512s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/path.dsv
+[0.514s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.bash
+[0.515s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.sh
+[0.517s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.zsh
+[0.518s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.dsv
+[0.519s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/package.dsv
+[0.553s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/packages/diablo_utils
+[0.556s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.558s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_libraries-extras.cmake
+[0.559s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.561s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/diablo_utilsConfig.cmake
+[0.562s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/diablo_utilsConfig-version.cmake
+[0.564s] -- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/package.xml
+[0.572s] Invoked command in '/home/diablo/diablo_ws/build/diablo_utils' returned '0': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/motion_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/diablo/diablo_ws/build/diablo_utils

@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_cmake/rosidl_cmake-extras.cmake

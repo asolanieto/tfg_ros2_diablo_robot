@@ -1,0 +1,1767 @@
+[0.000000] (-) TimerEvent: {}
+[0.001329] (-) JobUnselected: {'identifier': 'diablo_rviz2_control_plugin'}
+[0.001817] (-) JobUnselected: {'identifier': 'diablo_simpose_trans'}
+[0.002000] (-) JobUnselected: {'identifier': 'diablo_simulation'}
+[0.002082] (-) JobUnselected: {'identifier': 'diablo_teleop'}
+[0.002157] (-) JobUnselected: {'identifier': 'diablo_test'}
+[0.002241] (ception_msgs) JobQueued: {'identifier': 'ception_msgs', 'dependencies': OrderedDict()}
+[0.002327] (motion_msgs) JobQueued: {'identifier': 'motion_msgs', 'dependencies': OrderedDict()}
+[0.002403] (diablo_utils) JobQueued: {'identifier': 'diablo_utils', 'dependencies': OrderedDict([('motion_msgs', '/home/diablo/diablo_ws/install/motion_msgs')])}
+[0.002487] (diablo_body) JobQueued: {'identifier': 'diablo_body', 'dependencies': OrderedDict([('ception_msgs', '/home/diablo/diablo_ws/install/ception_msgs'), ('motion_msgs', '/home/diablo/diablo_ws/install/motion_msgs'), ('diablo_utils', '/home/diablo/diablo_ws/install/diablo_utils')])}
+[0.002784] (diablo_ctrl) JobQueued: {'identifier': 'diablo_ctrl', 'dependencies': OrderedDict([('ception_msgs', '/home/diablo/diablo_ws/install/ception_msgs'), ('motion_msgs', '/home/diablo/diablo_ws/install/motion_msgs'), ('diablo_utils', '/home/diablo/diablo_ws/install/diablo_utils'), ('diablo_body', '/home/diablo/diablo_ws/install/diablo_body')])}
+[0.002888] (ception_msgs) JobStarted: {'identifier': 'ception_msgs'}
+[0.054502] (ception_msgs) JobProgress: {'identifier': 'ception_msgs', 'progress': 'cmake'}
+[0.063475] (ception_msgs) JobProgress: {'identifier': 'ception_msgs', 'progress': 'build'}
+[0.066771] (ception_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diablo/diablo_ws/build/ception_msgs'], 'cwd': '/home/diablo/diablo_ws/build/ception_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/ception_msgs'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098637] (-) TimerEvent: {}
+[0.199426] (-) TimerEvent: {}
+[0.300355] (-) TimerEvent: {}
+[0.401278] (-) TimerEvent: {}
+[0.502143] (-) TimerEvent: {}
+[0.603022] (-) TimerEvent: {}
+[0.702563] (ception_msgs) StdoutLine: {'line': b'[  3%] Built target ception_msgs__cpp\n'}
+[0.703298] (-) TimerEvent: {}
+[0.804011] (-) TimerEvent: {}
+[0.863742] (ception_msgs) StdoutLine: {'line': b'[ 12%] Built target ception_msgs__rosidl_typesupport_cpp\n'}
+[0.904205] (-) TimerEvent: {}
+[0.969349] (ception_msgs) StdoutLine: {'line': b'[ 22%] Built target ception_msgs__rosidl_generator_c\n'}
+[1.004467] (-) TimerEvent: {}
+[1.080641] (ception_msgs) StdoutLine: {'line': b'[ 32%] Built target ception_msgs__rosidl_typesupport_fastrtps_c\n'}
+[1.104662] (-) TimerEvent: {}
+[1.183923] (ception_msgs) StdoutLine: {'line': b'[ 41%] Built target ception_msgs__rosidl_typesupport_introspection_c\n'}
+[1.204832] (-) TimerEvent: {}
+[1.281400] (ception_msgs) StdoutLine: {'line': b'[ 51%] Built target ception_msgs__rosidl_typesupport_c\n'}
+[1.305024] (-) TimerEvent: {}
+[1.386495] (ception_msgs) StdoutLine: {'line': b'[ 61%] Built target ception_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[1.405236] (-) TimerEvent: {}
+[1.499093] (ception_msgs) StdoutLine: {'line': b'[ 70%] Built target ception_msgs__rosidl_typesupport_introspection_cpp\n'}
+[1.505432] (-) TimerEvent: {}
+[1.586128] (ception_msgs) StdoutLine: {'line': b'[ 70%] Built target ception_msgs\n'}
+[1.605630] (-) TimerEvent: {}
+[1.697207] (ception_msgs) StdoutLine: {'line': b'[ 70%] Built target ament_cmake_python_symlink_ception_msgs\n'}
+[1.705805] (-) TimerEvent: {}
+[1.806556] (-) TimerEvent: {}
+[1.907238] (-) TimerEvent: {}
+[2.007908] (-) TimerEvent: {}
+[2.108704] (-) TimerEvent: {}
+[2.209462] (-) TimerEvent: {}
+[2.310044] (-) TimerEvent: {}
+[2.410676] (-) TimerEvent: {}
+[2.511289] (-) TimerEvent: {}
+[2.611894] (-) TimerEvent: {}
+[2.688511] (ception_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.691412] (ception_msgs) StdoutLine: {'line': b'writing ception_msgs.egg-info/PKG-INFO\n'}
+[2.692662] (ception_msgs) StdoutLine: {'line': b'writing dependency_links to ception_msgs.egg-info/dependency_links.txt\n'}
+[2.693931] (ception_msgs) StdoutLine: {'line': b'writing top-level names to ception_msgs.egg-info/top_level.txt\n'}
+[2.706409] (ception_msgs) StdoutLine: {'line': b"reading manifest file 'ception_msgs.egg-info/SOURCES.txt'\n"}
+[2.709632] (ception_msgs) StdoutLine: {'line': b"writing manifest file 'ception_msgs.egg-info/SOURCES.txt'\n"}
+[2.712217] (-) TimerEvent: {}
+[2.813644] (-) TimerEvent: {}
+[2.832008] (ception_msgs) StdoutLine: {'line': b'[ 70%] Built target ament_cmake_python_build_ception_msgs_egg\n'}
+[2.913893] (-) TimerEvent: {}
+[2.928888] (ception_msgs) StdoutLine: {'line': b'[ 74%] Built target ception_msgs__py\n'}
+[3.014184] (-) TimerEvent: {}
+[3.044526] (ception_msgs) StdoutLine: {'line': b'[ 80%] Built target ception_msgs__rosidl_generator_py\n'}
+[3.114381] (-) TimerEvent: {}
+[3.144151] (ception_msgs) StdoutLine: {'line': b'[ 87%] Built target ception_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[3.214580] (-) TimerEvent: {}
+[3.245478] (ception_msgs) StdoutLine: {'line': b'[ 93%] Built target ception_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[3.314781] (-) TimerEvent: {}
+[3.344460] (ception_msgs) StdoutLine: {'line': b'[100%] Built target ception_msgs__rosidl_typesupport_c__pyext\n'}
+[3.382728] (ception_msgs) CommandEnded: {'returncode': 0}
+[3.387638] (ception_msgs) JobProgress: {'identifier': 'ception_msgs', 'progress': 'install'}
+[3.414991] (-) TimerEvent: {}
+[3.427041] (ception_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diablo/diablo_ws/build/ception_msgs'], 'cwd': '/home/diablo/diablo_ws/build/ception_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/ception_msgs'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[3.457099] (ception_msgs) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[3.461887] (ception_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.466618] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ament_index/resource_index/rosidl_interfaces/ception_msgs\n'}
+[3.477625] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__functions.h\n'}
+[3.479580] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__struct.h\n'}
+[3.481590] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__type_support.h\n'}
+[3.483439] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/imu_euler.h\n'}
+[3.485236] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.487789] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/library_path.sh\n'}
+[3.489324] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/library_path.dsv\n'}
+[3.492905] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__rosidl_typesupport_fastrtps_c.h\n'}
+[3.494314] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.497222] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__rosidl_typesupport_introspection_c.h\n'}
+[3.498745] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.501795] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__builder.hpp\n'}
+[3.503213] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__struct.hpp\n'}
+[3.504854] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__traits.hpp\n'}
+[3.506325] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__type_support.hpp\n'}
+[3.507688] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/imu_euler.hpp\n'}
+[3.509143] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.513112] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.514532] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.514963] (-) TimerEvent: {}
+[3.517453] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/include/ception_msgs/ception_msgs/msg/detail/imu_euler__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.518929] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/pythonpath.sh\n'}
+[3.520487] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/pythonpath.dsv\n'}
+[3.525020] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs-1.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.526509] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs-1.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.528036] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs-1.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.529668] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs-1.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.536101] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/__init__.py\n'}
+[3.537564] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/_ception_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[3.538935] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/_ception_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.540342] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/_ception_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.541694] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.543099] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.544637] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.546005] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/libception_msgs__rosidl_generator_py.so\n'}
+[3.547967] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/msg/__init__.py\n'}
+[3.549529] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/msg/_imu_euler.py\n'}
+[3.551029] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/msg/_imu_euler_s.c\n'}
+[3.553467] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.555663] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.557852] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/ception_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.559781] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/msg/IMUEuler.idl\n'}
+[3.561377] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/msg/IMUEuler.msg\n'}
+[3.563472] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ament_index/resource_index/package_run_dependencies/ception_msgs\n'}
+[3.565622] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ament_index/resource_index/parent_prefix_path/ception_msgs\n'}
+[3.567389] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/ament_prefix_path.sh\n'}
+[3.569065] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/ament_prefix_path.dsv\n'}
+[3.570669] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/path.sh\n'}
+[3.572246] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/environment/path.dsv\n'}
+[3.573844] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/local_setup.bash\n'}
+[3.575380] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/local_setup.sh\n'}
+[3.576929] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/local_setup.zsh\n'}
+[3.578455] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/local_setup.dsv\n'}
+[3.579129] (ception_msgs) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/package.dsv\n'}
+[3.612591] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ament_index/resource_index/packages/ception_msgs\n'}
+[3.614496] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[3.615096] (-) TimerEvent: {}
+[3.616128] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.617802] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.619313] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.620985] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.622455] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.624021] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.625600] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgsConfig.cmake\n'}
+[3.626965] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgsConfig-version.cmake\n'}
+[3.628566] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/package.xml\n'}
+[3.631454] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_generator_c.so\n'}
+[3.634711] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[3.637715] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_introspection_c.so\n'}
+[3.640713] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_c.so\n'}
+[3.643878] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.647253] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[3.650188] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_typesupport_cpp.so\n'}
+[3.715266] (-) TimerEvent: {}
+[3.790210] (ception_msgs) StdoutLine: {'line': b"Listing '/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs'...\n"}
+[3.791406] (ception_msgs) StdoutLine: {'line': b"Listing '/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages/ception_msgs/msg'...\n"}
+[3.815487] (-) TimerEvent: {}
+[3.816635] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/lib/libception_msgs__rosidl_generator_py.so\n'}
+[3.820992] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_generator_cExport.cmake\n'}
+[3.821765] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_generator_cExport-release.cmake\n'}
+[3.824186] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.824960] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[3.827436] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.828125] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[3.830657] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_cExport.cmake\n'}
+[3.831295] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_cExport-release.cmake\n'}
+[3.833201] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_generator_cppExport.cmake\n'}
+[3.835345] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[3.835906] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[3.838113] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.838713] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[3.840763] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[3.841368] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/ception_msgs__rosidl_typesupport_cppExport-release.cmake\n'}
+[3.843668] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_generator_pyExport.cmake\n'}
+[3.844231] (ception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/ception_msgs/share/ception_msgs/cmake/export_ception_msgs__rosidl_generator_pyExport-release.cmake\n'}
+[3.851770] (ception_msgs) CommandEnded: {'returncode': 0}
+[3.915637] (-) TimerEvent: {}
+[3.984389] (ception_msgs) JobEnded: {'identifier': 'ception_msgs', 'rc': 0}
+[3.989197] (motion_msgs) JobStarted: {'identifier': 'motion_msgs'}
+[4.008824] (motion_msgs) JobProgress: {'identifier': 'motion_msgs', 'progress': 'cmake'}
+[4.014456] (motion_msgs) JobProgress: {'identifier': 'motion_msgs', 'progress': 'build'}
+[4.015677] (motion_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diablo/diablo_ws/build/motion_msgs'], 'cwd': '/home/diablo/diablo_ws/build/motion_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/motion_msgs'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[4.025323] (-) TimerEvent: {}
+[4.125968] (-) TimerEvent: {}
+[4.226886] (-) TimerEvent: {}
+[4.266772] (motion_msgs) StdoutLine: {'line': b'[  1%] Built target motion_msgs__cpp\n'}
+[4.327231] (-) TimerEvent: {}
+[4.384176] (motion_msgs) StdoutLine: {'line': b'[ 12%] Built target motion_msgs__rosidl_typesupport_cpp\n'}
+[4.427433] (-) TimerEvent: {}
+[4.515418] (motion_msgs) StdoutLine: {'line': b'[ 23%] Built target motion_msgs__rosidl_generator_c\n'}
+[4.527643] (-) TimerEvent: {}
+[4.628549] (-) TimerEvent: {}
+[4.638203] (motion_msgs) StdoutLine: {'line': b'[ 35%] Built target motion_msgs__rosidl_typesupport_fastrtps_c\n'}
+[4.728726] (-) TimerEvent: {}
+[4.745979] (motion_msgs) StdoutLine: {'line': b'[ 46%] Built target motion_msgs__rosidl_typesupport_introspection_c\n'}
+[4.828952] (-) TimerEvent: {}
+[4.844540] (motion_msgs) StdoutLine: {'line': b'[ 57%] Built target motion_msgs__rosidl_typesupport_c\n'}
+[4.929130] (-) TimerEvent: {}
+[4.963909] (motion_msgs) StdoutLine: {'line': b'[ 69%] Built target motion_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[5.029361] (-) TimerEvent: {}
+[5.085107] (motion_msgs) StdoutLine: {'line': b'[ 80%] Built target motion_msgs__rosidl_typesupport_introspection_cpp\n'}
+[5.129570] (-) TimerEvent: {}
+[5.169783] (motion_msgs) StdoutLine: {'line': b'[ 80%] Built target motion_msgs\n'}
+[5.229758] (-) TimerEvent: {}
+[5.282941] (motion_msgs) StdoutLine: {'line': b'[ 80%] Built target ament_cmake_python_symlink_motion_msgs\n'}
+[5.329932] (-) TimerEvent: {}
+[5.430595] (-) TimerEvent: {}
+[5.531288] (-) TimerEvent: {}
+[5.631919] (-) TimerEvent: {}
+[5.732585] (-) TimerEvent: {}
+[5.833216] (-) TimerEvent: {}
+[5.933860] (-) TimerEvent: {}
+[6.034465] (-) TimerEvent: {}
+[6.135132] (-) TimerEvent: {}
+[6.235779] (-) TimerEvent: {}
+[6.253041] (motion_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[6.255625] (motion_msgs) StdoutLine: {'line': b'writing motion_msgs.egg-info/PKG-INFO\n'}
+[6.256713] (motion_msgs) StdoutLine: {'line': b'writing dependency_links to motion_msgs.egg-info/dependency_links.txt\n'}
+[6.257683] (motion_msgs) StdoutLine: {'line': b'writing top-level names to motion_msgs.egg-info/top_level.txt\n'}
+[6.267915] (motion_msgs) StdoutLine: {'line': b"reading manifest file 'motion_msgs.egg-info/SOURCES.txt'\n"}
+[6.271696] (motion_msgs) StdoutLine: {'line': b"writing manifest file 'motion_msgs.egg-info/SOURCES.txt'\n"}
+[6.336124] (-) TimerEvent: {}
+[6.393554] (motion_msgs) StdoutLine: {'line': b'[ 80%] Built target ament_cmake_python_build_motion_msgs_egg\n'}
+[6.436344] (-) TimerEvent: {}
+[6.490286] (motion_msgs) StdoutLine: {'line': b'[ 81%] Built target motion_msgs__py\n'}
+[6.536524] (-) TimerEvent: {}
+[6.606107] (motion_msgs) StdoutLine: {'line': b'[ 91%] Built target motion_msgs__rosidl_generator_py\n'}
+[6.636725] (-) TimerEvent: {}
+[6.705943] (motion_msgs) StdoutLine: {'line': b'[ 94%] Built target motion_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.736943] (-) TimerEvent: {}
+[6.808276] (motion_msgs) StdoutLine: {'line': b'[ 97%] Built target motion_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[6.837141] (-) TimerEvent: {}
+[6.907762] (motion_msgs) StdoutLine: {'line': b'[100%] Built target motion_msgs__rosidl_typesupport_c__pyext\n'}
+[6.937356] (-) TimerEvent: {}
+[6.951003] (motion_msgs) CommandEnded: {'returncode': 0}
+[6.956108] (motion_msgs) JobProgress: {'identifier': 'motion_msgs', 'progress': 'install'}
+[6.957285] (motion_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diablo/diablo_ws/build/motion_msgs'], 'cwd': '/home/diablo/diablo_ws/build/motion_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/motion_msgs'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[6.991371] (motion_msgs) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[6.994438] (motion_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[6.998741] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/ament_index/resource_index/rosidl_interfaces/motion_msgs\n'}
+[7.006047] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/ctrl_plot.h\n'}
+[7.007994] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__functions.h\n'}
+[7.009627] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__struct.h\n'}
+[7.011135] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__type_support.h\n'}
+[7.012686] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__functions.h\n'}
+[7.014186] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__struct.h\n'}
+[7.015733] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__type_support.h\n'}
+[7.017245] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__functions.h\n'}
+[7.018733] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__struct.h\n'}
+[7.020290] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__type_support.h\n'}
+[7.021986] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__functions.h\n'}
+[7.023514] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__struct.h\n'}
+[7.025107] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__type_support.h\n'}
+[7.026629] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__functions.h\n'}
+[7.028166] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__struct.h\n'}
+[7.029689] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__type_support.h\n'}
+[7.031159] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__functions.h\n'}
+[7.032628] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__struct.h\n'}
+[7.034165] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__type_support.h\n'}
+[7.035524] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/leg_motors.h\n'}
+[7.036923] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/motion_ctrl.h\n'}
+[7.037440] (-) TimerEvent: {}
+[7.038416] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/movement_ctrl_data.h\n'}
+[7.039838] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/movement_ctrl_mode.h\n'}
+[7.041213] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/robot_status.h\n'}
+[7.042615] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[7.045109] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/library_path.sh\n'}
+[7.046695] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/library_path.dsv\n'}
+[7.052856] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__rosidl_typesupport_fastrtps_c.h\n'}
+[7.054378] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__rosidl_typesupport_fastrtps_c.h\n'}
+[7.055954] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__rosidl_typesupport_fastrtps_c.h\n'}
+[7.057619] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__rosidl_typesupport_fastrtps_c.h\n'}
+[7.059162] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__rosidl_typesupport_fastrtps_c.h\n'}
+[7.060682] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h\n'}
+[7.062119] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[7.066010] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__rosidl_typesupport_introspection_c.h\n'}
+[7.067544] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__rosidl_typesupport_introspection_c.h\n'}
+[7.069120] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__rosidl_typesupport_introspection_c.h\n'}
+[7.070661] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__rosidl_typesupport_introspection_c.h\n'}
+[7.072184] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__rosidl_typesupport_introspection_c.h\n'}
+[7.073763] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__rosidl_typesupport_introspection_c.h\n'}
+[7.075202] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[7.080270] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/ctrl_plot.hpp\n'}
+[7.081819] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__builder.hpp\n'}
+[7.083265] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__struct.hpp\n'}
+[7.084782] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__traits.hpp\n'}
+[7.086265] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__type_support.hpp\n'}
+[7.087692] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__builder.hpp\n'}
+[7.089159] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__struct.hpp\n'}
+[7.090617] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__traits.hpp\n'}
+[7.092053] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__type_support.hpp\n'}
+[7.093520] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__builder.hpp\n'}
+[7.094998] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__struct.hpp\n'}
+[7.096450] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__traits.hpp\n'}
+[7.097933] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__type_support.hpp\n'}
+[7.099379] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__builder.hpp\n'}
+[7.100996] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__struct.hpp\n'}
+[7.102444] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__traits.hpp\n'}
+[7.103923] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__type_support.hpp\n'}
+[7.105383] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__builder.hpp\n'}
+[7.106861] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__struct.hpp\n'}
+[7.108333] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__traits.hpp\n'}
+[7.109810] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__type_support.hpp\n'}
+[7.111253] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__builder.hpp\n'}
+[7.112827] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__struct.hpp\n'}
+[7.114303] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__traits.hpp\n'}
+[7.115750] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__type_support.hpp\n'}
+[7.117113] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/leg_motors.hpp\n'}
+[7.118523] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/motion_ctrl.hpp\n'}
+[7.119884] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/movement_ctrl_data.hpp\n'}
+[7.121259] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/movement_ctrl_mode.hpp\n'}
+[7.122705] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/robot_status.hpp\n'}
+[7.124233] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[7.130483] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.131932] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.133548] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.135093] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.136669] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.137556] (-) TimerEvent: {}
+[7.138233] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.139804] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[7.143619] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/ctrl_plot__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.145142] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/leg_motors__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.146680] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/motion_ctrl__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.148220] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_data__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.149855] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/movement_ctrl_mode__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.151370] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/include/motion_msgs/motion_msgs/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.152940] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/pythonpath.sh\n'}
+[7.154415] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/pythonpath.dsv\n'}
+[7.158724] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs-1.0.0-py3.10.egg-info/PKG-INFO\n'}
+[7.160163] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs-1.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[7.161827] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs-1.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[7.163366] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs-1.0.0-py3.10.egg-info/top_level.txt\n'}
+[7.171931] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/__init__.py\n'}
+[7.173269] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[7.174621] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[7.175955] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[7.177388] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/libmotion_msgs__rosidl_generator_py.so\n'}
+[7.178805] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.180122] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.181678] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.183551] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/__init__.py\n'}
+[7.185165] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_ctrl_plot.py\n'}
+[7.186706] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_ctrl_plot_s.c\n'}
+[7.188186] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_leg_motors.py\n'}
+[7.189764] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_leg_motors_s.c\n'}
+[7.191296] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_motion_ctrl.py\n'}
+[7.192830] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_motion_ctrl_s.c\n'}
+[7.194379] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_movement_ctrl_data.py\n'}
+[7.195860] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_movement_ctrl_data_s.c\n'}
+[7.197389] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_movement_ctrl_mode.py\n'}
+[7.198879] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_movement_ctrl_mode_s.c\n'}
+[7.200381] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_robot_status.py\n'}
+[7.201926] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg/_robot_status_s.c\n'}
+[7.204211] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.206299] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.208373] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/motion_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[7.210301] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/CtrlPlot.idl\n'}
+[7.211931] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/LegMotors.idl\n'}
+[7.213509] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MotionCtrl.idl\n'}
+[7.215019] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/RobotStatus.idl\n'}
+[7.216586] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MovementCtrlData.idl\n'}
+[7.218138] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MovementCtrlMode.idl\n'}
+[7.219729] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/CtrlPlot.msg\n'}
+[7.221334] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/LegMotors.msg\n'}
+[7.222853] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MotionCtrl.msg\n'}
+[7.224513] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/RobotStatus.msg\n'}
+[7.226073] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MovementCtrlData.msg\n'}
+[7.227585] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/msg/MovementCtrlMode.msg\n'}
+[7.229699] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/ament_index/resource_index/package_run_dependencies/motion_msgs\n'}
+[7.231858] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/ament_index/resource_index/parent_prefix_path/motion_msgs\n'}
+[7.233427] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/ament_prefix_path.sh\n'}
+[7.235028] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/ament_prefix_path.dsv\n'}
+[7.236695] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/path.sh\n'}
+[7.237682] (-) TimerEvent: {}
+[7.238381] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/environment/path.dsv\n'}
+[7.239995] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/local_setup.bash\n'}
+[7.241512] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/local_setup.sh\n'}
+[7.243029] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/local_setup.zsh\n'}
+[7.244573] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/local_setup.dsv\n'}
+[7.245264] (motion_msgs) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/package.dsv\n'}
+[7.279110] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/ament_index/resource_index/packages/motion_msgs\n'}
+[7.280806] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[7.282315] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.283712] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.285359] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[7.286769] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[7.288345] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[7.290037] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[7.291581] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgsConfig.cmake\n'}
+[7.293004] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgsConfig-version.cmake\n'}
+[7.294596] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/package.xml\n'}
+[7.298493] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_generator_c.so\n'}
+[7.302611] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[7.306603] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_introspection_c.so\n'}
+[7.310037] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_c.so\n'}
+[7.314588] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[7.319013] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[7.322960] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_typesupport_cpp.so\n'}
+[7.337903] (-) TimerEvent: {}
+[7.438667] (-) TimerEvent: {}
+[7.468305] (motion_msgs) StdoutLine: {'line': b"Listing '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs'...\n"}
+[7.469579] (motion_msgs) StdoutLine: {'line': b"Listing '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages/motion_msgs/msg'...\n"}
+[7.496228] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/lib/libmotion_msgs__rosidl_generator_py.so\n'}
+[7.500530] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_generator_cExport.cmake\n'}
+[7.501184] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_generator_cExport-release.cmake\n'}
+[7.503162] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[7.503776] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[7.505997] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[7.506612] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[7.508808] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_cExport.cmake\n'}
+[7.509413] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_cExport-release.cmake\n'}
+[7.511250] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_generator_cppExport.cmake\n'}
+[7.513408] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[7.514012] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[7.516478] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[7.517084] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[7.519309] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[7.519890] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/motion_msgs__rosidl_typesupport_cppExport-release.cmake\n'}
+[7.522124] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_generator_pyExport.cmake\n'}
+[7.522786] (motion_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/diablo/diablo_ws/install/motion_msgs/share/motion_msgs/cmake/export_motion_msgs__rosidl_generator_pyExport-release.cmake\n'}
+[7.530313] (motion_msgs) CommandEnded: {'returncode': 0}
+[7.539357] (-) TimerEvent: {}
+[7.618768] (motion_msgs) JobEnded: {'identifier': 'motion_msgs', 'rc': 0}
+[7.623740] (diablo_utils) JobStarted: {'identifier': 'diablo_utils'}
+[7.639543] (-) TimerEvent: {}
+[7.660200] (diablo_utils) JobProgress: {'identifier': 'diablo_utils', 'progress': 'cmake'}
+[7.665743] (diablo_utils) JobProgress: {'identifier': 'diablo_utils', 'progress': 'build'}
+[7.667014] (diablo_utils) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diablo/diablo_ws/build/diablo_utils'], 'cwd': '/home/diablo/diablo_ws/build/diablo_utils', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/motion_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_utils'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble')]), 'shell': False}
+[7.739777] (-) TimerEvent: {}
+[7.840541] (-) TimerEvent: {}
+[7.941271] (-) TimerEvent: {}
+[7.978380] (diablo_utils) StdoutLine: {'line': b'[100%] Built target diablo_utils_core\n'}
+[8.016725] (diablo_utils) CommandEnded: {'returncode': 0}
+[8.020287] (diablo_utils) JobProgress: {'identifier': 'diablo_utils', 'progress': 'install'}
+[8.021432] (diablo_utils) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diablo/diablo_ws/build/diablo_utils'], 'cwd': '/home/diablo/diablo_ws/build/diablo_utils', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/motion_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_utils'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/motion_msgs:/opt/ros/humble')]), 'shell': False}
+[8.041470] (-) TimerEvent: {}
+[8.055570] (diablo_utils) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.058102] (diablo_utils) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[8.063651] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/VulcanSerial/Exception.hpp\n'}
+[8.065111] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/VulcanSerial/SerialPort.hpp\n'}
+[8.067204] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/onboard_sdk_uart_protocol.h\n'}
+[8.068751] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_crc.hpp\n'}
+[8.070268] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_ddj_m15.hpp\n'}
+[8.071772] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_hal.hpp\n'}
+[8.073337] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_header.hpp\n'}
+[8.074853] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_movement.hpp\n'}
+[8.076373] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_telemetry.hpp\n'}
+[8.077870] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_vehicle.hpp\n'}
+[8.079384] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/include//diablo_utils/diablo_tools/osdk_virtual_rc.hpp\n'}
+[8.082220] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/lib/libdiablo_utils_core.so\n'}
+[8.085114] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/library_path.sh\n'}
+[8.086659] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/library_path.dsv\n'}
+[8.089694] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/package_run_dependencies/diablo_utils\n'}
+[8.091849] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/parent_prefix_path/diablo_utils\n'}
+[8.093516] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/ament_prefix_path.sh\n'}
+[8.095082] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/ament_prefix_path.dsv\n'}
+[8.096796] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/path.sh\n'}
+[8.098357] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/environment/path.dsv\n'}
+[8.099848] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.bash\n'}
+[8.101408] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.sh\n'}
+[8.102998] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.zsh\n'}
+[8.104479] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/local_setup.dsv\n'}
+[8.105262] (diablo_utils) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/package.dsv\n'}
+[8.139173] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/ament_index/resource_index/packages/diablo_utils\n'}
+[8.140995] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.141526] (-) TimerEvent: {}
+[8.142855] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[8.144669] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.146297] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/diablo_utilsConfig.cmake\n'}
+[8.147696] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/cmake/diablo_utilsConfig-version.cmake\n'}
+[8.149347] (diablo_utils) StdoutLine: {'line': b'-- Up-to-date symlink: /home/diablo/diablo_ws/install/diablo_utils/share/diablo_utils/package.xml\n'}
+[8.155570] (diablo_utils) CommandEnded: {'returncode': 0}
+[8.234918] (diablo_utils) JobEnded: {'identifier': 'diablo_utils', 'rc': 0}
+[8.239749] (diablo_body) JobStarted: {'identifier': 'diablo_body'}
+[8.241659] (-) TimerEvent: {}
+[8.299435] (diablo_body) JobProgress: {'identifier': 'diablo_body', 'progress': 'cmake'}
+[8.305157] (diablo_body) JobProgress: {'identifier': 'diablo_body', 'progress': 'build'}
+[8.306411] (diablo_body) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diablo/diablo_ws/build/diablo_body'], 'cwd': '/home/diablo/diablo_ws/build/diablo_body', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_body'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble')]), 'shell': False}
+[8.341857] (-) TimerEvent: {}
+[8.442678] (-) TimerEvent: {}
+[8.543428] (-) TimerEvent: {}
+[8.569863] (diablo_body) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_imu.cpp.o\x1b[0m\n'}
+[8.643661] (-) TimerEvent: {}
+[8.744608] (-) TimerEvent: {}
+[8.845504] (-) TimerEvent: {}
+[8.946223] (-) TimerEvent: {}
+[9.046950] (-) TimerEvent: {}
+[9.147833] (-) TimerEvent: {}
+[9.248477] (-) TimerEvent: {}
+[9.349124] (-) TimerEvent: {}
+[9.449770] (-) TimerEvent: {}
+[9.550614] (-) TimerEvent: {}
+[9.651317] (-) TimerEvent: {}
+[9.751977] (-) TimerEvent: {}
+[9.852660] (-) TimerEvent: {}
+[9.953362] (-) TimerEvent: {}
+[10.054074] (-) TimerEvent: {}
+[10.154813] (-) TimerEvent: {}
+[10.255541] (-) TimerEvent: {}
+[10.356230] (-) TimerEvent: {}
+[10.456932] (-) TimerEvent: {}
+[10.557614] (-) TimerEvent: {}
+[10.658320] (-) TimerEvent: {}
+[10.758986] (-) TimerEvent: {}
+[10.859670] (-) TimerEvent: {}
+[10.960368] (-) TimerEvent: {}
+[11.061070] (-) TimerEvent: {}
+[11.161742] (-) TimerEvent: {}
+[11.262425] (-) TimerEvent: {}
+[11.363147] (-) TimerEvent: {}
+[11.463843] (-) TimerEvent: {}
+[11.564624] (-) TimerEvent: {}
+[11.665648] (-) TimerEvent: {}
+[11.766436] (-) TimerEvent: {}
+[11.867209] (-) TimerEvent: {}
+[11.968021] (-) TimerEvent: {}
+[12.068814] (-) TimerEvent: {}
+[12.169525] (-) TimerEvent: {}
+[12.270257] (-) TimerEvent: {}
+[12.371125] (-) TimerEvent: {}
+[12.471885] (-) TimerEvent: {}
+[12.572717] (-) TimerEvent: {}
+[12.673417] (-) TimerEvent: {}
+[12.774121] (-) TimerEvent: {}
+[12.874878] (-) TimerEvent: {}
+[12.975638] (-) TimerEvent: {}
+[13.076510] (-) TimerEvent: {}
+[13.177222] (-) TimerEvent: {}
+[13.278001] (-) TimerEvent: {}
+[13.378691] (-) TimerEvent: {}
+[13.479405] (-) TimerEvent: {}
+[13.580152] (-) TimerEvent: {}
+[13.680994] (-) TimerEvent: {}
+[13.782146] (-) TimerEvent: {}
+[13.882892] (-) TimerEvent: {}
+[13.983631] (-) TimerEvent: {}
+[14.084441] (-) TimerEvent: {}
+[14.185161] (-) TimerEvent: {}
+[14.285919] (-) TimerEvent: {}
+[14.386730] (-) TimerEvent: {}
+[14.487475] (-) TimerEvent: {}
+[14.588448] (-) TimerEvent: {}
+[14.689180] (-) TimerEvent: {}
+[14.789891] (-) TimerEvent: {}
+[14.890616] (-) TimerEvent: {}
+[14.991385] (-) TimerEvent: {}
+[15.092102] (-) TimerEvent: {}
+[15.192898] (-) TimerEvent: {}
+[15.293617] (-) TimerEvent: {}
+[15.394333] (-) TimerEvent: {}
+[15.495072] (-) TimerEvent: {}
+[15.595841] (-) TimerEvent: {}
+[15.696988] (-) TimerEvent: {}
+[15.797743] (-) TimerEvent: {}
+[15.898497] (-) TimerEvent: {}
+[15.999288] (-) TimerEvent: {}
+[16.100031] (-) TimerEvent: {}
+[16.200868] (-) TimerEvent: {}
+[16.301585] (-) TimerEvent: {}
+[16.402337] (-) TimerEvent: {}
+[16.503185] (-) TimerEvent: {}
+[16.603904] (-) TimerEvent: {}
+[16.704707] (-) TimerEvent: {}
+[16.805411] (-) TimerEvent: {}
+[16.906161] (-) TimerEvent: {}
+[17.006943] (-) TimerEvent: {}
+[17.107699] (-) TimerEvent: {}
+[17.208504] (-) TimerEvent: {}
+[17.309233] (-) TimerEvent: {}
+[17.410020] (-) TimerEvent: {}
+[17.510798] (-) TimerEvent: {}
+[17.611533] (-) TimerEvent: {}
+[17.712261] (-) TimerEvent: {}
+[17.813030] (-) TimerEvent: {}
+[17.913776] (-) TimerEvent: {}
+[18.014588] (-) TimerEvent: {}
+[18.115357] (-) TimerEvent: {}
+[18.216132] (-) TimerEvent: {}
+[18.316933] (-) TimerEvent: {}
+[18.417801] (-) TimerEvent: {}
+[18.518526] (-) TimerEvent: {}
+[18.619276] (-) TimerEvent: {}
+[18.720009] (-) TimerEvent: {}
+[18.820822] (-) TimerEvent: {}
+[18.921626] (-) TimerEvent: {}
+[19.022396] (-) TimerEvent: {}
+[19.123216] (-) TimerEvent: {}
+[19.223973] (-) TimerEvent: {}
+[19.324764] (-) TimerEvent: {}
+[19.425466] (-) TimerEvent: {}
+[19.526214] (-) TimerEvent: {}
+[19.627176] (-) TimerEvent: {}
+[19.727917] (-) TimerEvent: {}
+[19.828729] (-) TimerEvent: {}
+[19.929428] (-) TimerEvent: {}
+[20.030191] (-) TimerEvent: {}
+[20.130962] (-) TimerEvent: {}
+[20.231681] (-) TimerEvent: {}
+[20.332445] (-) TimerEvent: {}
+[20.433158] (-) TimerEvent: {}
+[20.533896] (-) TimerEvent: {}
+[20.634660] (-) TimerEvent: {}
+[20.735405] (-) TimerEvent: {}
+[20.836129] (-) TimerEvent: {}
+[20.936999] (-) TimerEvent: {}
+[21.037727] (-) TimerEvent: {}
+[21.138436] (-) TimerEvent: {}
+[21.239199] (-) TimerEvent: {}
+[21.339962] (-) TimerEvent: {}
+[21.440746] (-) TimerEvent: {}
+[21.541468] (-) TimerEvent: {}
+[21.642186] (-) TimerEvent: {}
+[21.742911] (-) TimerEvent: {}
+[21.843656] (-) TimerEvent: {}
+[21.944418] (-) TimerEvent: {}
+[22.045154] (-) TimerEvent: {}
+[22.145933] (-) TimerEvent: {}
+[22.246644] (-) TimerEvent: {}
+[22.347388] (-) TimerEvent: {}
+[22.448141] (-) TimerEvent: {}
+[22.548919] (-) TimerEvent: {}
+[22.649920] (-) TimerEvent: {}
+[22.750937] (-) TimerEvent: {}
+[22.851675] (-) TimerEvent: {}
+[22.952417] (-) TimerEvent: {}
+[23.053177] (-) TimerEvent: {}
+[23.153857] (-) TimerEvent: {}
+[23.254593] (-) TimerEvent: {}
+[23.355327] (-) TimerEvent: {}
+[23.456155] (-) TimerEvent: {}
+[23.557094] (-) TimerEvent: {}
+[23.657899] (-) TimerEvent: {}
+[23.758647] (-) TimerEvent: {}
+[23.859402] (-) TimerEvent: {}
+[23.960113] (-) TimerEvent: {}
+[24.060901] (-) TimerEvent: {}
+[24.161643] (-) TimerEvent: {}
+[24.262395] (-) TimerEvent: {}
+[24.363143] (-) TimerEvent: {}
+[24.463870] (-) TimerEvent: {}
+[24.564633] (-) TimerEvent: {}
+[24.665316] (-) TimerEvent: {}
+[24.766037] (-) TimerEvent: {}
+[24.866787] (-) TimerEvent: {}
+[24.967527] (-) TimerEvent: {}
+[25.068415] (-) TimerEvent: {}
+[25.169136] (-) TimerEvent: {}
+[25.269871] (-) TimerEvent: {}
+[25.370638] (-) TimerEvent: {}
+[25.471378] (-) TimerEvent: {}
+[25.572101] (-) TimerEvent: {}
+[25.672864] (-) TimerEvent: {}
+[25.773602] (-) TimerEvent: {}
+[25.874302] (-) TimerEvent: {}
+[25.974988] (-) TimerEvent: {}
+[26.075726] (-) TimerEvent: {}
+[26.176506] (-) TimerEvent: {}
+[26.277237] (-) TimerEvent: {}
+[26.377972] (-) TimerEvent: {}
+[26.478715] (-) TimerEvent: {}
+[26.579430] (-) TimerEvent: {}
+[26.680204] (-) TimerEvent: {}
+[26.780990] (-) TimerEvent: {}
+[26.881690] (-) TimerEvent: {}
+[26.982420] (-) TimerEvent: {}
+[27.083146] (-) TimerEvent: {}
+[27.183927] (-) TimerEvent: {}
+[27.284687] (-) TimerEvent: {}
+[27.385468] (-) TimerEvent: {}
+[27.486546] (-) TimerEvent: {}
+[27.587502] (-) TimerEvent: {}
+[27.688525] (-) TimerEvent: {}
+[27.789296] (-) TimerEvent: {}
+[27.890028] (-) TimerEvent: {}
+[27.990771] (-) TimerEvent: {}
+[28.091537] (-) TimerEvent: {}
+[28.192258] (-) TimerEvent: {}
+[28.293054] (-) TimerEvent: {}
+[28.393879] (-) TimerEvent: {}
+[28.494589] (-) TimerEvent: {}
+[28.594940] (diablo_body) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_battery.cpp.o\x1b[0m\n'}
+[28.595673] (-) TimerEvent: {}
+[28.696360] (-) TimerEvent: {}
+[28.797039] (-) TimerEvent: {}
+[28.897730] (-) TimerEvent: {}
+[28.998383] (-) TimerEvent: {}
+[29.099056] (-) TimerEvent: {}
+[29.199733] (-) TimerEvent: {}
+[29.300455] (-) TimerEvent: {}
+[29.401109] (-) TimerEvent: {}
+[29.501782] (-) TimerEvent: {}
+[29.602450] (-) TimerEvent: {}
+[29.703215] (-) TimerEvent: {}
+[29.803875] (-) TimerEvent: {}
+[29.904616] (-) TimerEvent: {}
+[30.005306] (-) TimerEvent: {}
+[30.106099] (-) TimerEvent: {}
+[30.207086] (-) TimerEvent: {}
+[30.307770] (-) TimerEvent: {}
+[30.408441] (-) TimerEvent: {}
+[30.509083] (-) TimerEvent: {}
+[30.609837] (-) TimerEvent: {}
+[30.710676] (-) TimerEvent: {}
+[30.811449] (-) TimerEvent: {}
+[30.912172] (-) TimerEvent: {}
+[31.013050] (-) TimerEvent: {}
+[31.113801] (-) TimerEvent: {}
+[31.214640] (-) TimerEvent: {}
+[31.315364] (-) TimerEvent: {}
+[31.416150] (-) TimerEvent: {}
+[31.516869] (-) TimerEvent: {}
+[31.617575] (-) TimerEvent: {}
+[31.718279] (-) TimerEvent: {}
+[31.819004] (-) TimerEvent: {}
+[31.919727] (-) TimerEvent: {}
+[32.020477] (-) TimerEvent: {}
+[32.121305] (-) TimerEvent: {}
+[32.222110] (-) TimerEvent: {}
+[32.322828] (-) TimerEvent: {}
+[32.423567] (-) TimerEvent: {}
+[32.524367] (-) TimerEvent: {}
+[32.625111] (-) TimerEvent: {}
+[32.725813] (-) TimerEvent: {}
+[32.826617] (-) TimerEvent: {}
+[32.927354] (-) TimerEvent: {}
+[33.028095] (-) TimerEvent: {}
+[33.128861] (-) TimerEvent: {}
+[33.229598] (-) TimerEvent: {}
+[33.330328] (-) TimerEvent: {}
+[33.431075] (-) TimerEvent: {}
+[33.531817] (-) TimerEvent: {}
+[33.632558] (-) TimerEvent: {}
+[33.733287] (-) TimerEvent: {}
+[33.834021] (-) TimerEvent: {}
+[33.934732] (-) TimerEvent: {}
+[34.035467] (-) TimerEvent: {}
+[34.136202] (-) TimerEvent: {}
+[34.237061] (-) TimerEvent: {}
+[34.337804] (-) TimerEvent: {}
+[34.438521] (-) TimerEvent: {}
+[34.539284] (-) TimerEvent: {}
+[34.640011] (-) TimerEvent: {}
+[34.740931] (-) TimerEvent: {}
+[34.841662] (-) TimerEvent: {}
+[34.942396] (-) TimerEvent: {}
+[35.043149] (-) TimerEvent: {}
+[35.143882] (-) TimerEvent: {}
+[35.244627] (-) TimerEvent: {}
+[35.345319] (-) TimerEvent: {}
+[35.446026] (-) TimerEvent: {}
+[35.546777] (-) TimerEvent: {}
+[35.647479] (-) TimerEvent: {}
+[35.748188] (-) TimerEvent: {}
+[35.848916] (-) TimerEvent: {}
+[35.949627] (-) TimerEvent: {}
+[36.050360] (-) TimerEvent: {}
+[36.151080] (-) TimerEvent: {}
+[36.251812] (-) TimerEvent: {}
+[36.352560] (-) TimerEvent: {}
+[36.453264] (-) TimerEvent: {}
+[36.553989] (-) TimerEvent: {}
+[36.654753] (-) TimerEvent: {}
+[36.755481] (-) TimerEvent: {}
+[36.856224] (-) TimerEvent: {}
+[36.956967] (-) TimerEvent: {}
+[37.057669] (-) TimerEvent: {}
+[37.158372] (-) TimerEvent: {}
+[37.259082] (-) TimerEvent: {}
+[37.359874] (-) TimerEvent: {}
+[37.460658] (-) TimerEvent: {}
+[37.561385] (-) TimerEvent: {}
+[37.662130] (-) TimerEvent: {}
+[37.762882] (-) TimerEvent: {}
+[37.863658] (-) TimerEvent: {}
+[37.964432] (-) TimerEvent: {}
+[38.065139] (-) TimerEvent: {}
+[38.165846] (-) TimerEvent: {}
+[38.266571] (-) TimerEvent: {}
+[38.367325] (-) TimerEvent: {}
+[38.468030] (-) TimerEvent: {}
+[38.568777] (-) TimerEvent: {}
+[38.669488] (-) TimerEvent: {}
+[38.770214] (-) TimerEvent: {}
+[38.871364] (-) TimerEvent: {}
+[38.972119] (-) TimerEvent: {}
+[39.072874] (-) TimerEvent: {}
+[39.173579] (-) TimerEvent: {}
+[39.274283] (-) TimerEvent: {}
+[39.375049] (-) TimerEvent: {}
+[39.475781] (-) TimerEvent: {}
+[39.576506] (-) TimerEvent: {}
+[39.677241] (-) TimerEvent: {}
+[39.778035] (-) TimerEvent: {}
+[39.878767] (-) TimerEvent: {}
+[39.979486] (-) TimerEvent: {}
+[40.080233] (-) TimerEvent: {}
+[40.180985] (-) TimerEvent: {}
+[40.281712] (-) TimerEvent: {}
+[40.382435] (-) TimerEvent: {}
+[40.483166] (-) TimerEvent: {}
+[40.583925] (-) TimerEvent: {}
+[40.684685] (-) TimerEvent: {}
+[40.785398] (-) TimerEvent: {}
+[40.886118] (-) TimerEvent: {}
+[40.987011] (-) TimerEvent: {}
+[41.087740] (-) TimerEvent: {}
+[41.188511] (-) TimerEvent: {}
+[41.289242] (-) TimerEvent: {}
+[41.390060] (-) TimerEvent: {}
+[41.491026] (-) TimerEvent: {}
+[41.591919] (-) TimerEvent: {}
+[41.692669] (-) TimerEvent: {}
+[41.793387] (-) TimerEvent: {}
+[41.894120] (-) TimerEvent: {}
+[41.994833] (-) TimerEvent: {}
+[42.095560] (-) TimerEvent: {}
+[42.196262] (-) TimerEvent: {}
+[42.297026] (-) TimerEvent: {}
+[42.397728] (-) TimerEvent: {}
+[42.498450] (-) TimerEvent: {}
+[42.599252] (-) TimerEvent: {}
+[42.699944] (-) TimerEvent: {}
+[42.800658] (-) TimerEvent: {}
+[42.901409] (-) TimerEvent: {}
+[43.002090] (-) TimerEvent: {}
+[43.102846] (-) TimerEvent: {}
+[43.203557] (-) TimerEvent: {}
+[43.304283] (-) TimerEvent: {}
+[43.405037] (-) TimerEvent: {}
+[43.505716] (-) TimerEvent: {}
+[43.606393] (-) TimerEvent: {}
+[43.707078] (-) TimerEvent: {}
+[43.807934] (-) TimerEvent: {}
+[43.908895] (-) TimerEvent: {}
+[44.009602] (-) TimerEvent: {}
+[44.110342] (-) TimerEvent: {}
+[44.211034] (-) TimerEvent: {}
+[44.311752] (-) TimerEvent: {}
+[44.412506] (-) TimerEvent: {}
+[44.513206] (-) TimerEvent: {}
+[44.613912] (-) TimerEvent: {}
+[44.714596] (-) TimerEvent: {}
+[44.815364] (-) TimerEvent: {}
+[44.998318] (-) TimerEvent: {}
+[45.099114] (-) TimerEvent: {}
+[45.199945] (-) TimerEvent: {}
+[45.300723] (-) TimerEvent: {}
+[45.401440] (-) TimerEvent: {}
+[45.502158] (-) TimerEvent: {}
+[45.603018] (-) TimerEvent: {}
+[45.704159] (-) TimerEvent: {}
+[45.805091] (-) TimerEvent: {}
+[45.816564] (diablo_body) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_legmotors.cpp.o\x1b[0m\n'}
+[45.905277] (-) TimerEvent: {}
+[46.005975] (-) TimerEvent: {}
+[46.106624] (-) TimerEvent: {}
+[46.207284] (-) TimerEvent: {}
+[46.307954] (-) TimerEvent: {}
+[46.408666] (-) TimerEvent: {}
+[46.509299] (-) TimerEvent: {}
+[46.609960] (-) TimerEvent: {}
+[46.710732] (-) TimerEvent: {}
+[46.811472] (-) TimerEvent: {}
+[46.912136] (-) TimerEvent: {}
+[47.012827] (-) TimerEvent: {}
+[47.113489] (-) TimerEvent: {}
+[47.214122] (-) TimerEvent: {}
+[47.314794] (-) TimerEvent: {}
+[47.415428] (-) TimerEvent: {}
+[47.516058] (-) TimerEvent: {}
+[47.616718] (-) TimerEvent: {}
+[47.717452] (-) TimerEvent: {}
+[47.818164] (-) TimerEvent: {}
+[47.918895] (-) TimerEvent: {}
+[48.019695] (-) TimerEvent: {}
+[48.120434] (-) TimerEvent: {}
+[48.221158] (-) TimerEvent: {}
+[48.321926] (-) TimerEvent: {}
+[48.422645] (-) TimerEvent: {}
+[48.523465] (-) TimerEvent: {}
+[48.624217] (-) TimerEvent: {}
+[48.725025] (-) TimerEvent: {}
+[48.825748] (-) TimerEvent: {}
+[48.926562] (-) TimerEvent: {}
+[49.027323] (-) TimerEvent: {}
+[49.128059] (-) TimerEvent: {}
+[49.228881] (-) TimerEvent: {}
+[49.329578] (-) TimerEvent: {}
+[49.430388] (-) TimerEvent: {}
+[49.531139] (-) TimerEvent: {}
+[49.631877] (-) TimerEvent: {}
+[49.732639] (-) TimerEvent: {}
+[49.833364] (-) TimerEvent: {}
+[49.934164] (-) TimerEvent: {}
+[50.035026] (-) TimerEvent: {}
+[50.135711] (-) TimerEvent: {}
+[50.236440] (-) TimerEvent: {}
+[50.337137] (-) TimerEvent: {}
+[50.437855] (-) TimerEvent: {}
+[50.538665] (-) TimerEvent: {}
+[50.639369] (-) TimerEvent: {}
+[50.740059] (-) TimerEvent: {}
+[50.840880] (-) TimerEvent: {}
+[50.941604] (-) TimerEvent: {}
+[51.042370] (-) TimerEvent: {}
+[51.143078] (-) TimerEvent: {}
+[51.243762] (-) TimerEvent: {}
+[51.344498] (-) TimerEvent: {}
+[51.445271] (-) TimerEvent: {}
+[51.545951] (-) TimerEvent: {}
+[51.646641] (-) TimerEvent: {}
+[51.747345] (-) TimerEvent: {}
+[51.848080] (-) TimerEvent: {}
+[51.948833] (-) TimerEvent: {}
+[52.049543] (-) TimerEvent: {}
+[52.150266] (-) TimerEvent: {}
+[52.250978] (-) TimerEvent: {}
+[52.351743] (-) TimerEvent: {}
+[52.452461] (-) TimerEvent: {}
+[52.553157] (-) TimerEvent: {}
+[52.653857] (-) TimerEvent: {}
+[52.754550] (-) TimerEvent: {}
+[52.855273] (-) TimerEvent: {}
+[52.955976] (-) TimerEvent: {}
+[53.056725] (-) TimerEvent: {}
+[53.157442] (-) TimerEvent: {}
+[53.258179] (-) TimerEvent: {}
+[53.358969] (-) TimerEvent: {}
+[53.459662] (-) TimerEvent: {}
+[53.560432] (-) TimerEvent: {}
+[53.661113] (-) TimerEvent: {}
+[53.761828] (-) TimerEvent: {}
+[53.862606] (-) TimerEvent: {}
+[53.963319] (-) TimerEvent: {}
+[54.064034] (-) TimerEvent: {}
+[54.164787] (-) TimerEvent: {}
+[54.265488] (-) TimerEvent: {}
+[54.366181] (-) TimerEvent: {}
+[54.466874] (-) TimerEvent: {}
+[54.567591] (-) TimerEvent: {}
+[54.668423] (-) TimerEvent: {}
+[54.769197] (-) TimerEvent: {}
+[54.869932] (-) TimerEvent: {}
+[54.970696] (-) TimerEvent: {}
+[55.071631] (-) TimerEvent: {}
+[55.172456] (-) TimerEvent: {}
+[55.273185] (-) TimerEvent: {}
+[55.373913] (-) TimerEvent: {}
+[55.474630] (-) TimerEvent: {}
+[55.575420] (-) TimerEvent: {}
+[55.676187] (-) TimerEvent: {}
+[55.776942] (-) TimerEvent: {}
+[55.877695] (-) TimerEvent: {}
+[55.978437] (-) TimerEvent: {}
+[56.079168] (-) TimerEvent: {}
+[56.179933] (-) TimerEvent: {}
+[56.280688] (-) TimerEvent: {}
+[56.381416] (-) TimerEvent: {}
+[56.482142] (-) TimerEvent: {}
+[56.582868] (-) TimerEvent: {}
+[56.683627] (-) TimerEvent: {}
+[56.784382] (-) TimerEvent: {}
+[56.885110] (-) TimerEvent: {}
+[56.985844] (-) TimerEvent: {}
+[57.086654] (-) TimerEvent: {}
+[57.187416] (-) TimerEvent: {}
+[57.288141] (-) TimerEvent: {}
+[57.388891] (-) TimerEvent: {}
+[57.489613] (-) TimerEvent: {}
+[57.590322] (-) TimerEvent: {}
+[57.691084] (-) TimerEvent: {}
+[57.791797] (-) TimerEvent: {}
+[57.892525] (-) TimerEvent: {}
+[57.993310] (-) TimerEvent: {}
+[58.094025] (-) TimerEvent: {}
+[58.194774] (-) TimerEvent: {}
+[58.295472] (-) TimerEvent: {}
+[58.396227] (-) TimerEvent: {}
+[58.496976] (-) TimerEvent: {}
+[58.597677] (-) TimerEvent: {}
+[58.698425] (-) TimerEvent: {}
+[58.799607] (-) TimerEvent: {}
+[58.900306] (-) TimerEvent: {}
+[59.001023] (-) TimerEvent: {}
+[59.101745] (-) TimerEvent: {}
+[59.202435] (-) TimerEvent: {}
+[59.303146] (-) TimerEvent: {}
+[59.403863] (-) TimerEvent: {}
+[59.504598] (-) TimerEvent: {}
+[59.605273] (-) TimerEvent: {}
+[59.705976] (-) TimerEvent: {}
+[59.806666] (-) TimerEvent: {}
+[59.907343] (-) TimerEvent: {}
+[60.008078] (-) TimerEvent: {}
+[60.108829] (-) TimerEvent: {}
+[60.209557] (-) TimerEvent: {}
+[60.310240] (-) TimerEvent: {}
+[60.410970] (-) TimerEvent: {}
+[60.511669] (-) TimerEvent: {}
+[60.612373] (-) TimerEvent: {}
+[60.713047] (-) TimerEvent: {}
+[60.813715] (-) TimerEvent: {}
+[60.914421] (-) TimerEvent: {}
+[61.015141] (-) TimerEvent: {}
+[61.115847] (-) TimerEvent: {}
+[61.216543] (-) TimerEvent: {}
+[61.317231] (-) TimerEvent: {}
+[61.417961] (-) TimerEvent: {}
+[61.518712] (-) TimerEvent: {}
+[61.619433] (-) TimerEvent: {}
+[61.720201] (-) TimerEvent: {}
+[61.820965] (-) TimerEvent: {}
+[61.921701] (-) TimerEvent: {}
+[62.022458] (-) TimerEvent: {}
+[62.123332] (-) TimerEvent: {}
+[62.224079] (-) TimerEvent: {}
+[62.324859] (-) TimerEvent: {}
+[62.425596] (-) TimerEvent: {}
+[62.526345] (-) TimerEvent: {}
+[62.627070] (-) TimerEvent: {}
+[62.727838] (-) TimerEvent: {}
+[62.828609] (-) TimerEvent: {}
+[62.911414] (diablo_body) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_body_state.cpp.o\x1b[0m\n'}
+[62.928794] (-) TimerEvent: {}
+[63.029515] (-) TimerEvent: {}
+[63.130207] (-) TimerEvent: {}
+[63.230899] (-) TimerEvent: {}
+[63.331545] (-) TimerEvent: {}
+[63.432201] (-) TimerEvent: {}
+[63.532956] (-) TimerEvent: {}
+[63.633859] (-) TimerEvent: {}
+[63.734549] (-) TimerEvent: {}
+[63.835204] (-) TimerEvent: {}
+[63.935832] (-) TimerEvent: {}
+[64.036480] (-) TimerEvent: {}
+[64.137115] (-) TimerEvent: {}
+[64.237748] (-) TimerEvent: {}
+[64.338374] (-) TimerEvent: {}
+[64.439023] (-) TimerEvent: {}
+[64.539699] (-) TimerEvent: {}
+[64.640425] (-) TimerEvent: {}
+[64.741177] (-) TimerEvent: {}
+[64.841916] (-) TimerEvent: {}
+[64.942697] (-) TimerEvent: {}
+[65.043419] (-) TimerEvent: {}
+[65.144277] (-) TimerEvent: {}
+[65.244993] (-) TimerEvent: {}
+[65.345681] (-) TimerEvent: {}
+[65.446491] (-) TimerEvent: {}
+[65.547204] (-) TimerEvent: {}
+[65.647909] (-) TimerEvent: {}
+[65.748710] (-) TimerEvent: {}
+[65.849511] (-) TimerEvent: {}
+[65.950186] (-) TimerEvent: {}
+[66.050972] (-) TimerEvent: {}
+[66.151823] (-) TimerEvent: {}
+[66.252619] (-) TimerEvent: {}
+[66.353317] (-) TimerEvent: {}
+[66.454000] (-) TimerEvent: {}
+[66.554756] (-) TimerEvent: {}
+[66.655527] (-) TimerEvent: {}
+[66.756247] (-) TimerEvent: {}
+[66.857035] (-) TimerEvent: {}
+[66.957884] (-) TimerEvent: {}
+[67.058611] (-) TimerEvent: {}
+[67.159321] (-) TimerEvent: {}
+[67.260012] (-) TimerEvent: {}
+[67.360837] (-) TimerEvent: {}
+[67.461572] (-) TimerEvent: {}
+[67.562365] (-) TimerEvent: {}
+[67.663056] (-) TimerEvent: {}
+[67.763795] (-) TimerEvent: {}
+[67.864486] (-) TimerEvent: {}
+[67.965208] (-) TimerEvent: {}
+[68.065967] (-) TimerEvent: {}
+[68.166661] (-) TimerEvent: {}
+[68.267400] (-) TimerEvent: {}
+[68.368140] (-) TimerEvent: {}
+[68.468900] (-) TimerEvent: {}
+[68.569620] (-) TimerEvent: {}
+[68.670318] (-) TimerEvent: {}
+[68.771061] (-) TimerEvent: {}
+[68.871803] (-) TimerEvent: {}
+[68.972501] (-) TimerEvent: {}
+[69.073187] (-) TimerEvent: {}
+[69.173913] (-) TimerEvent: {}
+[69.274697] (-) TimerEvent: {}
+[69.375533] (-) TimerEvent: {}
+[69.476258] (-) TimerEvent: {}
+[69.576977] (-) TimerEvent: {}
+[69.677686] (-) TimerEvent: {}
+[69.778387] (-) TimerEvent: {}
+[69.879076] (-) TimerEvent: {}
+[69.979825] (-) TimerEvent: {}
+[70.080552] (-) TimerEvent: {}
+[70.181349] (-) TimerEvent: {}
+[70.285638] (-) TimerEvent: {}
+[70.386386] (-) TimerEvent: {}
+[70.487107] (-) TimerEvent: {}
+[70.587835] (-) TimerEvent: {}
+[70.688554] (-) TimerEvent: {}
+[70.789292] (-) TimerEvent: {}
+[70.890067] (-) TimerEvent: {}
+[70.990797] (-) TimerEvent: {}
+[71.091532] (-) TimerEvent: {}
+[71.192275] (-) TimerEvent: {}
+[71.293006] (-) TimerEvent: {}
+[71.393687] (-) TimerEvent: {}
+[71.494384] (-) TimerEvent: {}
+[71.595088] (-) TimerEvent: {}
+[71.695834] (-) TimerEvent: {}
+[71.796613] (-) TimerEvent: {}
+[71.897320] (-) TimerEvent: {}
+[71.998042] (-) TimerEvent: {}
+[72.098777] (-) TimerEvent: {}
+[72.199520] (-) TimerEvent: {}
+[72.300247] (-) TimerEvent: {}
+[72.401048] (-) TimerEvent: {}
+[72.501785] (-) TimerEvent: {}
+[72.602525] (-) TimerEvent: {}
+[72.703291] (-) TimerEvent: {}
+[72.804004] (-) TimerEvent: {}
+[72.904743] (-) TimerEvent: {}
+[73.005451] (-) TimerEvent: {}
+[73.106169] (-) TimerEvent: {}
+[73.206881] (-) TimerEvent: {}
+[73.307607] (-) TimerEvent: {}
+[73.408377] (-) TimerEvent: {}
+[73.509075] (-) TimerEvent: {}
+[73.609774] (-) TimerEvent: {}
+[73.710459] (-) TimerEvent: {}
+[73.811168] (-) TimerEvent: {}
+[73.911918] (-) TimerEvent: {}
+[74.012625] (-) TimerEvent: {}
+[74.113329] (-) TimerEvent: {}
+[74.214019] (-) TimerEvent: {}
+[74.314725] (-) TimerEvent: {}
+[74.415460] (-) TimerEvent: {}
+[74.516164] (-) TimerEvent: {}
+[74.616905] (-) TimerEvent: {}
+[74.717603] (-) TimerEvent: {}
+[74.818295] (-) TimerEvent: {}
+[74.919034] (-) TimerEvent: {}
+[75.019743] (-) TimerEvent: {}
+[75.120462] (-) TimerEvent: {}
+[75.221120] (-) TimerEvent: {}
+[75.321907] (-) TimerEvent: {}
+[75.422681] (-) TimerEvent: {}
+[75.523423] (-) TimerEvent: {}
+[75.624161] (-) TimerEvent: {}
+[75.725020] (-) TimerEvent: {}
+[75.826242] (-) TimerEvent: {}
+[75.926952] (-) TimerEvent: {}
+[76.027663] (-) TimerEvent: {}
+[76.128360] (-) TimerEvent: {}
+[76.229051] (-) TimerEvent: {}
+[76.329763] (-) TimerEvent: {}
+[76.430469] (-) TimerEvent: {}
+[76.531187] (-) TimerEvent: {}
+[76.631906] (-) TimerEvent: {}
+[76.732634] (-) TimerEvent: {}
+[76.833337] (-) TimerEvent: {}
+[76.934025] (-) TimerEvent: {}
+[77.034727] (-) TimerEvent: {}
+[77.135462] (-) TimerEvent: {}
+[77.236165] (-) TimerEvent: {}
+[77.336918] (-) TimerEvent: {}
+[77.437614] (-) TimerEvent: {}
+[77.538310] (-) TimerEvent: {}
+[77.639052] (-) TimerEvent: {}
+[77.739740] (-) TimerEvent: {}
+[77.840483] (-) TimerEvent: {}
+[77.941167] (-) TimerEvent: {}
+[78.041861] (-) TimerEvent: {}
+[78.142577] (-) TimerEvent: {}
+[78.243275] (-) TimerEvent: {}
+[78.343991] (-) TimerEvent: {}
+[78.444732] (-) TimerEvent: {}
+[78.545432] (-) TimerEvent: {}
+[78.646114] (-) TimerEvent: {}
+[78.746768] (-) TimerEvent: {}
+[78.847459] (-) TimerEvent: {}
+[78.948204] (-) TimerEvent: {}
+[79.049362] (-) TimerEvent: {}
+[79.150079] (-) TimerEvent: {}
+[79.250817] (-) TimerEvent: {}
+[79.351511] (-) TimerEvent: {}
+[79.452217] (-) TimerEvent: {}
+[79.552944] (-) TimerEvent: {}
+[79.653651] (-) TimerEvent: {}
+[79.754490] (-) TimerEvent: {}
+[79.851263] (diablo_body) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libdiablo_body_core.so\x1b[0m\n'}
+[79.854651] (-) TimerEvent: {}
+[79.955379] (-) TimerEvent: {}
+[80.056391] (-) TimerEvent: {}
+[80.157188] (-) TimerEvent: {}
+[80.257992] (-) TimerEvent: {}
+[80.358906] (-) TimerEvent: {}
+[80.459915] (-) TimerEvent: {}
+[80.560748] (-) TimerEvent: {}
+[80.661610] (-) TimerEvent: {}
+[80.762579] (-) TimerEvent: {}
+[80.863475] (-) TimerEvent: {}
+[80.964208] (-) TimerEvent: {}
+[81.065091] (-) TimerEvent: {}
+[81.166320] (-) TimerEvent: {}
+[81.267572] (-) TimerEvent: {}
+[81.368400] (-) TimerEvent: {}
+[81.469012] (-) TimerEvent: {}
+[81.569625] (-) TimerEvent: {}
+[81.670268] (-) TimerEvent: {}
+[81.771070] (-) TimerEvent: {}
+[81.871721] (-) TimerEvent: {}
+[81.972436] (-) TimerEvent: {}
+[82.073132] (-) TimerEvent: {}
+[82.173711] (-) TimerEvent: {}
+[82.228359] (diablo_body) StdoutLine: {'line': b'[100%] Built target diablo_body_core\n'}
+[82.267576] (diablo_body) CommandEnded: {'returncode': 0}
+[82.272122] (diablo_body) JobProgress: {'identifier': 'diablo_body', 'progress': 'install'}
+[82.276210] (diablo_body) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diablo/diablo_ws/build/diablo_body'], 'cwd': '/home/diablo/diablo_ws/build/diablo_body', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_body'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble')]), 'shell': False}
+[82.282117] (-) TimerEvent: {}
+[82.307848] (diablo_body) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[82.310502] (diablo_body) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[82.313491] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_battery.hpp\n'}
+[82.349582] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_body_state.hpp\n'}
+[82.382298] (-) TimerEvent: {}
+[82.382914] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_imu.hpp\n'}
+[82.415112] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_legmotors.hpp\n'}
+[82.454792] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/lib/libdiablo_body_core.so\n'}
+[82.482509] (-) TimerEvent: {}
+[82.492110] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/library_path.sh\n'}
+[82.526138] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/library_path.dsv\n'}
+[82.560023] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/package_run_dependencies/diablo_body\n'}
+[82.582702] (-) TimerEvent: {}
+[82.596594] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/parent_prefix_path/diablo_body\n'}
+[82.629705] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/ament_prefix_path.sh\n'}
+[82.663808] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/ament_prefix_path.dsv\n'}
+[82.682994] (-) TimerEvent: {}
+[82.697270] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/path.sh\n'}
+[82.730493] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/path.dsv\n'}
+[82.763549] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.bash\n'}
+[82.783196] (-) TimerEvent: {}
+[82.796750] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.sh\n'}
+[82.829597] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.zsh\n'}
+[82.865210] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.dsv\n'}
+[82.883487] (-) TimerEvent: {}
+[82.897703] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/package.dsv\n'}
+[82.931186] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/packages/diablo_body\n'}
+[82.964803] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[82.983735] (-) TimerEvent: {}
+[82.999113] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[83.034581] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[83.067790] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/diablo_bodyConfig.cmake\n'}
+[83.083987] (-) TimerEvent: {}
+[83.101772] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/diablo_bodyConfig-version.cmake\n'}
+[83.134759] (diablo_body) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/package.xml\n'}
+[83.173586] (diablo_body) CommandEnded: {'returncode': 0}
+[83.184111] (-) TimerEvent: {}
+[83.253269] (diablo_body) JobEnded: {'identifier': 'diablo_body', 'rc': 0}
+[83.257560] (diablo_ctrl) JobStarted: {'identifier': 'diablo_ctrl'}
+[83.284352] (-) TimerEvent: {}
+[83.326532] (diablo_ctrl) JobProgress: {'identifier': 'diablo_ctrl', 'progress': 'cmake'}
+[83.328827] (diablo_ctrl) Command: {'cmd': ['/usr/bin/cmake', '/home/diablo/diablo_ws/src/diablo_ros2/diablo_interaction/diablo_ctrl', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/diablo/diablo_ws/install/diablo_ctrl'], 'cwd': '/home/diablo/diablo_ws/build/diablo_ctrl', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/diablo_body/lib:/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_ctrl'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble')]), 'shell': False}
+[83.384492] (-) TimerEvent: {}
+[83.485424] (-) TimerEvent: {}
+[83.586489] (-) TimerEvent: {}
+[83.687386] (-) TimerEvent: {}
+[83.788144] (-) TimerEvent: {}
+[83.889373] (-) TimerEvent: {}
+[83.990258] (-) TimerEvent: {}
+[84.041408] (diablo_ctrl) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[84.090437] (-) TimerEvent: {}
+[84.191200] (-) TimerEvent: {}
+[84.291930] (-) TimerEvent: {}
+[84.315737] (diablo_ctrl) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[84.365252] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[84.392096] (-) TimerEvent: {}
+[84.492916] (-) TimerEvent: {}
+[84.593965] (-) TimerEvent: {}
+[84.694745] (-) TimerEvent: {}
+[84.722276] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[84.750668] (diablo_ctrl) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[84.754937] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[84.757283] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[84.772687] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[84.794928] (-) TimerEvent: {}
+[84.895621] (-) TimerEvent: {}
+[84.996472] (-) TimerEvent: {}
+[85.097246] (-) TimerEvent: {}
+[85.143914] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[85.172955] (diablo_ctrl) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[85.173869] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[85.175470] (diablo_ctrl) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[85.197384] (-) TimerEvent: {}
+[85.200601] (diablo_ctrl) StdoutLine: {'line': b'-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[85.297534] (-) TimerEvent: {}
+[85.398183] (-) TimerEvent: {}
+[85.499319] (-) TimerEvent: {}
+[85.600166] (-) TimerEvent: {}
+[85.700973] (-) TimerEvent: {}
+[85.801903] (-) TimerEvent: {}
+[85.902895] (-) TimerEvent: {}
+[85.926373] (diablo_ctrl) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[86.003115] (-) TimerEvent: {}
+[86.103805] (-) TimerEvent: {}
+[86.204739] (-) TimerEvent: {}
+[86.242359] (diablo_ctrl) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[86.304918] (-) TimerEvent: {}
+[86.405581] (-) TimerEvent: {}
+[86.506223] (-) TimerEvent: {}
+[86.606869] (-) TimerEvent: {}
+[86.707498] (-) TimerEvent: {}
+[86.808143] (-) TimerEvent: {}
+[86.908858] (-) TimerEvent: {}
+[86.953121] (diablo_ctrl) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[87.003651] (diablo_ctrl) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[87.008995] (-) TimerEvent: {}
+[87.075989] (diablo_ctrl) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[87.109165] (-) TimerEvent: {}
+[87.166617] (diablo_ctrl) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[87.209340] (-) TimerEvent: {}
+[87.286426] (diablo_ctrl) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[87.309495] (-) TimerEvent: {}
+[87.410121] (-) TimerEvent: {}
+[87.510747] (-) TimerEvent: {}
+[87.611373] (-) TimerEvent: {}
+[87.632209] (diablo_ctrl) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[87.660577] (diablo_ctrl) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[87.711534] (-) TimerEvent: {}
+[87.812174] (-) TimerEvent: {}
+[87.912817] (-) TimerEvent: {}
+[88.013471] (-) TimerEvent: {}
+[88.114183] (-) TimerEvent: {}
+[88.181091] (diablo_ctrl) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[88.214344] (-) TimerEvent: {}
+[88.309650] (diablo_ctrl) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[88.314499] (-) TimerEvent: {}
+[88.415156] (-) TimerEvent: {}
+[88.515965] (-) TimerEvent: {}
+[88.518643] (diablo_ctrl) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[88.601759] (diablo_ctrl) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[88.616124] (-) TimerEvent: {}
+[88.716863] (-) TimerEvent: {}
+[88.817651] (-) TimerEvent: {}
+[88.918416] (-) TimerEvent: {}
+[88.947524] (diablo_ctrl) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[88.949401] (diablo_ctrl) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[89.018772] (-) TimerEvent: {}
+[89.119678] (-) TimerEvent: {}
+[89.220899] (-) TimerEvent: {}
+[89.311668] (diablo_ctrl) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[89.316179] (diablo_ctrl) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[89.321034] (-) TimerEvent: {}
+[89.421648] (-) TimerEvent: {}
+[89.522355] (-) TimerEvent: {}
+[89.623055] (-) TimerEvent: {}
+[89.623628] (diablo_ctrl) StdoutLine: {'line': b'-- Found diablo_body: 1.0.0 (/home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake)\n'}
+[89.723226] (-) TimerEvent: {}
+[89.823877] (-) TimerEvent: {}
+[89.924672] (-) TimerEvent: {}
+[90.017983] (diablo_ctrl) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[90.024848] (-) TimerEvent: {}
+[90.125572] (-) TimerEvent: {}
+[90.226211] (-) TimerEvent: {}
+[90.326863] (-) TimerEvent: {}
+[90.427531] (-) TimerEvent: {}
+[90.525336] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[90.527690] (-) TimerEvent: {}
+[90.535586] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[90.536423] (diablo_ctrl) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/diablo/diablo_ws/src/diablo_ros2/diablo_interaction/diablo_ctrl/include\n'}
+[90.536858] (diablo_ctrl) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[90.545279] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[90.545782] (diablo_ctrl) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[90.551226] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[90.560297] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[90.560867] (diablo_ctrl) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[90.564413] (diablo_ctrl) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[90.584394] (diablo_ctrl) StdoutLine: {'line': b'-- Configuring done\n'}
+[90.627885] (-) TimerEvent: {}
+[90.728527] (-) TimerEvent: {}
+[90.732826] (diablo_ctrl) StdoutLine: {'line': b'-- Generating done\n'}
+[90.749776] (diablo_ctrl) StdoutLine: {'line': b'-- Build files have been written to: /home/diablo/diablo_ws/build/diablo_ctrl\n'}
+[90.787738] (diablo_ctrl) CommandEnded: {'returncode': 0}
+[90.789557] (diablo_ctrl) JobProgress: {'identifier': 'diablo_ctrl', 'progress': 'build'}
+[90.790408] (diablo_ctrl) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/diablo/diablo_ws/build/diablo_ctrl'], 'cwd': '/home/diablo/diablo_ws/build/diablo_ctrl', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/diablo_body/lib:/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_ctrl'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble')]), 'shell': False}
+[90.828746] (-) TimerEvent: {}
+[90.929552] (-) TimerEvent: {}
+[91.029109] (diablo_ctrl) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/diablo_ctrl_node.dir/src/diablo_ctrl.cpp.o\x1b[0m\n'}
+[91.029709] (-) TimerEvent: {}
+[91.130346] (-) TimerEvent: {}
+[91.231012] (-) TimerEvent: {}
+[91.331661] (-) TimerEvent: {}
+[91.432335] (-) TimerEvent: {}
+[91.532993] (-) TimerEvent: {}
+[91.633762] (-) TimerEvent: {}
+[91.734727] (-) TimerEvent: {}
+[91.835398] (-) TimerEvent: {}
+[91.936037] (-) TimerEvent: {}
+[92.036759] (-) TimerEvent: {}
+[92.137398] (-) TimerEvent: {}
+[92.238047] (-) TimerEvent: {}
+[92.338737] (-) TimerEvent: {}
+[92.439434] (-) TimerEvent: {}
+[92.540150] (-) TimerEvent: {}
+[92.640898] (-) TimerEvent: {}
+[92.741552] (-) TimerEvent: {}
+[92.842218] (-) TimerEvent: {}
+[92.942916] (-) TimerEvent: {}
+[93.043679] (-) TimerEvent: {}
+[93.144464] (-) TimerEvent: {}
+[93.245188] (-) TimerEvent: {}
+[93.345936] (-) TimerEvent: {}
+[93.446628] (-) TimerEvent: {}
+[93.547343] (-) TimerEvent: {}
+[93.648081] (-) TimerEvent: {}
+[93.749010] (-) TimerEvent: {}
+[93.849746] (-) TimerEvent: {}
+[93.950431] (-) TimerEvent: {}
+[94.051277] (-) TimerEvent: {}
+[94.152086] (-) TimerEvent: {}
+[94.252911] (-) TimerEvent: {}
+[94.353603] (-) TimerEvent: {}
+[94.454318] (-) TimerEvent: {}
+[94.555060] (-) TimerEvent: {}
+[94.655768] (-) TimerEvent: {}
+[94.756477] (-) TimerEvent: {}
+[94.857178] (-) TimerEvent: {}
+[94.957889] (-) TimerEvent: {}
+[95.058690] (-) TimerEvent: {}
+[95.159395] (-) TimerEvent: {}
+[95.260133] (-) TimerEvent: {}
+[95.360928] (-) TimerEvent: {}
+[95.461626] (-) TimerEvent: {}
+[95.562567] (-) TimerEvent: {}
+[95.663299] (-) TimerEvent: {}
+[95.764016] (-) TimerEvent: {}
+[95.864773] (-) TimerEvent: {}
+[95.965472] (-) TimerEvent: {}
+[96.066196] (-) TimerEvent: {}
+[96.166949] (-) TimerEvent: {}
+[96.267689] (-) TimerEvent: {}
+[96.368438] (-) TimerEvent: {}
+[96.469142] (-) TimerEvent: {}
+[96.569859] (-) TimerEvent: {}
+[96.670653] (-) TimerEvent: {}
+[96.771388] (-) TimerEvent: {}
+[96.872094] (-) TimerEvent: {}
+[96.972843] (-) TimerEvent: {}
+[97.073539] (-) TimerEvent: {}
+[97.174229] (-) TimerEvent: {}
+[97.274928] (-) TimerEvent: {}
+[97.375626] (-) TimerEvent: {}
+[97.476402] (-) TimerEvent: {}
+[97.577103] (-) TimerEvent: {}
+[97.677810] (-) TimerEvent: {}
+[97.778534] (-) TimerEvent: {}
+[97.879256] (-) TimerEvent: {}
+[97.980036] (-) TimerEvent: {}
+[98.080797] (-) TimerEvent: {}
+[98.181520] (-) TimerEvent: {}
+[98.282256] (-) TimerEvent: {}
+[98.382969] (-) TimerEvent: {}
+[98.483752] (-) TimerEvent: {}
+[98.584500] (-) TimerEvent: {}
+[98.685236] (-) TimerEvent: {}
+[98.785973] (-) TimerEvent: {}
+[98.886703] (-) TimerEvent: {}
+[98.987486] (-) TimerEvent: {}
+[99.088246] (-) TimerEvent: {}
+[99.188997] (-) TimerEvent: {}
+[99.289712] (-) TimerEvent: {}
+[99.390439] (-) TimerEvent: {}
+[99.491181] (-) TimerEvent: {}
+[99.591885] (-) TimerEvent: {}
+[99.692633] (-) TimerEvent: {}
+[99.793366] (-) TimerEvent: {}
+[99.894149] (-) TimerEvent: {}
+[99.994923] (-) TimerEvent: {}
+[100.095663] (-) TimerEvent: {}
+[100.196475] (-) TimerEvent: {}
+[100.297221] (-) TimerEvent: {}
+[100.397963] (-) TimerEvent: {}
+[100.498736] (-) TimerEvent: {}
+[100.599654] (-) TimerEvent: {}
+[100.700422] (-) TimerEvent: {}
+[100.801133] (-) TimerEvent: {}
+[100.901871] (-) TimerEvent: {}
+[101.002609] (-) TimerEvent: {}
+[101.103387] (-) TimerEvent: {}
+[101.204082] (-) TimerEvent: {}
+[101.304884] (-) TimerEvent: {}
+[101.405596] (-) TimerEvent: {}
+[101.506306] (-) TimerEvent: {}
+[101.607047] (-) TimerEvent: {}
+[101.707771] (-) TimerEvent: {}
+[101.808491] (-) TimerEvent: {}
+[101.909235] (-) TimerEvent: {}
+[102.010115] (-) TimerEvent: {}
+[102.110853] (-) TimerEvent: {}
+[102.211638] (-) TimerEvent: {}
+[102.312402] (-) TimerEvent: {}
+[102.413098] (-) TimerEvent: {}
+[102.513821] (-) TimerEvent: {}
+[102.614584] (-) TimerEvent: {}
+[102.715297] (-) TimerEvent: {}
+[102.816047] (-) TimerEvent: {}
+[102.916809] (-) TimerEvent: {}
+[103.017517] (-) TimerEvent: {}
+[103.118243] (-) TimerEvent: {}
+[103.218971] (-) TimerEvent: {}
+[103.319698] (-) TimerEvent: {}
+[103.420488] (-) TimerEvent: {}
+[103.521206] (-) TimerEvent: {}
+[103.621937] (-) TimerEvent: {}
+[103.722655] (-) TimerEvent: {}
+[103.823390] (-) TimerEvent: {}
+[103.924160] (-) TimerEvent: {}
+[104.024955] (-) TimerEvent: {}
+[104.125742] (-) TimerEvent: {}
+[104.226616] (-) TimerEvent: {}
+[104.327517] (-) TimerEvent: {}
+[104.428224] (-) TimerEvent: {}
+[104.528997] (-) TimerEvent: {}
+[104.629706] (-) TimerEvent: {}
+[104.730440] (-) TimerEvent: {}
+[104.831253] (-) TimerEvent: {}
+[104.932019] (-) TimerEvent: {}
+[105.032780] (-) TimerEvent: {}
+[105.133495] (-) TimerEvent: {}
+[105.234218] (-) TimerEvent: {}
+[105.334978] (-) TimerEvent: {}
+[105.435705] (-) TimerEvent: {}
+[105.536447] (-) TimerEvent: {}
+[105.637207] (-) TimerEvent: {}
+[105.737915] (-) TimerEvent: {}
+[105.838622] (-) TimerEvent: {}
+[105.939328] (-) TimerEvent: {}
+[106.040075] (-) TimerEvent: {}
+[106.140895] (-) TimerEvent: {}
+[106.241614] (-) TimerEvent: {}
+[106.342334] (-) TimerEvent: {}
+[106.443059] (-) TimerEvent: {}
+[106.543857] (-) TimerEvent: {}
+[106.644693] (-) TimerEvent: {}
+[106.745490] (-) TimerEvent: {}
+[106.846218] (-) TimerEvent: {}
+[106.946984] (-) TimerEvent: {}
+[107.047698] (-) TimerEvent: {}
+[107.148451] (-) TimerEvent: {}
+[107.249165] (-) TimerEvent: {}
+[107.349888] (-) TimerEvent: {}
+[107.450628] (-) TimerEvent: {}
+[107.551357] (-) TimerEvent: {}
+[107.652092] (-) TimerEvent: {}
+[107.752849] (-) TimerEvent: {}
+[107.853565] (-) TimerEvent: {}
+[107.954276] (-) TimerEvent: {}
+[108.054982] (-) TimerEvent: {}
+[108.155720] (-) TimerEvent: {}
+[108.256487] (-) TimerEvent: {}
+[108.357203] (-) TimerEvent: {}
+[108.457892] (-) TimerEvent: {}
+[108.558527] (-) TimerEvent: {}
+[108.659175] (-) TimerEvent: {}
+[108.759811] (-) TimerEvent: {}
+[108.860502] (-) TimerEvent: {}
+[108.961199] (-) TimerEvent: {}
+[109.061947] (-) TimerEvent: {}
+[109.162807] (-) TimerEvent: {}
+[109.263572] (-) TimerEvent: {}
+[109.364376] (-) TimerEvent: {}
+[109.465123] (-) TimerEvent: {}
+[109.565895] (-) TimerEvent: {}
+[109.667299] (-) TimerEvent: {}
+[109.768044] (-) TimerEvent: {}
+[109.868818] (-) TimerEvent: {}
+[109.969544] (-) TimerEvent: {}
+[110.070260] (-) TimerEvent: {}
+[110.171073] (-) TimerEvent: {}
+[110.272228] (-) TimerEvent: {}
+[110.373571] (-) TimerEvent: {}
+[110.474310] (-) TimerEvent: {}
+[110.575113] (-) TimerEvent: {}
+[110.675869] (-) TimerEvent: {}
+[110.776672] (-) TimerEvent: {}
+[110.877447] (-) TimerEvent: {}
+[110.978158] (-) TimerEvent: {}
+[111.078874] (-) TimerEvent: {}
+[111.179625] (-) TimerEvent: {}
+[111.280376] (-) TimerEvent: {}
+[111.381084] (-) TimerEvent: {}
+[111.481814] (-) TimerEvent: {}
+[111.582529] (-) TimerEvent: {}
+[111.683282] (-) TimerEvent: {}
+[111.784003] (-) TimerEvent: {}
+[111.884775] (-) TimerEvent: {}
+[111.985466] (-) TimerEvent: {}
+[112.086190] (-) TimerEvent: {}
+[112.186927] (-) TimerEvent: {}
+[112.287609] (-) TimerEvent: {}
+[112.388362] (-) TimerEvent: {}
+[112.489052] (-) TimerEvent: {}
+[112.589774] (-) TimerEvent: {}
+[112.690453] (-) TimerEvent: {}
+[112.791156] (-) TimerEvent: {}
+[112.891863] (-) TimerEvent: {}
+[112.992591] (-) TimerEvent: {}
+[113.093298] (-) TimerEvent: {}
+[113.193986] (-) TimerEvent: {}
+[113.294679] (-) TimerEvent: {}
+[113.395399] (-) TimerEvent: {}
+[113.496135] (-) TimerEvent: {}
+[113.596910] (-) TimerEvent: {}
+[113.697584] (-) TimerEvent: {}
+[113.798290] (-) TimerEvent: {}
+[113.898979] (-) TimerEvent: {}
+[113.999727] (-) TimerEvent: {}
+[114.100434] (-) TimerEvent: {}
+[114.201113] (-) TimerEvent: {}
+[114.301782] (-) TimerEvent: {}
+[114.402467] (-) TimerEvent: {}
+[114.503187] (-) TimerEvent: {}
+[114.603923] (-) TimerEvent: {}
+[114.704698] (-) TimerEvent: {}
+[114.805398] (-) TimerEvent: {}
+[114.906131] (-) TimerEvent: {}
+[115.006884] (-) TimerEvent: {}
+[115.107670] (-) TimerEvent: {}
+[115.208423] (-) TimerEvent: {}
+[115.309118] (-) TimerEvent: {}
+[115.409796] (-) TimerEvent: {}
+[115.510631] (-) TimerEvent: {}
+[115.611563] (-) TimerEvent: {}
+[115.712394] (-) TimerEvent: {}
+[115.813138] (-) TimerEvent: {}
+[115.913846] (-) TimerEvent: {}
+[116.014565] (-) TimerEvent: {}
+[116.115287] (-) TimerEvent: {}
+[116.215994] (-) TimerEvent: {}
+[116.316726] (-) TimerEvent: {}
+[116.417427] (-) TimerEvent: {}
+[116.518164] (-) TimerEvent: {}
+[116.619004] (-) TimerEvent: {}
+[116.719721] (-) TimerEvent: {}
+[116.820517] (-) TimerEvent: {}
+[116.921240] (-) TimerEvent: {}
+[117.021958] (-) TimerEvent: {}
+[117.122707] (-) TimerEvent: {}
+[117.223432] (-) TimerEvent: {}
+[117.324174] (-) TimerEvent: {}
+[117.424962] (-) TimerEvent: {}
+[117.525650] (-) TimerEvent: {}
+[117.626363] (-) TimerEvent: {}
+[117.727077] (-) TimerEvent: {}
+[117.827806] (-) TimerEvent: {}
+[117.928519] (-) TimerEvent: {}
+[118.029261] (-) TimerEvent: {}
+[118.129974] (-) TimerEvent: {}
+[118.230711] (-) TimerEvent: {}
+[118.331459] (-) TimerEvent: {}
+[118.432183] (-) TimerEvent: {}
+[118.532955] (-) TimerEvent: {}
+[118.633672] (-) TimerEvent: {}
+[118.734378] (-) TimerEvent: {}
+[118.835103] (-) TimerEvent: {}
+[118.935853] (-) TimerEvent: {}
+[119.036600] (-) TimerEvent: {}
+[119.137317] (-) TimerEvent: {}
+[119.238028] (-) TimerEvent: {}
+[119.338787] (-) TimerEvent: {}
+[119.439505] (-) TimerEvent: {}
+[119.540210] (-) TimerEvent: {}
+[119.640988] (-) TimerEvent: {}
+[119.741838] (-) TimerEvent: {}
+[119.842583] (-) TimerEvent: {}
+[119.943328] (-) TimerEvent: {}
+[120.044182] (-) TimerEvent: {}
+[120.145126] (-) TimerEvent: {}
+[120.246022] (-) TimerEvent: {}
+[120.347090] (-) TimerEvent: {}
+[120.447949] (-) TimerEvent: {}
+[120.548726] (-) TimerEvent: {}
+[120.649453] (-) TimerEvent: {}
+[120.750347] (-) TimerEvent: {}
+[120.851098] (-) TimerEvent: {}
+[120.951831] (-) TimerEvent: {}
+[121.052544] (-) TimerEvent: {}
+[121.153242] (-) TimerEvent: {}
+[121.253931] (-) TimerEvent: {}
+[121.354663] (-) TimerEvent: {}
+[121.455360] (-) TimerEvent: {}
+[121.556070] (-) TimerEvent: {}
+[121.656857] (-) TimerEvent: {}
+[121.757568] (-) TimerEvent: {}
+[121.858295] (-) TimerEvent: {}
+[121.958991] (-) TimerEvent: {}
+[122.059691] (-) TimerEvent: {}
+[122.160693] (-) TimerEvent: {}
+[122.262226] (-) TimerEvent: {}
+[122.363353] (-) TimerEvent: {}
+[122.464129] (-) TimerEvent: {}
+[122.565044] (-) TimerEvent: {}
+[122.665831] (-) TimerEvent: {}
+[122.766585] (-) TimerEvent: {}
+[122.844938] (diablo_ctrl) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable diablo_ctrl_node\x1b[0m\n'}
+[122.866884] (-) TimerEvent: {}
+[122.967800] (-) TimerEvent: {}
+[123.069346] (-) TimerEvent: {}
+[123.170202] (-) TimerEvent: {}
+[123.271011] (-) TimerEvent: {}
+[123.371975] (-) TimerEvent: {}
+[123.473165] (-) TimerEvent: {}
+[123.574364] (-) TimerEvent: {}
+[123.675193] (-) TimerEvent: {}
+[123.776286] (-) TimerEvent: {}
+[123.877641] (-) TimerEvent: {}
+[123.978873] (-) TimerEvent: {}
+[124.079710] (-) TimerEvent: {}
+[124.180522] (-) TimerEvent: {}
+[124.281455] (-) TimerEvent: {}
+[124.382606] (-) TimerEvent: {}
+[124.483632] (-) TimerEvent: {}
+[124.584464] (-) TimerEvent: {}
+[124.685231] (-) TimerEvent: {}
+[124.786176] (-) TimerEvent: {}
+[124.887062] (-) TimerEvent: {}
+[124.987692] (-) TimerEvent: {}
+[125.088653] (-) TimerEvent: {}
+[125.189651] (-) TimerEvent: {}
+[125.290293] (-) TimerEvent: {}
+[125.391140] (-) TimerEvent: {}
+[125.492075] (-) TimerEvent: {}
+[125.592833] (-) TimerEvent: {}
+[125.623424] (diablo_ctrl) StdoutLine: {'line': b'[100%] Built target diablo_ctrl_node\n'}
+[125.670889] (diablo_ctrl) CommandEnded: {'returncode': 0}
+[125.675304] (diablo_ctrl) JobProgress: {'identifier': 'diablo_ctrl', 'progress': 'install'}
+[125.682115] (diablo_ctrl) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/diablo/diablo_ws/build/diablo_ctrl'], 'cwd': '/home/diablo/diablo_ws/build/diablo_ctrl', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'diablo'), ('SSH_CLIENT', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 22'), ('LC_TIME', 'C.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/diablo/diablo_ws/install/diablo_body/lib:/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/diablo'), ('OLDPWD', '/home/diablo'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'C.UTF-8'), ('MAKEFLAGS', '-j1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'diablo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'C.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'C.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'C.UTF-8'), ('LC_IDENTIFICATION', 'C.UTF-8'), ('PWD', '/home/diablo/diablo_ws/build/diablo_ctrl'), ('SSH_CONNECTION', 'fc94:895d:2729:ce2e:5d7:5613:5e0f:cf5a 41846 fc94:64f0:8f29:7d71:97ae:cae5:211:47b1 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'C.UTF-8'), ('LC_PAPER', 'C.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/diablo/diablo_ws/install/diablo_body:/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble')]), 'shell': False}
+[125.693002] (-) TimerEvent: {}
+[125.711966] (diablo_ctrl) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[125.713587] (diablo_ctrl) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[125.715626] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/lib/diablo_ctrl/diablo_ctrl_node\n'}
+[125.748127] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/include/diablo_ctrl/diablo_ctrl.hpp\n'}
+[125.785263] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/ament_index/resource_index/package_run_dependencies/diablo_ctrl\n'}
+[125.793180] (-) TimerEvent: {}
+[125.820249] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/ament_index/resource_index/parent_prefix_path/diablo_ctrl\n'}
+[125.856118] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/environment/ament_prefix_path.sh\n'}
+[125.891266] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/environment/ament_prefix_path.dsv\n'}
+[125.893295] (-) TimerEvent: {}
+[125.925687] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/environment/path.sh\n'}
+[125.959362] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/environment/path.dsv\n'}
+[125.993531] (-) TimerEvent: {}
+[125.996197] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/local_setup.bash\n'}
+[126.031115] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/local_setup.sh\n'}
+[126.068616] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/local_setup.zsh\n'}
+[126.093723] (-) TimerEvent: {}
+[126.104039] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/local_setup.dsv\n'}
+[126.138812] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/package.dsv\n'}
+[126.176955] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/ament_index/resource_index/packages/diablo_ctrl\n'}
+[126.193912] (-) TimerEvent: {}
+[126.213443] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[126.249155] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[126.284369] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/cmake/diablo_ctrlConfig.cmake\n'}
+[126.294078] (-) TimerEvent: {}
+[126.318866] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/cmake/diablo_ctrlConfig-version.cmake\n'}
+[126.355396] (diablo_ctrl) StdoutLine: {'line': b'-- Symlinking: /home/diablo/diablo_ws/install/diablo_ctrl/share/diablo_ctrl/package.xml\n'}
+[126.394318] (-) TimerEvent: {}
+[126.397262] (diablo_ctrl) CommandEnded: {'returncode': 0}
+[126.456505] (diablo_ctrl) JobEnded: {'identifier': 'diablo_ctrl', 'rc': 0}
+[126.459233] (-) EventReactorShutdown: {}

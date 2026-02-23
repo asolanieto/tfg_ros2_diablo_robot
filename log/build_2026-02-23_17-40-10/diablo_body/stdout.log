@@ -1,0 +1,4 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_battery.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_legmotors.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_imu.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_body_state.cpp.o[0m

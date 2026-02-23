@@ -1,0 +1,37 @@
+[0.076s] Invoking command in '/home/diablo/diablo_ws/build/diablo_body': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_body
+[0.331s] [ 20%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_imu.cpp.o[0m
+[20.356s] [ 40%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_battery.cpp.o[0m
+[37.577s] [ 60%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_legmotors.cpp.o[0m
+[54.672s] [ 80%] [32mBuilding CXX object CMakeFiles/diablo_body_core.dir/src/diablo_body_state.cpp.o[0m
+[71.612s] [100%] [32m[1mLinking CXX shared library libdiablo_body_core.so[0m
+[73.989s] [100%] Built target diablo_body_core
+[74.028s] Invoked command in '/home/diablo/diablo_ws/build/diablo_body' returned '0': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/diablo/diablo_ws/build/diablo_body
+[74.041s] Invoking command in '/home/diablo/diablo_ws/build/diablo_body': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/diablo/diablo_ws/build/diablo_body
+[74.068s] -- Install configuration: ""
+[74.071s] -- Execute custom install script
+[74.074s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_battery.hpp
+[74.110s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_body_state.hpp
+[74.144s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_imu.hpp
+[74.176s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/include//diablo_legmotors.hpp
+[74.215s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/lib/libdiablo_body_core.so
+[74.253s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/library_path.sh
+[74.287s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/library_path.dsv
+[74.321s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/package_run_dependencies/diablo_body
+[74.357s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/parent_prefix_path/diablo_body
+[74.390s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/ament_prefix_path.sh
+[74.424s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/ament_prefix_path.dsv
+[74.458s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/path.sh
+[74.491s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/environment/path.dsv
+[74.524s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.bash
+[74.557s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.sh
+[74.590s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.zsh
+[74.626s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/local_setup.dsv
+[74.658s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/package.dsv
+[74.692s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/ament_index/resource_index/packages/diablo_body
+[74.725s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_include_directories-extras.cmake
+[74.760s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_libraries-extras.cmake
+[74.795s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/ament_cmake_export_dependencies-extras.cmake
+[74.828s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/diablo_bodyConfig.cmake
+[74.862s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/cmake/diablo_bodyConfig-version.cmake
+[74.895s] -- Symlinking: /home/diablo/diablo_ws/install/diablo_body/share/diablo_body/package.xml
+[74.936s] Invoked command in '/home/diablo/diablo_ws/build/diablo_body' returned '0': AMENT_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/diablo/diablo_ws/install/diablo_utils:/home/diablo/diablo_ws/install/motion_msgs:/home/diablo/diablo_ws/install/ception_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/diablo/diablo_ws/install/diablo_utils/lib:/home/diablo/diablo_ws/install/motion_msgs/lib:/home/diablo/diablo_ws/install/ception_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/diablo/diablo_ws/install/motion_msgs/local/lib/python3.10/dist-packages:/home/diablo/diablo_ws/install/ception_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/diablo/diablo_ws/build/diablo_body

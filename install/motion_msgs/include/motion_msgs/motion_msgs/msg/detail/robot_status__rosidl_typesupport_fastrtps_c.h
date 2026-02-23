@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/motion_msgs/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h

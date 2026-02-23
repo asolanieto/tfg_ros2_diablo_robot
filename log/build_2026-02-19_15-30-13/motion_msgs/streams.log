@@ -1,0 +1,131 @@
+[0.111s] Invoking command in '/home/diablo/diablo_ws/build/motion_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/diablo/diablo_ws/install/motion_msgs
+[1.609s] -- The C compiler identification is GNU 11.4.0
+[2.643s] -- The CXX compiler identification is GNU 11.4.0
+[5.835s] -- Detecting C compiler ABI info
+[6.305s] -- Detecting C compiler ABI info - done
+[6.346s] -- Check for working C compiler: /usr/bin/cc - skipped
+[6.349s] -- Detecting C compile features
+[6.353s] -- Detecting C compile features - done
+[6.370s] -- Detecting CXX compiler ABI info
+[6.902s] -- Detecting CXX compiler ABI info - done
+[6.958s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[6.961s] -- Detecting CXX compile features
+[6.965s] -- Detecting CXX compile features - done
+[7.042s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[8.488s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[9.210s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[9.482s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[9.524s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[9.625s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[11.139s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[11.443s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[15.784s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[18.691s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[20.742s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[20.900s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[20.915s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[21.078s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[21.080s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[21.081s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[21.083s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[21.267s] -- Found PythonExtra: .so  
+[21.805s] -- Configuring done
+[22.121s] -- Generating done
+[22.296s] -- Build files have been written to: /home/diablo/diablo_ws/build/motion_msgs
+[22.328s] Invoked command in '/home/diablo/diablo_ws/build/motion_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/diablo/diablo_ws/install/motion_msgs
+[22.350s] Invoking command in '/home/diablo/diablo_ws/build/motion_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/motion_msgs -- -j4 -l4
+[22.687s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[22.814s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[23.076s] [  2%] Built target ament_cmake_python_symlink_motion_msgs
+[27.247s] running egg_info
+[27.262s] creating motion_msgs.egg-info
+[27.265s] writing motion_msgs.egg-info/PKG-INFO
+[27.267s] writing dependency_links to motion_msgs.egg-info/dependency_links.txt
+[27.269s] writing top-level names to motion_msgs.egg-info/top_level.txt
+[27.270s] writing manifest file 'motion_msgs.egg-info/SOURCES.txt'
+[27.293s] reading manifest file 'motion_msgs.egg-info/SOURCES.txt'
+[27.296s] writing manifest file 'motion_msgs.egg-info/SOURCES.txt'
+[27.954s] [  2%] Built target ament_cmake_python_build_motion_msgs_egg
+[31.459s] [  2%] Built target motion_msgs__cpp
+[31.614s] [  4%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[36.073s] [  5%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/ctrl_plot__functions.c.o[0m
+[37.097s] [  7%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/leg_motors__functions.c.o[0m
+[37.423s] [  8%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/ctrl_plot__type_support.cpp.o[0m
+[38.084s] [  9%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/motion_ctrl__functions.c.o[0m
+[39.706s] [ 11%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/robot_status__functions.c.o[0m
+[40.681s] [ 12%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/movement_ctrl_data__functions.c.o[0m
+[41.484s] [ 14%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_c.dir/rosidl_generator_c/motion_msgs/msg/detail/movement_ctrl_mode__functions.c.o[0m
+[41.832s] [ 15%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/leg_motors__type_support.cpp.o[0m
+[42.422s] [ 16%] [32m[1mLinking C shared library libmotion_msgs__rosidl_generator_c.so[0m
+[42.812s] [ 16%] Built target motion_msgs__rosidl_generator_c
+[45.479s] [ 18%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/motion_ctrl__type_support.cpp.o[0m
+[48.840s] [ 19%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/robot_status__type_support.cpp.o[0m
+[51.891s] [ 21%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/movement_ctrl_data__type_support.cpp.o[0m
+[54.765s] [ 22%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motion_msgs/msg/detail/dds_fastrtps/movement_ctrl_mode__type_support.cpp.o[0m
+[57.856s] [ 23%] [32m[1mLinking CXX shared library libmotion_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[58.284s] [ 23%] Built target motion_msgs__rosidl_typesupport_fastrtps_cpp
+[58.336s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[61.117s] [ 26%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/ctrl_plot__type_support_c.cpp.o[0m
+[63.530s] [ 28%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/leg_motors__type_support_c.cpp.o[0m
+[65.727s] [ 29%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/motion_ctrl__type_support_c.cpp.o[0m
+[70.585s] [ 30%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/robot_status__type_support_c.cpp.o[0m
+[72.759s] [ 32%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/movement_ctrl_data__type_support_c.cpp.o[0m
+[74.960s] [ 33%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motion_msgs/msg/detail/movement_ctrl_mode__type_support_c.cpp.o[0m
+[76.876s] [ 35%] [32m[1mLinking CXX shared library libmotion_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[77.151s] [ 36%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[77.280s] [ 36%] Built target motion_msgs__rosidl_typesupport_fastrtps_c
+[77.332s] [ 38%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[79.359s] [ 39%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/ctrl_plot__type_support.cpp.o[0m
+[79.787s] [ 40%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/ctrl_plot__type_support.c.o[0m
+[80.030s] [ 42%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/leg_motors__type_support.c.o[0m
+[80.277s] [ 43%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/motion_ctrl__type_support.c.o[0m
+[80.511s] [ 45%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/robot_status__type_support.c.o[0m
+[80.753s] [ 46%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/movement_ctrl_data__type_support.c.o[0m
+[80.983s] [ 47%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motion_msgs/msg/detail/movement_ctrl_mode__type_support.c.o[0m
+[81.122s] [ 49%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/leg_motors__type_support.cpp.o[0m
+[81.201s] [ 50%] [32m[1mLinking C shared library libmotion_msgs__rosidl_typesupport_introspection_c.so[0m
+[81.373s] [ 50%] Built target motion_msgs__rosidl_typesupport_introspection_c
+[81.412s] [ 52%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/motion_ctrl__type_support.cpp.o[0m
+[81.427s] [ 53%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[83.192s] [ 54%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/robot_status__type_support.cpp.o[0m
+[83.481s] [ 56%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/movement_ctrl_data__type_support.cpp.o[0m
+[83.810s] [ 57%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/ctrl_plot__type_support.cpp.o[0m
+[84.010s] [ 59%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/leg_motors__type_support.cpp.o[0m
+[84.249s] [ 60%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/motion_ctrl__type_support.cpp.o[0m
+[84.474s] [ 61%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/robot_status__type_support.cpp.o[0m
+[84.682s] [ 63%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/movement_ctrl_data__type_support.cpp.o[0m
+[84.887s] [ 64%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motion_msgs/msg/movement_ctrl_mode__type_support.cpp.o[0m
+[85.093s] [ 66%] [32m[1mLinking CXX shared library libmotion_msgs__rosidl_typesupport_c.so[0m
+[85.276s] [ 67%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motion_msgs/msg/movement_ctrl_mode__type_support.cpp.o[0m
+[85.331s] [ 67%] Built target motion_msgs__rosidl_typesupport_c
+[85.387s] [ 69%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[87.034s] [ 70%] [32m[1mLinking CXX shared library libmotion_msgs__rosidl_typesupport_cpp.so[0m
+[87.225s] [ 70%] Built target motion_msgs__rosidl_typesupport_cpp
+[87.738s] [ 71%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/ctrl_plot__type_support.cpp.o[0m
+[87.741s] [ 73%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/leg_motors__type_support.cpp.o[0m
+[88.797s] [ 74%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/robot_status__type_support.cpp.o[0m
+[89.887s] [ 76%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/motion_ctrl__type_support.cpp.o[0m
+[90.526s] [ 77%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/movement_ctrl_data__type_support.cpp.o[0m
+[90.683s] [ 78%] [32mBuilding CXX object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motion_msgs/msg/detail/movement_ctrl_mode__type_support.cpp.o[0m
+[93.865s] [ 80%] [32m[1mLinking CXX shared library libmotion_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[94.178s] [ 80%] Built target motion_msgs__rosidl_typesupport_introspection_cpp
+[94.258s] [ 80%] Built target motion_msgs
+[94.340s] [ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[98.533s] [ 81%] Built target motion_msgs__py
+[98.617s] [ 83%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_ctrl_plot_s.c.o[0m
+[98.619s] [ 84%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_leg_motors_s.c.o[0m
+[99.248s] [ 85%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_robot_status_s.c.o[0m
+[99.569s] [ 87%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_movement_ctrl_data_s.c.o[0m
+[99.917s] [ 88%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_movement_ctrl_mode_s.c.o[0m
+[100.249s] [ 90%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_generator_py.dir/rosidl_generator_py/motion_msgs/msg/_motion_ctrl_s.c.o[0m
+[100.869s] [ 91%] [32m[1mLinking C shared library rosidl_generator_py/motion_msgs/libmotion_msgs__rosidl_generator_py.so[0m
+[101.081s] [ 91%] Built target motion_msgs__rosidl_generator_py
+[101.169s] [ 94%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[101.170s] [ 94%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[103.249s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/motion_msgs/motion_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[103.252s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/motion_msgs/motion_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[103.494s] [ 97%] Built target motion_msgs__rosidl_typesupport_fastrtps_c__pyext
+[103.495s] [ 97%] Built target motion_msgs__rosidl_typesupport_introspection_c__pyext
+[103.579s] [ 98%] [32mBuilding C object CMakeFiles/motion_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/motion_msgs/_motion_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[104.964s] [100%] [32m[1mLinking C shared library rosidl_generator_py/motion_msgs/motion_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[105.150s] [100%] Built target motion_msgs__rosidl_typesupport_c__pyext

@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/src/diablo_ros2/diablo_interfaces/motion_msgs/msg/MovementCtrlMode.msg

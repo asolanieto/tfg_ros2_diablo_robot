@@ -1,0 +1,4 @@
+Invoking command in '/home/diablo/diablo_ws/build/ception_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/ception_msgs -- -j4 -l4
+Invoked command in '/home/diablo/diablo_ws/build/ception_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/diablo/diablo_ws/build/ception_msgs -- -j4 -l4
+Invoking command in '/home/diablo/diablo_ws/build/ception_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/diablo/diablo_ws/build/ception_msgs
+Invoked command in '/home/diablo/diablo_ws/build/ception_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/diablo/diablo_ws/build/ception_msgs

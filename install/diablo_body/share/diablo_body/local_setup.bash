@@ -1,0 +1,1 @@
+/home/diablo/diablo_ws/build/diablo_body/ament_cmake_environment_hooks/local_setup.bash

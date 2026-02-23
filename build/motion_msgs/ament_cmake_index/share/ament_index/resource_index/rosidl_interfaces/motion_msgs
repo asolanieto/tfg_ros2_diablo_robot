@@ -1,0 +1,12 @@
+msg/CtrlPlot.idl
+msg/CtrlPlot.msg
+msg/LegMotors.idl
+msg/LegMotors.msg
+msg/MotionCtrl.idl
+msg/MotionCtrl.msg
+msg/MovementCtrlData.idl
+msg/MovementCtrlData.msg
+msg/MovementCtrlMode.idl
+msg/MovementCtrlMode.msg
+msg/RobotStatus.idl
+msg/RobotStatus.msg

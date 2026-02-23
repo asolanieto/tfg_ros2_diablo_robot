@@ -1,0 +1,13 @@
+setup.py
+motion_msgs/__init__.py
+motion_msgs.egg-info/PKG-INFO
+motion_msgs.egg-info/SOURCES.txt
+motion_msgs.egg-info/dependency_links.txt
+motion_msgs.egg-info/top_level.txt
+motion_msgs/msg/__init__.py
+motion_msgs/msg/_ctrl_plot.py
+motion_msgs/msg/_leg_motors.py
+motion_msgs/msg/_motion_ctrl.py
+motion_msgs/msg/_movement_ctrl_data.py
+motion_msgs/msg/_movement_ctrl_mode.py
+motion_msgs/msg/_robot_status.py
