@@ -24,10 +24,6 @@ include_directories("$ENV{WEBOTS_HOME}/include/controller/cpp")
 link_directories("$ENV{WEBOTS_HOME}/lib/controller")
 
 
-add_executable(diablo_controller src/diablo_controller.cpp)
-target_include_directories(diablo_controller PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
 
 add_executable(diablo_driver src/diablo_driver.cpp)
 ament_target_dependencies(diablo_driver rclcpp std_msgs geometry_msgs sensor_msgs nav_msgs tf2 tf2_ros)
@@ -36,17 +32,7 @@ target_link_libraries(diablo_driver
   "$ENV{WEBOTS_HOME}/lib/controller/libCppController.so"
 )
 
-target_compile_features(diablo_controller PUBLIC c_std_99 cxx_std_17)
-ament_target_dependencies(
-  diablo_controller
-  "rclcpp"
-  "geometry_msgs"
-  "nav_msgs"
-  "tf2_ros"
-)
 
-install(TARGETS diablo_controller
-  DESTINATION lib/${PROJECT_NAME})
 
 install(TARGETS 
   diablo_driver

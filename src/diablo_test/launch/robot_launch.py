@@ -52,17 +52,17 @@ def generate_launch_description():
 
     # 5. BRIDGES
     scan_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'scan_bridge.py')],
+        cmd=['python3', os.path.join(package_dir, 'src/bridges', 'scan_bridge.py')],
         output='screen'
     )
 
     odom_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'odom_bridge.py')],
+        cmd=['python3', os.path.join(package_dir, 'src/bridges', 'odom_bridge.py')],
         output='screen'
     )
 
     joint_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'joint_bridge.py')],
+        cmd=['python3', os.path.join(package_dir, 'src/bridges', 'joint_bridge.py')],
         output='screen'
     )
 
