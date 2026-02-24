@@ -7,7 +7,7 @@ twist_mux:
         priority: 10
       keyboard:
         topic: cmd_vel_key
-        timeout: 2.0
+        timeout: 4.0
         priority: 100
     locks:
       pause:
