@@ -42,7 +42,7 @@ public:
   virtual void on_initialize();
   virtual void update(NavState & nav_state);
 
-// Añadido a partir de aqui:
+// Añadido para mapas dinámicos:
 protected:
   
 // Suscriptor y variable para guardar el mapa de SLAM

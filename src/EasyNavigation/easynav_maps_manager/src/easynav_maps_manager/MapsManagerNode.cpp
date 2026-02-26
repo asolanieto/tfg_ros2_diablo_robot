@@ -69,11 +69,10 @@ MapsManagerNode::on_configure([[maybe_unused]] const rclcpp_lifecycle::State & s
 {
 
   std::vector<std::string> map_types;
-  // 1. CORRECCIÓN: Comprobar si existe la lista antes de declararla
+  // Comprobar si existe la lista antes de declararla
   if (!has_parameter("map_types")) {
     declare_parameter("map_types", std::vector<std::string>());
   }
-  // He borrado el declare_parameter
   get_parameter("map_types", map_types);
 
   for (const auto & map_type : map_types) {
@@ -81,7 +80,7 @@ MapsManagerNode::on_configure([[maybe_unused]] const rclcpp_lifecycle::State & s
     // Definimos variable para el nombre del parámetro
     std::string param_name = map_type + std::string(".plugin");
 
-    // 2. CORRECCIÓN: Comprobar si existe el parámetro del plugin antes de declararlo
+    // Comprobar si existe el parámetro del plugin antes de declararlo
     if (!has_parameter(param_name)) {
          // Ponemos el nombre del plugin como valor por defecto
          declare_parameter(param_name, std::string("easynav_simple_maps_manager/SimpleMapsManager"));

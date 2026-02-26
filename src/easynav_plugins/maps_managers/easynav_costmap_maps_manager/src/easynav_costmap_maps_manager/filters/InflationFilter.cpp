@@ -114,7 +114,7 @@ InflationFilter::update(NavState & nav_state)
     recompute_static_inflation_(static_map);
   }
 
-  // --- SUSTITUIDO EL BLOQUE if (!matchedSize_)---
+  // Cambio para que sea compatible con mapas dinámicos generados por SLAM en tiempo real
   unsigned int current_sx = dynamic_map.getSizeInCellsX();
   unsigned int current_sy = dynamic_map.getSizeInCellsY();
 
@@ -125,7 +125,6 @@ InflationFilter::update(NavState & nav_state)
     last_size_x_ = current_sx;
     last_size_y_ = current_sy;
   }
-  // -------------------------------------------------------
 
   int min_i = 0;
   int min_j = 0;
@@ -158,7 +157,6 @@ InflationFilter::update(NavState & nav_state)
 
   updateCosts(dynamic_map, min_i, min_j, max_i, max_j);
 
-  // --- SUSTITUIDO ---
   unsigned int static_sx = static_inflated_.getSizeInCellsX();
   unsigned int static_sy = static_inflated_.getSizeInCellsY();
 
@@ -168,7 +166,7 @@ InflationFilter::update(NavState & nav_state)
       
       unsigned char static_cost = 0;
       
-      // SOLO leemos del mapa estático si estamos dentro de sus límites
+      // Solo leemos del mapa estático si estamos dentro de sus límites
       if (i < static_cast<int>(static_sx) && j < static_cast<int>(static_sy)) {
         static_cost = static_inflated_.getCost(i, j);
       }
@@ -178,7 +176,6 @@ InflationFilter::update(NavState & nav_state)
       dynamic_map.setCost(i, j, cost);
     }
   }
-  // -----------------------------------------
 
   nav_state.set("map.dynamic.filtered", dynamic_map_ptr);
 }

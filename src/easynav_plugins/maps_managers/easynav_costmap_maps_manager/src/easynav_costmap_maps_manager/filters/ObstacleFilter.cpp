@@ -23,15 +23,13 @@ ObstacleFilter::ObstacleFilter()
 void
 ObstacleFilter::on_initialize()
 {
-  // 1. Declaramos el parámetro si no existe (para evitar error "not declared")
   if (!parent_node_->has_parameter("CostmapMapsManager.publish_frequency")) {
       try {
         parent_node_->declare_parameter("CostmapMapsManager.publish_frequency", 0.0); 
-        // Lo iniciamos a 0.0 y lo cambiamos luego para forzar el evento de cambio
       } catch (...) {}
   }
 
-  // 2. Suscripción al mapa de SLAM
+  // Suscripción al mapa de SLAM
   auto qos = rclcpp::QoS(rclcpp::KeepLast(1)).transient_local().reliable();
   map_sub_ = parent_node_->create_subscription<nav_msgs::msg::OccupancyGrid>(
     "/map", qos, 
@@ -47,11 +45,8 @@ ObstacleFilter::map_callback(const nav_msgs::msg::OccupancyGrid::SharedPtr msg)
 
 void ObstacleFilter::update(NavState & nav_state)
 {
-  // CHIVATO
   static bool first_run = true;
   if (first_run) {
-    // RCLCPP_ERROR(parent_node_->get_logger(), ">>> OBSTACLE FILTER: COPY MODE (NO INFLATION) <<<");
-    // Forzamos parametro por si acaso
     parent_node_->set_parameter(rclcpp::Parameter("CostmapMapsManager.publish_frequency", 1.0));
     first_run = false;
   }
@@ -92,7 +87,7 @@ void ObstacleFilter::update(NavState & nav_state)
             for (unsigned int x = 0; x < size_x; ++x) {
                 unsigned int idx = x + (y * size_x);
                 int value = data[idx];
-                unsigned char cost = 0; // FREE_SPACE por defecto
+                unsigned char cost = 0;
 
                 if (value == 100) {
                     cost = 254; // Pared

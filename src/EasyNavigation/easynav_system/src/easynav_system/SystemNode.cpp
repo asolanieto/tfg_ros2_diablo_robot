@@ -39,112 +39,9 @@ namespace easynav
 
 using namespace std::chrono_literals;
 
-// SystemNode::SystemNode(const rclcpp::NodeOptions & options)
-// : LifecycleNode("system_node", 
-//     // FORZAMOS A FALSE (Hora del Sistema / Wall Time)
-//     rclcpp::NodeOptions(options).parameter_overrides(
-//       std::vector<rclcpp::Parameter>{
-//         rclcpp::Parameter("use_sim_time", false)
-//       }
-//     )
-// )
-// {
-//   realtime_cbg_ = create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive, false);
-
-//   nav_state_ = std::make_shared<NavState>();
-
-//   NavState::register_printer<nav_msgs::msg::Goals>(
-//     [](const nav_msgs::msg::Goals & goals) {
-//       std::ostringstream ret;
-//       ret << "{ " << rclcpp::Time(goals.header.stamp).seconds() << " } Goals " <<
-//         goals.goals.size() << " with :\n";
-//       for (const auto & goal : goals.goals) {
-//         ret << "\t--> (" << goal.pose.position.x << ", " << goal.pose.position.y << ")\n";
-//       }
-//       return ret.str();
-//     });
-
-//   controller_node_ = ControllerNode::make_shared();
-
-//   // ---------------------------------------------------------
-//   // ARREGLO PARA EL GESTOR DE MAPAS
-//   // --------------------------------------------------------- 
-//   // 1. Clonamos las opciones del padre
-//   rclcpp::NodeOptions maps_options = options;
-  
-//   // 2. Le permitimos leer parámetros del YAML
-//   maps_options.automatically_declare_parameters_from_overrides(false); // Estaba en true pero interfiere con el .yaml
-
-//   // 3. Forzamos el uso de argumentos (como --ros-args)
-//   maps_options.use_intra_process_comms(false); // Estaba en true pero ROS2 Humble da problemas
-
-//   // 4. Creamos el nodo pasando estas opciones explícitas
-//   maps_manager_node_ = std::make_shared<MapsManagerNode>(maps_options);
-
-//   // 5. Parche de seguridad (Hora Real)
-//   maps_manager_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
-  
-//   // ---------------------------------------------------------
-
-//   // ---------------------------------------------------------
-//   // ARREGLO PARA EL LOCALIZADOR
-//   // ---------------------------------------------------------
-//   // 1. Clonamos las opciones del padre (para heredar la ruta del YAML)
-//   rclcpp::NodeOptions loc_options = options;
-  
-//   // 2. Ajustes para que lea su propia sección del YAML sin conflictos
-//   loc_options.automatically_declare_parameters_from_overrides(false); 
-
-//   loc_options.use_intra_process_comms(false);
-
-//   // 3. Creamos el nodo pasando estas opciones explícitas
-//   localizer_node_ = std::make_shared<LocalizerNode>(loc_options);
-
-//   // 4. Parche de seguridad (Hora Real)
-//   localizer_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
-//   // ---------------------------------------------------------
-
-
-//   // ---------------------------------------------------------
-//   // ARREGLO PARA EL PLANIFICADOR (Planner)
-//   // ---------------------------------------------------------
-//   rclcpp::NodeOptions planner_ops = options;
-//   planner_ops.automatically_declare_parameters_from_overrides(false);
-//   planner_ops.use_intra_process_comms(false);
-  
-//   planner_node_ = std::make_shared<PlannerNode>(planner_ops);
-//   planner_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
-//   // ---------------------------------------------------------
-
-
-//   // ---------------------------------------------------------
-//   // ARREGLO PARA EL CONTROLADOR (Controller)
-//   // ---------------------------------------------------------
-//   rclcpp::NodeOptions controller_ops = options;
-//   controller_ops.automatically_declare_parameters_from_overrides(false);
-//   controller_ops.use_intra_process_comms(false);
-
-//   controller_node_ = std::make_shared<ControllerNode>(controller_ops);
-//   controller_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
-//   // ---------------------------------------------------------
-
-//   sensors_node_ = SensorsNode::make_shared();
-
-//   declare_parameter<bool>("use_cmd_vel_stamped", use_cmd_vel_stamped_);
-
-//   TFInfo tf_info;
-//   declare_parameter<std::string>("tf_prefix", tf_info.tf_prefix);
-//   declare_parameter<std::string>("robot_frame", tf_info.robot_frame);
-//   declare_parameter<std::string>("robot_footprint_frame", tf_info.robot_footprint_frame);
-//   declare_parameter<std::string>("odom_frame", tf_info.odom_frame);
-//   declare_parameter<std::string>("map_frame", tf_info.map_frame);
-//   declare_parameter<std::string>("world_frame", tf_info.world_frame);
-//   // get_logger().set_level(rclcpp::Logger::Level::Debug);
-// }
-
 SystemNode::SystemNode(const rclcpp::NodeOptions & options)
 : LifecycleNode("system_node", 
-    // FORZAMOS A FALSE (Hora del Sistema / Wall Time)
+    // Forzamos el parámetro 'use_sim_time' a false para evitar problemas de sincronización
     rclcpp::NodeOptions(options).parameter_overrides(
       std::vector<rclcpp::Parameter>{
         rclcpp::Parameter("use_sim_time", false)
@@ -167,15 +64,12 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
       return ret.str();
     });
 
-  // ---------------------------------------------------------
-  // ARREGLO PARA EL GESTOR DE MAPAS (maps_manager_node)
-  // --------------------------------------------------------- 
+  //  GESTOR DE MAPAS (maps_manager_node)
   {
     rclcpp::NodeOptions maps_options = options;
     maps_options.automatically_declare_parameters_from_overrides(false);
     maps_options.use_intra_process_comms(false);
     
-    // FORMA SEGURA DE AÑADIR ARGUMENTOS
     std::vector<std::string> args = maps_options.arguments();
     args.push_back("--ros-args");
     args.push_back("-r");
@@ -186,9 +80,7 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
     maps_manager_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
   }
   
-  // ---------------------------------------------------------
-  // ARREGLO PARA EL LOCALIZADOR (localizer_node)
-  // ---------------------------------------------------------
+  //  LOCALIZADOR (localizer_node)
   {
     rclcpp::NodeOptions loc_options = options;
     loc_options.automatically_declare_parameters_from_overrides(false); 
@@ -204,9 +96,7 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
     localizer_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
   }
 
-  // ---------------------------------------------------------
-  // ARREGLO PARA EL PLANIFICADOR (planner_node)
-  // ---------------------------------------------------------
+  //  PLANIFICADOR (planner_node)
   {
     rclcpp::NodeOptions planner_ops = options;
     planner_ops.automatically_declare_parameters_from_overrides(false);
@@ -222,9 +112,7 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
     planner_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
   }
 
-  // ---------------------------------------------------------
-  // ARREGLO PARA EL CONTROLADOR (controller_node)
-  // ---------------------------------------------------------
+  //  CONTROLADOR (controller_node)
   {
     rclcpp::NodeOptions controller_ops = options;
     controller_ops.automatically_declare_parameters_from_overrides(false);
@@ -240,9 +128,7 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
     controller_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
   }
 
-  // ---------------------------------------------------------
-  // ARREGLO PARA SENSORS (sensors_node)
-  // ---------------------------------------------------------
+  //  SENSORS (sensors_node)
   {
     rclcpp::NodeOptions sensors_ops = options;
     sensors_ops.automatically_declare_parameters_from_overrides(false);
@@ -257,7 +143,6 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
     sensors_node_ = std::make_shared<SensorsNode>(sensors_ops);
     sensors_node_->set_parameter(rclcpp::Parameter("use_sim_time", false));
   }
-  // ---------------------------------------------------------
 
   declare_parameter<bool>("use_cmd_vel_stamped", use_cmd_vel_stamped_);
 
@@ -268,14 +153,7 @@ SystemNode::SystemNode(const rclcpp::NodeOptions & options)
   declare_parameter<std::string>("odom_frame", tf_info.odom_frame);
   declare_parameter<std::string>("map_frame", tf_info.map_frame);
   declare_parameter<std::string>("world_frame", tf_info.world_frame);
-  // get_logger().set_level(rclcpp::Logger::Level::Debug);
 }
-
-
-
-
-
-
 
 
 
@@ -455,24 +333,22 @@ SystemNode::system_cycle()
   maps_manager_node_->cycle(nav_state_);
   goal_manager_->update(*nav_state_);
 
-  // --- PARCHE DE SEGURIDAD DE RELOJES ---
+  // MODIFICACIÓN TIEMPOS
 
-  // 1. Obtenemos los tiempos originales
+  //  Obtenemos los tiempos originales
   rclcpp::Time goals_ts_raw(goal_manager_->get_goals().header.stamp);
   rclcpp::Time planner_ts = planner_node_->get_last_execution_ts();
 
-  // 2. Normalizamos 'goals_ts' para que tenga el mismo tipo de reloj que 'planner_ts'
-  rclcpp::Time goals_ts = goals_ts_raw; // Copia por defecto
+  //  Normalizamos 'goals_ts' para que tenga el mismo tipo de reloj que 'planner_ts'
+  rclcpp::Time goals_ts = goals_ts_raw;
 
   if (goals_ts_raw.get_clock_type() != planner_ts.get_clock_type()) {
     // Creamos un nuevo tiempo clonando los nanosegundos pero robando el tipo de reloj
     goals_ts = rclcpp::Time(goals_ts_raw.nanoseconds(), planner_ts.get_clock_type());
   }
 
-  // 3. Ahora la comparación es segura (mismos tipos de reloj)
   planner_node_->cycle(nav_state_, planner_ts < goals_ts);
 
-  // --- FIN PARCHE ---
 
   if (navstate_pub_->get_subscription_count() > 0) {
     std_msgs::msg::String msg;

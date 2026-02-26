@@ -376,7 +376,7 @@ SensorsNode::cycle(std::shared_ptr<NavState> nav_state)
   for (auto & group_perceptions : perceptions_) {
     for (auto & p : group_perceptions.second) {
       
-      // --- PARCHE INICIO: Corrección de tipos de reloj ---
+      // Corrección de tipos de reloj
       // Obtenemos el timestamp del mensaje
       rclcpp::Time percept_time = p.perception->stamp;
       
@@ -386,11 +386,9 @@ SensorsNode::cycle(std::shared_ptr<NavState> nav_state)
         percept_time = rclcpp::Time(percept_time.nanoseconds(), now().get_clock_type());
       }
       
-      // Ahora la resta es segura porque ambos usan el mismo clock_type
       if (p.perception->valid && (now() - percept_time).seconds() > forget_time_) {
         p.perception->valid = false;
       }
-      // --- PARCHE FIN ---
     }
     
     if (!set_by_group(group_perceptions.first, group_perceptions.second, *nav_state)) {

@@ -231,7 +231,7 @@ protected:
 
   bool matchedSize_ {false};
 
-  // NUEVO!!!!!!!!!!!!!!!!
+  // Añadido para mapas dinámicos
   unsigned int last_size_x_ {0};
   unsigned int last_size_y_ {0};
 

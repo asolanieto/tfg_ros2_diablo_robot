@@ -230,10 +230,9 @@ void InflationFilter::update(::easynav::NavState & nav_state)
   // Obtenemos copia del mapa (Necesario para SLAM en cada ciclo)
   navmap_ = nav_state.get<::navmap::NavMap>("map.navmap");
 
-  // --- 1. LÓGICA DE CONVERSIÓN (0-100 -> 0-255) ---
+  // LÓGICA DE CONVERSIÓN (0-100 -> 0-255)
   if (!navmap_.has_layer("obstacles")) {
     
-    // Intentamos coger "occupancy" usando casting dinámico (LA FORMA CORRECTA)
     auto occ_view_i8 = std::dynamic_pointer_cast<::navmap::LayerView<std::int8_t>>(
       navmap_.layers.get("occupancy"));
     
@@ -246,7 +245,6 @@ void InflationFilter::update(::easynav::NavState & nav_state)
        
        auto & obs_data = obs_view->mutable_data();
 
-       // CONVERSIÓN AGRESIVA: Si vale más de 90, es MURO LETAL (254)
        if (occ_view_i8) {
            const auto & occ_data = occ_view_i8->data();
            for (size_t i = 0; i < occ_data.size(); ++i) {
@@ -265,7 +263,7 @@ void InflationFilter::update(::easynav::NavState & nav_state)
     } 
   }
 
-  // --- 2. INFLADO ---
+  // INFLADO
   const bool ok = inflate_layer_u8(
     navmap_,
     "obstacles", 
@@ -277,34 +275,6 @@ void InflationFilter::update(::easynav::NavState & nav_state)
   if (!ok) {
      return;
   }
-
-  //  DEBUG 
-  // Hacemos el get normal y luego el cast, igual que arriba.
-  // auto inf_view = std::dynamic_pointer_cast<::navmap::LayerView<std::uint8_t>>(
-  //     navmap_.layers.get("inflated_obstacles")
-  // );
-
-  // if (inf_view) {
-  //     int lethal_count = 0;
-  //     int high_cost_count = 0;
-  //     for (auto val : inf_view->data()) {
-  //         if (val == 254 || val == 255) lethal_count++;
-  //         else if (val > 100) high_cost_count++;
-  //     }
-      
-  //     // Imprimimos solo si hay algo relevante para no saturar el log
-  //     if (lethal_count > 0 || high_cost_count > 0) {
-  //         RCLCPP_INFO(parent_node_->get_logger(), 
-  //             "[InflationFilter] OK -> Letales (254/255): %d | Costosas (>100): %d", 
-  //             lethal_count, high_cost_count);
-  //     } else {
-  //          // Si esto sale, el inflado no está funcionando o el mapa está vacío
-  //          RCLCPP_WARN(parent_node_->get_logger(), "[InflationFilter] ALERTA: Capa inflada vacía o coste muy bajo.");
-  //     }
-  // }
-  // -----------------------
-
-  // 4. GUARDADO
   nav_state.set("map.navmap", navmap_);
 }
 

@@ -1,83 +1,3 @@
-# # --- PLANIFICADOR ---
-# planner_node:
-#   ros__parameters:
-#     use_sim_time: false
-#     planner_types: ["CostmapPlanner"] # CAMBIO AQUI
-
-#     CostmapPlanner:
-#       plugin: "easynav_costmap_planner/CostmapPlanner"
-#       # Permitir replanificación continua si el mapa cambia (SLAM)
-#       continuous_replan: true 
-#       # Umbral de tolerancia al objetivo
-#       goal_tolerance: 0.1
-#       # Capa del mapa a usar (debe coincidir con el MapsManager)
-#       layer: "inflation" 
-
-# # --- LOCALIZADOR ---
-# localizer_node:
-#   ros__parameters:
-#     use_sim_time: false
-#     localizer_types: ["DummyLocalizer"] # CAMBIO AQUI
-
-#     # Este plugin no hace nada, solo confía en la TF map->odom que publica SLAM
-#     DummyLocalizer:
-#       plugin: "easynav_localizer/DummyLocalizer"
-
-# # --- GESTOR DE MAPAS ---
-# maps_manager_node:
-#   ros__parameters:
-#     use_sim_time: false
-#     # Usamos CostmapMapsManager para trabajar con rejillas 2D (OccupancyGrid)
-#     map_types: ["CostmapMapsManager"] 
-
-#     CostmapMapsManager:
-#       plugin: "easynav_costmap_maps_manager/CostmapMapsManager"
-      
-#       # Frecuencia de actualización del mapa de costes
-#       freq: 5.0
-#       publish_frequency: 1.0  # Publicar el mapa para RViz 1 vez por segundo 
-#       resolution: 0.05 # Debe coincidir con slam_toolbox
-      
-#       # Definimos las capas: Obstáculos (del mapa) e Inflación (seguridad)
-#       filters: ["obstacle", "inflation"]
-      
-#       # 1. Capa de Obstáculos: Lee el topic /map
-#       obstacle:
-#         plugin: "easynav_costmap_maps_manager/CostmapMapsManager/ObstacleFilter"
-#         enabled: true
-#         topic: "/map" 
-#         threshold: 90 # Valor a partir del cual se considera obstáculo
-        
-#       # 2. Capa de Inflación: Añade "grosor" a las paredes para que el robot no se pegue
-#       inflation:
-#         plugin: "easynav_costmap_maps_manager/CostmapMapsManager/InflationFilter"
-#         enabled: true
-#         inscribed_radius: 0.25 # Radio del robot (Diablo es aprox 50cm ancho?)
-#         inflation_radius: 0.6  # Radio de influencia de coste
-#         cost_scaling_factor: 5.0
-
-# # --- CONTROLADOR (Se mantiene igual, el MPC es robusto) ---
-# controller_node:
-#   ros__parameters:
-#     use_sim_time: false
-#     controller_types: ["MPCController"]
-    
-#     MPCController:
-#       plugin: "easynav_mpc_controller/MPCController"
-#       horizon_steps: 20
-#       dt: 0.1
-#       max_v: 0.5
-#       max_w: 1.0
-#       # ... resto de tus parámetros del MPC ...
-      
-# # --- SISTEMA ---
-# system_main:
-#   ros__parameters:
-#     use_sim_time: false
-#     update_frequency: 10.0
-#     robot_footprint_frame: "base_link"
-
-
 # --- SYSTEM MAIN ---
 system_main:
   ros__parameters:
@@ -94,7 +14,8 @@ planner_node:
     CostmapPlanner:
       plugin: "easynav_costmap_planner/CostmapPlanner"
       continuous_replan: true 
-      goal_tolerance: 0.1
+      goal_tolerance: 0.25 # Distancia a la que el planner considerará que ha llegado al objetivo.
+      goal_yaw_tolerance: 0.35 # Ángulo (en radianes) a la que el planner considerará que ha alcanzado la orientación deseada.
       transform_tolerance: 2.0
       layer: "inflation"
       robot_radius: 0.5 # Para que el planner tenga en cuenta el tamaño del robot al planificar rutas seguras. 
@@ -121,19 +42,18 @@ maps_manager_node:
       inflation:
         plugin: "easynav_costmap_maps_manager/CostmapMapsManager/InflationFilter"
         enabled: true
-        inscribed_radius: 0.35
+        inscribed_radius: 0.35 
         inflation_radius: 0.7 
         cost_scaling_factor: 8.0 # A mas alto menos gordos los obstaculos
 
 # --- LOCALIZER NODE ---
 /localizer_node:
   ros__parameters:
-    use_sim_time: false # Ojo con esto
+    use_sim_time: false 
     localizer_types: ["easynav_simple_localizer/AMCLLocalizer"]
 
     easynav_simple_localizer/AMCLLocalizer:
       plugin: "easynav_simple_localizer/AMCLLocalizer"
-      # Los parametros de particulas ya dan igual, el codigo los ignora
 
 # --- CONTROLLER NODE ---
 controller_node:
