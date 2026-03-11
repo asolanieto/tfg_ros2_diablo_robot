@@ -29,7 +29,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
   ${PCL_INCLUDE_DIRS}
-  "/home/adri/tfg_ws/src/perception_pcl/pcl_conversions/include"  # AÑADIDO
+  "/home/diablo/diablo_ws/src/perception_pcl/pcl_conversions/include"  # AÑADIDO
   ${message_filters_INCLUDE_DIRS}
   ${pcl_msgs_INCLUDE_DIRS}
 )

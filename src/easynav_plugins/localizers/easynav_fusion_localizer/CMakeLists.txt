@@ -51,7 +51,6 @@ target_link_libraries(fusion_localizer
   easynav_localizer::easynav_localizer
   pluginlib::pluginlib
   ${geographic_msgs_TARGETS}
-  GeographicLib
   ${GeographicLib_LIBRARIES}
   ${robot_localization_LIBRARIES}
   angles::angles

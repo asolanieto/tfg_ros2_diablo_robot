@@ -38,7 +38,6 @@ target_link_libraries(gps_localizer
   easynav_core::easynav_core
   pluginlib::pluginlib
   ${geographic_msgs_TARGETS}
-  GeographicLib
   ${GeographicLib_LIBRARIES}
 )
 

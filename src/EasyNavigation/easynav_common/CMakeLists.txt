@@ -32,9 +32,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
   ${PCL_INCLUDE_DIRS}
-  "/home/adri/tfg_ws/src/vision_opencv/cv_bridge/include"   # AÑADIDO
-  "/home/adri/tfg_ws/install/pcl_conversions/include/pcl_conversions"    # AÑADIDO
-  "/home/adri/tfg_ws/install/cv_bridge/include/cv_bridge"    # AÑADIDO
+  "/home/diablo/diablo_ws/src/vision_opencv/cv_bridge/include"   # AÑADIDO
+  "/home/diablo/diablo_ws/install/pcl_conversions/include/pcl_conversions"    # AÑADIDO
+  "/home/diablo/diablo_ws/install/cv_bridge/include/cv_bridge"    # AÑADIDO
 
 )
 target_link_libraries(${PROJECT_NAME} PUBLIC
@@ -50,7 +50,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
   ${nav_msgs_TARGETS}
   yaets::yaets
   ${PCL_LIBRARIES}
-  "/home/adri/tfg_ws/install/cv_bridge/lib/libcv_bridge.so"
+  "/home/diablo/diablo_ws/install/cv_bridge/lib/libcv_bridge.so"
 )
 
 if(EASYNAV_TRACING)
