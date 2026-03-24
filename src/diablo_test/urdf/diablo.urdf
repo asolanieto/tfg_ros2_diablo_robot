@@ -791,18 +791,13 @@
       xyz="0 1 0" />
   </joint>
 
-  <webots>
-    <plugin type="webots_ros2_driver::Ros2IMU">
-      <enabled>true</enabled>
-      <topicName>/imu</topicName>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>100</updateRate>
-      <frameName>base_link</frameName>
-      
-      <inertialUnitName>imu</inertialUnitName>
-      <gyroName>gyro</gyroName>
-      <accelerometerName>accl</accelerometerName>
-    </plugin>
-  </webots>
+  <link name="lidar_link">
+  </link>
+
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.09 0.0 0.22" rpy="0.0 0.0 0.0"/>
+  </joint>
 
 </robot>

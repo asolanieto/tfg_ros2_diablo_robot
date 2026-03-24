@@ -1,40 +1,60 @@
 import os
 from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from ament_index_python.packages import get_package_share_directory
 from launch.actions import TimerAction, ExecuteProcess
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-from webots_ros2_driver.webots_launcher import WebotsLauncher
 
 def generate_launch_description():
     
     package_dir = get_package_share_directory('diablo_test')
 
     # Rutas
-    world_path = os.path.join(package_dir, 'worlds', 'diablo_robot.wbt') 
     urdf_path = os.path.join(package_dir, 'urdf', 'diablo.urdf')
     easynav_config_path = os.path.join(package_dir, 'config', 'easynav_params.yaml')
     slam_config = os.path.join(package_dir, 'config', 'slam_localization.yaml') 
     mux_config_path = os.path.join(package_dir, 'config', 'mux_params.yaml')
 
 
+    # 1. Driver propietario del hardware
+    diablo_hardware_node = Node(
+        package='diablo_ctrl', # Asegúrate de que este es tu paquete real
+        executable='diablo_ctrl_node',
+        output='screen'
+    )
+
     # 2. Driver
     my_robot_driver = Node(
         package='diablo_test',
-        executable='diablo_driver',
+        executable='diablo_bridge',
         output='screen',
-        additional_env={'WEBOTS_CONTROLLER_URL': 'DiabloOriginal'},
-        parameters=[{'robot_description': urdf_path}, {'use_sim_time': False}],
-        remappings=[('/joint_states', '/joint_states_webots'), # Hacemos que publique en un topic "intermedio" para que el bridge lo sincronice a tiempo real
-                    ('/tf', '/tf_garbage')]  # Evitamos que publique TFs "caducados" que confunden a RViz y SLAM. El bridge se encargará de publicar TFs frescos en el topic correcto (/tf
-    )
+        parameters=[{'robot_description': urdf_path}, {'use_sim_time': False}])
+    
 
     # 3. STATIC TF (Para unir base_link con el lidar)
-    lidar_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='lidar_tf_publisher',
-        arguments=['0', '0', '0.15', '3.1416', '0', '0', 'base_link', 'lidar_link'],
-        parameters=[{'use_sim_time': False}]
+    # lidar_tf = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     name='lidar_tf_publisher',
+    #     arguments=[
+    #         '--x', '0.09', '--y', '0.0', '--z', '0.22',
+    #         '--roll', '0.0', '--pitch', '0.0', '--yaw', '0.0',
+    #         '--frame-id', 'base_link', '--child-frame-id', 'lidar_link'
+    #     ],
+    #     parameters=[{'use_sim_time': False}]
+    # )
+
+    # Launch driver lidar
+    lidar_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(get_package_share_directory('rplidar_ros'), 'launch', 'rplidar_s3_launch.py')
+        ),
+        launch_arguments={
+            'frame_id': 'lidar_link',
+            'serial_port': '/dev/ttyUSB0',
+        }.items()
     )
 
     # 4. Robot State Publisher (use_sim_time FALSE)
@@ -46,20 +66,20 @@ def generate_launch_description():
     )
 
     # 5. BRIDGES
-    scan_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'scan_bridge.py')],
-        output='screen'
-    )
+    # scan_bridge_cmd = ExecuteProcess(
+    #     cmd=['python3', os.path.join(package_dir, 'src', 'scan_bridge.py')],
+    #     output='screen'
+    # )
 
-    odom_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'odom_bridge.py')],
-        output='screen'
-    )
+    # odom_bridge_cmd = ExecuteProcess(
+    #     cmd=['python3', os.path.join(package_dir, 'src', 'odom_bridge.py')],
+    #     output='screen'
+    # )
 
-    joint_bridge_cmd = ExecuteProcess(
-        cmd=['python3', os.path.join(package_dir, 'src', 'joint_bridge.py')],
-        output='screen'
-    )
+    # joint_bridge_cmd = ExecuteProcess(
+    #     cmd=['python3', os.path.join(package_dir, 'src', 'joint_bridge.py')],
+    #     output='screen'
+    # )
 
     # 6. SLAM Toolbox (Asíncrono, use_sim_time=False en el yaml)
     slam_node = Node(
@@ -79,6 +99,7 @@ def generate_launch_description():
         arguments=['--ros-args', '--params-file', easynav_config_path],
         parameters=[
             easynav_config_path,
+            {'use_sim_time': False},
             {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
         ],
         remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
@@ -96,19 +117,26 @@ def generate_launch_description():
     )
 
     # Retrasos para asegurar orden de carga
-    delayed_nodes = TimerAction(
-        period=5.0, 
-        actions=[slam_node, easynav_node]
+    delay_slam = TimerAction(
+        period=8.0, 
+        actions=[slam_node]
+    )
+
+    delay_easynav = TimerAction(
+        period=15.0, 
+        actions=[easynav_node]
     )
     
     return LaunchDescription([
-        webots,
+        diablo_hardware_node,
         my_robot_driver,
-        lidar_tf,
         robot_state_publisher,
-        scan_bridge_cmd,
-        odom_bridge_cmd,
-        joint_bridge_cmd, 
-        delayed_nodes,
+        # scan_bridge_cmd,
+        # odom_bridge_cmd,
+        # joint_bridge_cmd, 
+        # lidar_tf,
+        lidar_launch,
+        delay_slam,
+        delay_easynav,
         twist_mux_node
     ])

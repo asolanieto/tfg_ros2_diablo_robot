@@ -8,20 +8,18 @@ class AutoScanBridge(Node):
     def __init__(self):
         super().__init__('scan_bridge')
         
-        # QoS compatible con simuladores y hardware real (Best Effort)
+        # QoS compatible con simuladores y hardware real
         qos = QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT)
         qos_out = QoSProfile(depth=10, reliability=ReliabilityPolicy.RELIABLE)
 
-        # Suscripción al tópico original (Time=Simulación)
+        # Suscripción al tópico original
         self.sub = self.create_subscription(LaserScan, '/scan', self.scan_callback, qos)
         
-        # Publicación al tópico puenteado (Time=Real)
+        # Publicación al tópico puenteado
         self.pub = self.create_publisher(LaserScan, '/scan_bridged', qos_out)
         
     def scan_callback(self, msg):
-        # TRUCO SENCILLO Y ROBUSTO:
-        # Ignoramos cuándo se generó en Webots. Decimos que ha ocurrido "AHORA MISMO".
-        # Al usar use_sim_time=False en el launch, esto coge la hora de tu PC.
+        
         msg.header.stamp = self.get_clock().now().to_msg()
         
         # Publicamos

@@ -14,7 +14,7 @@ class JointBridge(Node):
         # 1. Escuchamos el topic "crudo" del simulador
         self.sub = self.create_subscription(
             JointState,
-            '/joint_states_webots', # OJO: Remapearemos el driver a este nombre
+            '/joint_states_webots',
             self.joint_callback,
             qos)
             

@@ -47,7 +47,8 @@ void DiabloBridge::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg
 
 void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr msg)
 {
-    rclcpp::Time current_time = msg->header.stamp;
+    //rclcpp::Time current_time = msg->header.stamp;
+    rclcpp::Time current_time = this->now();
 
     // Calcular el ángulo absoluto de cada rueda: (Revoluciones * 2Pi) + Posición en radianes
     double current_left_angle = (msg->left_wheel_enc_rev * 2.0 * M_PI) + msg->left_wheel_pos;

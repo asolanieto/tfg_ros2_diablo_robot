@@ -34,7 +34,6 @@ class OdomBridge(Node):
         # 2. Creamos la Transformada (TF) con la HORA ACTUAL DEL SISTEMA
         t = TransformStamped()
         
-        # Importante: Usar el reloj del nodo (System Time), no el del mensaje original
         t.header.stamp = self.get_clock().now().to_msg()
         t.header.frame_id = 'odom'
         t.child_frame_id = 'base_link'
@@ -48,7 +47,7 @@ class OdomBridge(Node):
         t.transform.rotation.z = qz
         t.transform.rotation.w = qw
 
-        # 3. Emitimos la TF "rejuvenecida"
+        # 3. Emitimos la TF
         self.tf_broadcaster.sendTransform(t)
 
 def main(args=None):

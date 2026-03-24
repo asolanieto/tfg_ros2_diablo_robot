@@ -37,9 +37,7 @@ install(TARGETS
 install(DIRECTORY
   urdf
   launch
-  worlds
   meshes
-  textures
   config
   maps
   DESTINATION share/${PROJECT_NAME}
