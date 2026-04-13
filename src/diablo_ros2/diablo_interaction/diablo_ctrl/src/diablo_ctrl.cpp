@@ -121,7 +121,7 @@ int main(int argc, char **argv)
     bodyStatePublisher.body_pub_init();
 
     // vehicle.telemetry->enableLog(DIABLO::OSDK::TOPIC_POWER);
-    // vehicle.telemetry->setMaxSpeed(1.0);
+    //vehicle.telemetry->setMaxSpeed(0.5);
     node->pMovementCtrl = vehicle.movement_ctrl;
     node->pTelemetry = vehicle.telemetry;
     node->run_();

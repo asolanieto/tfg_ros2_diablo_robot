@@ -5,25 +5,28 @@
             <transport_id>husarnet_ipv6</transport_id>
             <type>UDPv6</type>
         </transport_descriptor>
+        
+        <transport_descriptor>
+            <transport_id>shm_local</transport_id>
+            <type>SHM</type>
+        </transport_descriptor>
     </transport_descriptors>
 
     <participant profile_name="husarnet_profile" is_default_profile="true">
         <rtps>
             <userTransports>
                 <transport_id>husarnet_ipv6</transport_id>
+                <transport_id>shm_local</transport_id>
             </userTransports>
-            <useBuiltinTransports>true</useBuiltinTransports>
+            
+            <useBuiltinTransports>false</useBuiltinTransports>
+            
             <builtin>
                 <initialPeersList>
                     <locator>
                         <udpv6>
                             <address>fc94:895d:2729:ce2e:05d7:5613:5e0f:cf5a</address>
                         </udpv6>
-                    </locator>
-                    <locator>
-                        <udpv4>
-                            <address>127.0.0.1</address>
-                        </udpv4>
                     </locator>
                 </initialPeersList>
             </builtin>

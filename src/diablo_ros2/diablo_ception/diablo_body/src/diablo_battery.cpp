@@ -12,8 +12,8 @@ void diablo_battery_publisher::battery_pub_init(void)
 }
 
 void diablo_battery_publisher::lazyBatteryPublisher(void){
-    if(battery_Publisher_->get_subscription_count() > 0)
-    {
+    // if(battery_Publisher_->get_subscription_count() > 0)
+    // {
         bool battery_Pub_mark = false;
         if(this->vehicle->telemetry->newcome & 0x02)
         {
@@ -33,7 +33,7 @@ void diablo_battery_publisher::lazyBatteryPublisher(void){
             battery_Publisher_->publish(battery_msg_);
             battery_Pub_mark = false;
         }
-    }
+    // }
 
 }
 

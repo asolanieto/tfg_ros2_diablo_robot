@@ -9,7 +9,7 @@ slam_toolbox:
     odom_frame: "odom"
     map_frame: "map"
     base_frame: "base_link"
-    scan_topic: "/scan" # Asegúrate que tu robot publica aquí
+    scan_topic: "/scan"
     
     # Rendimiento
     map_update_interval: 0.5 
@@ -23,8 +23,8 @@ slam_toolbox:
     
     # Ajustes del optimizador
     optimizer_skip_step: 1
-    minimum_travel_distance: 0.05
-    minimum_travel_heading: 0.05
+    minimum_travel_distance: 0.001
+    minimum_travel_heading: 0.001
 
     throttle_scans: 2             # Saltar 1 de cada 2 escaneos (reduce carga al 50%)
     transform_publish_period: 0.05      # Publicar TFs a 20Hz

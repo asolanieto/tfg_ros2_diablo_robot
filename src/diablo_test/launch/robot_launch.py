@@ -19,11 +19,11 @@ def generate_launch_description():
 
 
     # 1. Driver propietario del hardware
-    diablo_hardware_node = Node(
-        package='diablo_ctrl', # Asegúrate de que este es tu paquete real
-        executable='diablo_ctrl_node',
-        output='screen'
-    )
+    # diablo_hardware_node = Node(
+    #     package='diablo_ctrl', # Asegúrate de que este es tu paquete real
+    #     executable='diablo_ctrl_node',
+    #     output='screen'
+    # )
 
     # 2. Driver
     my_robot_driver = Node(
@@ -33,19 +33,6 @@ def generate_launch_description():
         parameters=[{'robot_description': urdf_path}, {'use_sim_time': False}])
     
 
-    # 3. STATIC TF (Para unir base_link con el lidar)
-    # lidar_tf = Node(
-    #     package='tf2_ros',
-    #     executable='static_transform_publisher',
-    #     name='lidar_tf_publisher',
-    #     arguments=[
-    #         '--x', '0.09', '--y', '0.0', '--z', '0.22',
-    #         '--roll', '0.0', '--pitch', '0.0', '--yaw', '0.0',
-    #         '--frame-id', 'base_link', '--child-frame-id', 'lidar_link'
-    #     ],
-    #     parameters=[{'use_sim_time': False}]
-    # )
-
     # Launch driver lidar
     lidar_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -54,6 +41,7 @@ def generate_launch_description():
         launch_arguments={
             'frame_id': 'lidar_link',
             'serial_port': '/dev/ttyUSB0',
+            'scan_mode': 'Standard'
         }.items()
     )
 
@@ -67,7 +55,7 @@ def generate_launch_description():
 
     # 5. BRIDGES
     # scan_bridge_cmd = ExecuteProcess(
-    #     cmd=['python3', os.path.join(package_dir, 'src', 'scan_bridge.py')],
+    #     cmd=['python3', '/home/diablo/diablo_ws/src/diablo_test/src/bridges/scan_bridge.py'],
     #     output='screen'
     # )
 
@@ -91,19 +79,19 @@ def generate_launch_description():
     )
 
     # 7. EasyNav (use_sim_time=False en el yaml)
-    easynav_node = Node(
-        package='easynav_system',
-        executable='system_main',
-        name='system_main',
-        output='screen',
-        arguments=['--ros-args', '--params-file', easynav_config_path],
-        parameters=[
-            easynav_config_path,
-            {'use_sim_time': False},
-            {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
-        ],
-        remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
-    )
+    # easynav_node = Node(
+    #     package='easynav_system',
+    #     executable='system_main',
+    #     name='system_main',
+    #     output='screen',
+    #     arguments=['--ros-args', '--params-file', easynav_config_path],
+    #     parameters=[
+    #         easynav_config_path,
+    #         {'use_sim_time': False},
+    #         {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
+    #     ],
+    #     remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
+    # )
 
     # 8. Twist Mux 
     twist_mux_node = Node(
@@ -116,27 +104,32 @@ def generate_launch_description():
         remappings=[('/cmd_vel_out', '/cmd_vel')]
     )
 
+    # delay_diablo_ctrl = TimerAction(
+    #     period=4.0, 
+    #     actions=[diablo_hardware_node]
+    # )
+    
+    
     # Retrasos para asegurar orden de carga
     delay_slam = TimerAction(
-        period=8.0, 
+        period=15.0, 
         actions=[slam_node]
     )
 
-    delay_easynav = TimerAction(
-        period=15.0, 
-        actions=[easynav_node]
+
+    # Retrasos para asegurar orden de carga
+    delay_all = TimerAction(
+        period=6.0, 
+        actions=[my_robot_driver, robot_state_publisher, twist_mux_node]
     )
+
+    # delay_easynav = TimerAction(
+    #     period=15.0, 
+    #     actions=[easynav_node]
+    # )
     
     return LaunchDescription([
-        diablo_hardware_node,
-        my_robot_driver,
-        robot_state_publisher,
-        # scan_bridge_cmd,
-        # odom_bridge_cmd,
-        # joint_bridge_cmd, 
-        # lidar_tf,
         lidar_launch,
         delay_slam,
-        delay_easynav,
-        twist_mux_node
+        delay_all
     ])

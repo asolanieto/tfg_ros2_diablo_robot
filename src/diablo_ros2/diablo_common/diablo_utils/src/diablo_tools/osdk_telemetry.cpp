@@ -273,6 +273,16 @@ void Telemetry::SerialHandle(void)
         pData += sizeof(OSDK_Push_Data_Timestamp_t);
         log_start = false; //will only record timestamp once per log
 
+
+        // BEGUGGGGG
+        // static int debug_counter = 0;
+        // if (debug_counter++ % 50 == 0) {
+        //     std::cout << "DEBUG OSDK -> flag->status: " << (int)flag->status 
+        //             << " | flag->motor: " << (int)flag->motor << std::endl;
+        // }
+
+
+
         if(flag->status)
         {
             memcpy(&this->status, pData, sizeof(OSDK_Push_Data_Status_t));

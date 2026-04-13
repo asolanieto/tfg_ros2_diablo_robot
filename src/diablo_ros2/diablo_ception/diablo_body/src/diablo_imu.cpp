@@ -15,8 +15,8 @@ void diablo_imu_publisher::imu_pub_init(void)
 
 
 void diablo_imu_publisher::lazyPublisher(void){
-    if(imu_Publisher_->get_subscription_count() > 0 || euler_Publisher_->get_subscription_count() > 0)
-    {
+    // if(imu_Publisher_->get_subscription_count() > 0 || euler_Publisher_->get_subscription_count() > 0)
+    // {
         bool imu_Pub_mark = false;
         if(this->vehicle->telemetry->newcome & 0x10)
         {
@@ -77,7 +77,7 @@ void diablo_imu_publisher::lazyPublisher(void){
 
             imu_Pub_mark = false;
         }
-    }
+    // }
 }
 
 diablo_imu_publisher::diablo_imu_publisher(rclcpp::Node::SharedPtr node_ptr,DIABLO::OSDK::Vehicle* vehicle)

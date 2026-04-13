@@ -6,13 +6,25 @@ void diablo_motors_publisher::motors_pub_init(void)
 {
     motors_Publisher_ = this->node_ptr->create_publisher<motion_msgs::msg::LegMotors>("diablo/sensor/Motors",10);
     timer_ = this->node_ptr->create_wall_timer(20ms,std::bind(&diablo_motors_publisher::lazyMotorsPublisher, this));
-    this->vehicle->telemetry->configTopic(DIABLO::OSDK::TOPIC_MOTOR, OSDK_PUSH_DATA_50Hz);
-    this->vehicle->telemetry->configUpdate(); 
+    // this->vehicle->telemetry->configTopic(DIABLO::OSDK::TOPIC_MOTOR, OSDK_PUSH_DATA_50Hz);
+    // this->vehicle->telemetry->configUpdate(); 
+    // SUSTITUIDO POR PARCHE:
+    // Retardo táctico para asegurar que el serial y el microcontrolador están listos
+    usleep(500000); // Espera 0.5 segundos
+
+    // Configuramos y guardamos el resultado
+    uint8_t cfg_res = this->vehicle->telemetry->configTopic(DIABLO::OSDK::TOPIC_MOTOR, OSDK_PUSH_DATA_50Hz);
+    uint8_t upd_res = this->vehicle->telemetry->configUpdate(true); // Pasamos 'true' para forzar guardado
+
+    // std::cout << "=== CONFIG MOTOR INIT ===" << std::endl;
+    // std::cout << "configTopic res: " << (int)cfg_res << " | configUpdate res: " << (int)upd_res << std::endl;
+    // std::cout << "=========================" << std::endl;
 }
 
 void diablo_motors_publisher::lazyMotorsPublisher(void){
-    if(motors_Publisher_->get_subscription_count() > 0)
-    {
+    // if(motors_Publisher_->get_subscription_count() > 0)
+    // {
+    // COMENTADO PARA QUE SEA UN PUBLICADOR ACTIVO, CON LA RED DE HUSARNET UN PUBLICADOR PASIVO DA PROBLEMAS
         bool motors_Pub_mark = false;
         
         if(this->vehicle->telemetry->newcome & 0x01)
@@ -61,7 +73,7 @@ void diablo_motors_publisher::lazyMotorsPublisher(void){
             motors_Publisher_->publish(motors_msg_);
             motors_Pub_mark = false;
         }
-    }
+    // }
 }
 
 diablo_motors_publisher::diablo_motors_publisher(rclcpp::Node::SharedPtr node_ptr,DIABLO::OSDK::Vehicle* vehicle)

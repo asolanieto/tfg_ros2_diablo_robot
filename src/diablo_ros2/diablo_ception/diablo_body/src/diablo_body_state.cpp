@@ -13,8 +13,8 @@ void diablo_body_state_publisher::body_pub_init(void)
 
 
 void diablo_body_state_publisher::lazyPublisher(void){
-    if(robot_state_Publisher_->get_subscription_count() > 0)
-    {
+    // if(robot_state_Publisher_->get_subscription_count() > 0)
+    // {
         bool body_state_Pub_mark = false;
         if(this->vehicle->telemetry->newcome & 0x40)
         {
@@ -35,7 +35,7 @@ void diablo_body_state_publisher::lazyPublisher(void){
             robot_state_Publisher_->publish(robot_state_msg_);
             body_state_Pub_mark = false;
         }
-    }
+    // }
 }
 
 diablo_body_state_publisher::diablo_body_state_publisher(rclcpp::Node::SharedPtr node_ptr,DIABLO::OSDK::Vehicle* vehicle)
