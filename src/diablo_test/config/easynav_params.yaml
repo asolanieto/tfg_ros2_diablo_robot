@@ -3,7 +3,7 @@ system_main:
   ros__parameters:
     use_sim_time: false
     update_frequency: 10.0
-    robot_footprint_frame: "base_link"
+    robot_footprint_frame: "base_footprint"
 
 # --- PLANNER NODE ---
 planner_node:

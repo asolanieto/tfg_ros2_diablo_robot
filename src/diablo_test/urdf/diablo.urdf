@@ -4,6 +4,15 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="diablo_mesh">
+  <!-- Añadido para solucionar odometria en sentido contrario-->
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_to_base_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 3.14159"/> 
+  </joint>
+
   <link
     name="base_link">
     <inertial>
@@ -797,7 +806,7 @@
   <joint name="base_to_lidar" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <origin xyz="0.09 0.0 0.22" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.09 0.0 0.22" rpy="0.0 0.0 3.14159"/>
   </joint>
 
 </robot>

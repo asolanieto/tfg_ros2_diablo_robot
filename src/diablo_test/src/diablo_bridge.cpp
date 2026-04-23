@@ -103,7 +103,8 @@ void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr m
     geometry_msgs::msg::TransformStamped odom_tf;
     odom_tf.header.stamp = current_time;
     odom_tf.header.frame_id = "odom";
-    odom_tf.child_frame_id = "base_link";
+    // odom_tf.child_frame_id = "base_link";
+    odom_tf.child_frame_id = "base_footprint"; // Añadido para solucionar problema de sentido de odom
     odom_tf.transform.translation.x = x_;
     odom_tf.transform.translation.y = y_;
     odom_tf.transform.translation.z = 0.0;
@@ -117,7 +118,8 @@ void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr m
     auto odom_msg = nav_msgs::msg::Odometry();
     odom_msg.header.stamp = current_time;
     odom_msg.header.frame_id = "odom";
-    odom_msg.child_frame_id = "base_link";
+    // odom_msg.child_frame_id = "base_link";
+    odom_msg.child_frame_id = "base_footprint";
 
     odom_msg.pose.pose.position.x = x_;
     odom_msg.pose.pose.position.y = y_;

@@ -79,19 +79,19 @@ def generate_launch_description():
     )
 
     # 7. EasyNav (use_sim_time=False en el yaml)
-    # easynav_node = Node(
-    #     package='easynav_system',
-    #     executable='system_main',
-    #     name='system_main',
-    #     output='screen',
-    #     arguments=['--ros-args', '--params-file', easynav_config_path],
-    #     parameters=[
-    #         easynav_config_path,
-    #         {'use_sim_time': False},
-    #         {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
-    #     ],
-    #     remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
-    # )
+    easynav_node = Node(
+        package='easynav_system',
+        executable='system_main',
+        name='system_main',
+        output='screen',
+        arguments=['--ros-args', '--params-file', easynav_config_path],
+        parameters=[
+            easynav_config_path,
+            {'use_sim_time': False},
+            {'maps_manager_node.CostmapMapsManager.publish_frequency': 1.0} 
+        ],
+        remappings=[('/cmd_vel', '/cmd_vel_nav')]   # Para implementar el twist_mux que permite conmutar entre control manual y navegación autónoma. 
+    )
 
     # 8. Twist Mux 
     twist_mux_node = Node(
@@ -123,13 +123,14 @@ def generate_launch_description():
         actions=[my_robot_driver, robot_state_publisher, twist_mux_node]
     )
 
-    # delay_easynav = TimerAction(
-    #     period=15.0, 
-    #     actions=[easynav_node]
-    # )
+    delay_easynav = TimerAction(
+        period=15.0, 
+        actions=[easynav_node]
+    )
     
     return LaunchDescription([
         lidar_launch,
         delay_slam,
+        delay_easynav,
         delay_all
     ])
