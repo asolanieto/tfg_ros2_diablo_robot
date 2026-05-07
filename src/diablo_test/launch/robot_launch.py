@@ -39,12 +39,12 @@ def generate_launch_description():
     )
 
     # Publicamos un joint_state estatico para ver el modelo del robot (pendiente de añadir joints dinámicos en el futuro)
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        parameters=[{'robot_description': open(urdf_path).read()}, {'use_sim_time': False}], 
-    )
+    # joint_state_publisher_node = Node(
+    #     package='joint_state_publisher',
+    #     executable='joint_state_publisher',
+    #     name='joint_state_publisher',
+    #     parameters=[{'robot_description': open(urdf_path).read()}, {'use_sim_time': False}], 
+    # )
 
     # Robot State Publisher
     robot_state_publisher = Node(
@@ -106,7 +106,7 @@ def generate_launch_description():
 
     delay_all = TimerAction(
         period=6.0, 
-        actions=[my_robot_driver, robot_state_publisher, twist_mux_node, joint_state_publisher_node, real_path_publisher]
+        actions=[my_robot_driver, robot_state_publisher, twist_mux_node, real_path_publisher]
     )
 
     delay_easynav = TimerAction(

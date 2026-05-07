@@ -10,7 +10,7 @@
   <joint name="base_footprint_to_base_link" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.13" rpy="0 0 3.14159"/> 
+    <origin xyz="0 0 0.13" rpy="0 0 0"/> 
   </joint>
 
   <link
@@ -95,7 +95,7 @@
   </link>
   <joint
     name="left_j4"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0.18755 0"
       rpy="1.5708 0.13433 -3.1416" />
@@ -148,7 +148,7 @@
   </link>
   <joint
     name="left_j1"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 -2.8729" />
@@ -201,7 +201,7 @@
   </link>
   <joint
     name="left_j2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14 0 0"
       rpy="0 0 2.8729" />
@@ -256,7 +256,7 @@
   </link>
   <joint
     name="left_j3"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14 0 0.0537"
       rpy="0 0 0.13433" />
@@ -309,7 +309,7 @@
   </link>
   <joint
     name="left_j5"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.09 0 0"
       rpy="0 0 -2.8729" />
@@ -362,7 +362,7 @@
   </link>
   <joint
     name="right_j4"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 -0.18755 0"
       rpy="1.5708 0.13433 3.1416" />
@@ -415,7 +415,7 @@
   </link>
   <joint
     name="right_j1"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 -2.8729" />
@@ -468,7 +468,7 @@
   </link>
   <joint
     name="right_j2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14 0 0"
       rpy="0 0 2.8729" />
@@ -523,7 +523,7 @@
   </link>
   <joint
     name="right_j3"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.14 0 -0.0537"
       rpy="0 0 -3.0073" />
@@ -576,7 +576,7 @@
   </link>
   <joint
     name="right_j5"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.09 0 0"
       rpy="0 0 -2.8729" />
@@ -629,7 +629,7 @@
   </link>
   <joint
     name="little_wheel_left_j1"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.1562 0.08775 -0.101"
       rpy="0 0 0" />
@@ -682,7 +682,7 @@
   </link>
   <joint
     name="little_wheel_left_j2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.1135 0.08775 -0.101"
       rpy="0 0.4448 0" />
@@ -735,7 +735,7 @@
   </link>
   <joint
     name="little_wheel_right_j1"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.1562 -0.08775 -0.101"
       rpy="0 0 0" />
@@ -788,7 +788,7 @@
   </link>
   <joint
     name="little_wheel_right_j2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.1135 -0.08775 -0.101"
       rpy="0 0 0" />
@@ -806,7 +806,7 @@
   <joint name="base_to_lidar" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <origin xyz="-0.09 0.0 0.22" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.09 0.0 0.22" rpy="0.0 0.0 3.14159"/>
   </joint>
 
 </robot>

@@ -5,7 +5,7 @@ system_main:
     update_frequency: 10.0
     robot_footprint_frame: "base_footprint"
     robot_frame: "base_footprint"
-    position_tolerance: 0.2
+    position_tolerance: 0.4
     height_tolerance: 999.0
     angle_tolerance: 0.5
     allow_preempt_goal: true
@@ -67,15 +67,15 @@ controller_node:
     controller_types: ["MPCController"]
     MPCController:
       plugin: "easynav_mpc_controller/MPCController"
-      horizon_steps: 20
+      horizon_steps: 10
       dt: 0.1
       safety_radius: 0.35
-      max_linear_velocity: 0.4
+      max_linear_velocity: 0.3
       max_angular_velocity: 0.5
       verbose: true
       transform_tolerance: 1.0
 
-      fallback_goal_pos_tol: 0.4 # Distancia a la que el robot considerará que ha llegado al objetivo.
+      fallback_goal_pos_tol: 0.2 # 2*Distancia a partir de la cual se activa la histeresis y el controlador proporcional.
       fallback_goal_yaw_tol: 0.5 # Ángulo (en radianes) a la que el robot considerará que ha alcanzado la orientación deseada.
 
 
