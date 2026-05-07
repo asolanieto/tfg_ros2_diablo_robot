@@ -134,6 +134,7 @@ MPCOptimizer::cost_function(
     cost += R(0, 0) * v * v + R(1, 1) * w * w;
     // Smooth Cost
     cost += Rd(0, 0) * dv * dv + Rd(1, 1) * dw * dw;
+
   }
 
   return cost;

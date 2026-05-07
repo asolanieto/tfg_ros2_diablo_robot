@@ -25,6 +25,7 @@ endif()
 
 install(PROGRAMS
   scripts/battery_monitor.py
+  scripts/path_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

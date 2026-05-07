@@ -331,6 +331,7 @@ MPCController::update_rt(NavState & nav_state)
     }
   }
 
+
   // Publish the computed velocity command
   cmd_vel_.header.frame_id = path.header.frame_id;
   cmd_vel_.header.stamp = get_node()->now();

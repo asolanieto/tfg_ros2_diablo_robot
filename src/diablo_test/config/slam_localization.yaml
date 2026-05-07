@@ -14,7 +14,7 @@ slam_toolbox:
     # Rendimiento
     map_update_interval: 0.5 
     resolution: 0.05
-    max_laser_range: 12.0 
+    max_laser_range: 16.0 
     minimum_time_interval: 0.2
     transform_timeout: 1.0
     tf_buffer_duration: 30.0
@@ -23,8 +23,8 @@ slam_toolbox:
     
     # Ajustes del optimizador
     optimizer_skip_step: 1
-    minimum_travel_distance: 0.001
-    minimum_travel_heading: 0.001
+    minimum_travel_distance: 0.1
+    minimum_travel_heading: 0.1
 
-    throttle_scans: 2             # Saltar 1 de cada 2 escaneos (reduce carga al 50%)
+    throttle_scans: 1             # Saltar 1 de cada 2 escaneos (reduce carga al 50%)
     transform_publish_period: 0.05      # Publicar TFs a 20Hz
