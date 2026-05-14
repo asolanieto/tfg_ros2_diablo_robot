@@ -98,15 +98,38 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Retrasos para asegurar orden de carga
-    delay_slam = TimerAction(
-        period=15.0, 
-        actions=[slam_node]
+    # Nodo que publica posición inicial (levantamiento y pitch)
+    diablo_posture_node = Node(
+        package='diablo_test',
+        executable='diablo_posture_init_node',
+        name='diablo_posture_init',
+        output='screen',
+        parameters=[{
+            'target_up': 0.85,
+            'target_pitch': 0.5,
+            'pitch_duration_steps': 2
+        }]
     )
 
+    # Bridge para eliminar puntos del suelo de /scan
+    scan_filter_node = Node(
+        package='diablo_test',
+        executable='scan_bridge.py',
+        name='scan_ground_filter',
+        output='screen'
+    )
+
+
+
+    # Retrasos para asegurar orden de carga y evitar sobrecargas
     delay_all = TimerAction(
         period=6.0, 
-        actions=[my_robot_driver, robot_state_publisher, twist_mux_node, real_path_publisher]
+        actions=[my_robot_driver, robot_state_publisher, twist_mux_node, real_path_publisher, scan_filter_node]
+    )
+
+    delay_slam = TimerAction(
+        period=12.0, 
+        actions=[slam_node, diablo_posture_node]
     )
 
     delay_easynav = TimerAction(

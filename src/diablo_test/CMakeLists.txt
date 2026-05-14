@@ -15,10 +15,17 @@ find_package(sensor_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(motion_msgs REQUIRED)
+find_package(ception_msgs REQUIRED)
 
 
 
 add_executable(diablo_bridge src/diablo_bridge.cpp)
+
+target_include_directories(diablo_bridge PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
 ament_target_dependencies(diablo_bridge
   rclcpp
   geometry_msgs
@@ -26,12 +33,16 @@ ament_target_dependencies(diablo_bridge
   tf2
   tf2_ros
   motion_msgs
+  ception_msgs
 )
 
 install(TARGETS
   diablo_bridge
   DESTINATION lib/${PROJECT_NAME}
 )
+
+add_executable(diablo_posture_init_node src/diablo_posture_init.cpp)
+ament_target_dependencies(diablo_posture_init_node rclcpp motion_msgs)
 
 
 install(DIRECTORY
@@ -43,19 +54,24 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}
 )
 
-# install(PROGRAMS
-#   src/bridges/scan_bridge.py
-#   src/bridges/navmap_bridge.py
-#   src/bridges/joint_bridge.py
-#   src/bridges/odom_bridge.py
-#   DESTINATION lib/${PROJECT_NAME}
-# )
-
+install(DIRECTORY include/
+  DESTINATION include
+)
 
 install(
   DIRECTORY src/
   DESTINATION share/${PROJECT_NAME}/src
   FILES_MATCHING PATTERN "*.py"
+)
+
+install(TARGETS
+  diablo_posture_init_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  src/bridges/scan_bridge.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

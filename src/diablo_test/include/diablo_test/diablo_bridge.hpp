@@ -11,6 +11,7 @@
 // Mensajes propietarios del fabricante
 #include "motion_msgs/msg/motion_ctrl.hpp"
 #include "motion_msgs/msg/leg_motors.hpp"
+#include "ception_msgs/msg/imu_euler.hpp"
 
 #include <cmath>
 
@@ -23,6 +24,7 @@ private:
     // Callbacks
     void cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
     void motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr msg);
+    void imuCallback(const ception_msgs::msg::IMUEuler::SharedPtr msg);
 
     // Parámetros físicos
     const double WHEEL_RADIUS = 0.10;
@@ -41,6 +43,8 @@ private:
     // ROS 2 Interfaces
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
     rclcpp::Subscription<motion_msgs::msg::LegMotors>::SharedPtr motors_sub_;
+    rclcpp::Subscription<ception_msgs::msg::IMUEuler>::SharedPtr imu_sub_;
+
     
     rclcpp::Publisher<motion_msgs::msg::MotionCtrl>::SharedPtr diablo_cmd_pub_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;

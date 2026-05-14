@@ -1,4 +1,4 @@
-#include "diablo_bridge.hpp"
+#include "diablo_test/diablo_bridge.hpp"
 
 DiabloBridge::DiabloBridge() : Node("diablo_bridge_node")
 {
@@ -14,6 +14,11 @@ DiabloBridge::DiabloBridge() : Node("diablo_bridge_node")
     motors_sub_ = this->create_subscription<motion_msgs::msg::LegMotors>(
         "/diablo/sensor/Motors", 10, std::bind(&DiabloBridge::motorsCallback, this, std::placeholders::_1));
 
+    // Escucha a IMU
+    imu_sub_ = this->create_subscription<ception_msgs::msg::IMUEuler>(
+        "/diablo/sensor/ImuEuler", 10, std::bind(&DiabloBridge::imuCallback, this, std::placeholders::_1));
+
+
     // 3. Publicadores
     // Envía comandos al robot real
     diablo_cmd_pub_ = this->create_publisher<motion_msgs::msg::MotionCtrl>("/diablo/MotionCmd", 10);
@@ -21,25 +26,33 @@ DiabloBridge::DiabloBridge() : Node("diablo_bridge_node")
     // Envía odometría a EasyNav / Nav2
     odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
 
-    RCLCPP_INFO(this->get_logger(), "Diablo Bridge Hardware INICIADO. Escuchando /cmd_vel y /diablo/sensor/Motors");
+    // Parámetros para postura inicial
+    this->declare_parameter<double>("target_up", 1.0);
+
+    RCLCPP_INFO(this->get_logger(), "Diablo Bridge Hardware initialized.");
 }
 
 void DiabloBridge::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
     auto diablo_msg = motion_msgs::msg::MotionCtrl();
 
-    // Según el README del SDK, false significa "control directo", no cambio de modo
+    // False significa "control directo", no cambio de modo
     diablo_msg.mode_mark = false; 
 
-    // Mapeo directo: El SDK se encarga de calcular la velocidad de cada rueda por dentro.
+    // Activamos modo de pie y control de pitch
+    diablo_msg.mode.stand_mode = true;
+    diablo_msg.mode.pitch_ctrl_mode = true;
+    
+    // El SDK se encarga de calcular la velocidad de cada rueda por dentro.
     // Solo le pasamos la velocidad lineal y la velocidad de giro.
     diablo_msg.value.forward = msg->linear.x;
-    diablo_msg.value.left = msg->angular.z;  // Radianes/s positivos giran a la izquierda
+    diablo_msg.value.left = msg->angular.z;
 
-    // El resto de valores a 0 (no queremos cambiar postura, roll, ni pitch)
-    diablo_msg.value.up = 0.0;
-    diablo_msg.value.roll = 0.0;
+    // Configuramos parámetros de postura deseada
+    diablo_msg.value.up = this->get_parameter("target_up").as_double();
+    //diablo_msg.value.pitch = this->get_parameter("target_pitch").as_double();
     diablo_msg.value.pitch = 0.0;
+    diablo_msg.value.roll = 0.0;
     diablo_msg.value.leg_split = 0.0;
 
     diablo_cmd_pub_->publish(diablo_msg);
@@ -103,7 +116,6 @@ void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr m
     geometry_msgs::msg::TransformStamped odom_tf;
     odom_tf.header.stamp = current_time;
     odom_tf.header.frame_id = "odom";
-    // odom_tf.child_frame_id = "base_link";
     odom_tf.child_frame_id = "base_footprint"; // Añadido para solucionar problema de sentido de odom
     odom_tf.transform.translation.x = x_;
     odom_tf.transform.translation.y = y_;
@@ -118,7 +130,6 @@ void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr m
     auto odom_msg = nav_msgs::msg::Odometry();
     odom_msg.header.stamp = current_time;
     odom_msg.header.frame_id = "odom";
-    // odom_msg.child_frame_id = "base_link";
     odom_msg.child_frame_id = "base_footprint";
 
     odom_msg.pose.pose.position.x = x_;
@@ -134,6 +145,31 @@ void DiabloBridge::motorsCallback(const motion_msgs::msg::LegMotors::SharedPtr m
     odom_msg.twist.twist.angular.z = v_angular;
 
     odom_pub_->publish(odom_msg);
+}
+
+
+void DiabloBridge::imuCallback(const ception_msgs::msg::IMUEuler::SharedPtr msg)
+{
+    // Parametro transformada base_footprint->base_link
+    static double BASE_LINK_Z = 0.396;   // 0.13 (dist desde suelo a centro con robot sentado) + 0.266 (altura por estirar las patas)
+
+    geometry_msgs::msg::TransformStamped tf_msg;
+    tf_msg.header.stamp = this->now();
+    tf_msg.header.frame_id = "base_footprint";
+    tf_msg.child_frame_id = "base_link";
+    
+    tf_msg.transform.translation.x = 0.0;
+    tf_msg.transform.translation.y = 0.0;
+    tf_msg.transform.translation.z = BASE_LINK_Z;
+    
+    tf2::Quaternion q;
+    q.setRPY(msg->roll, msg->pitch, 0.0);
+    tf_msg.transform.rotation.x = q.x();
+    tf_msg.transform.rotation.y = q.y();
+    tf_msg.transform.rotation.z = q.z();
+    tf_msg.transform.rotation.w = q.w();
+    
+    tf_broadcaster_->sendTransform(tf_msg);
 }
 
 int main(int argc, char * argv[])
