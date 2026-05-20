@@ -85,7 +85,7 @@ AMCLLocalizer::update(NavState & nav_state)
   }
 }
 
-// --- Funciones muertas (Stubs) para cumplir con la herencia ---
+// Funciones muertas (Stubs) para cumplir con la herencia
 
 void AMCLLocalizer::odom_callback(nav_msgs::msg::Odometry::UniquePtr) {}
 void AMCLLocalizer::predict(NavState &) {}

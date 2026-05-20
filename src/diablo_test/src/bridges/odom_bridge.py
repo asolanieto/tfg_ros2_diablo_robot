@@ -21,7 +21,7 @@ class OdomBridge(Node):
         
 
     def odom_callback(self, msg):
-        # 1. Capturamos la odometría
+        # Capturamos la odometría
         x = msg.pose.pose.position.x
         y = msg.pose.pose.position.y
         z = msg.pose.pose.position.z
@@ -31,13 +31,12 @@ class OdomBridge(Node):
         qz = msg.pose.pose.orientation.z
         qw = msg.pose.pose.orientation.w
 
-        # 2. Creamos la Transformada (TF) con la HORA ACTUAL DEL SISTEMA
+        # Creamos la Transformada (TF) con la HORA ACTUAL DEL SISTEMA
         t = TransformStamped()
         
-        # Importante: Usar el reloj del nodo (System Time), no el del mensaje original
         t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = 'odom'
-        t.child_frame_id = 'base_link'
+        t.header.frame_id = msg.header.frame_id or 'odom'
+        t.child_frame_id = msg.child_frame_id or 'base_footprint'
 
         # Rellenamos datos
         t.transform.translation.x = x
@@ -48,7 +47,7 @@ class OdomBridge(Node):
         t.transform.rotation.z = qz
         t.transform.rotation.w = qw
 
-        # 3. Emitimos la TF "rejuvenecida"
+        # Emitimos la TF "rejuvenecida"
         self.tf_broadcaster.sendTransform(t)
 
 def main(args=None):

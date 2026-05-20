@@ -1,16 +1,17 @@
-# --- SYSTEM MAIN ---
+# SYSTEM MAIN
 system_main:
   ros__parameters:
     use_sim_time: false
     update_frequency: 10.0
-    robot_footprint_frame: "base_link"
+    robot_footprint_frame: "base_footprint"
+    robot_frame: "base_footprint"
     position_tolerance: 0.4
     height_tolerance: 999.0
     angle_tolerance: 0.5
     allow_preempt_goal: true
 
 
-# --- PLANNER NODE ---
+# PLANNER NODE
 planner_node:
   ros__parameters:
     use_sim_time: false
@@ -20,12 +21,11 @@ planner_node:
       plugin: "easynav_costmap_planner/CostmapPlanner"
       continuous_replan: true 
       goal_tolerance: 0.25 # Distancia a la que el planner considerará que ha llegado al objetivo.
-      goal_yaw_tolerance: 0.35 # Ángulo (en radianes) a la que el planner considerará que ha alcanzado la orientación deseada.
       transform_tolerance: 2.0
       layer: "inflation"
       robot_radius: 0.5 # Para que el planner tenga en cuenta el tamaño del robot al planificar rutas seguras. 
 
-# --- MAPS MANAGER NODE ---
+# MAPS MANAGER NODE
 maps_manager_node:
   ros__parameters:
     use_sim_time: false
@@ -49,9 +49,9 @@ maps_manager_node:
         enabled: true
         inscribed_radius: 0.35 
         inflation_radius: 0.7 
-        cost_scaling_factor: 8.0 # A mas alto menos gordos los obstaculos
+        cost_scaling_factor: 8.0
 
-# --- LOCALIZER NODE ---
+# LOCALIZER NODE
 /localizer_node:
   ros__parameters:
     use_sim_time: false 
@@ -60,7 +60,7 @@ maps_manager_node:
     easynav_simple_localizer/AMCLLocalizer:
       plugin: "easynav_simple_localizer/AMCLLocalizer"
 
-# --- CONTROLLER NODE ---
+# CONTROLLER NODE
 controller_node:
   ros__parameters:
     use_sim_time: false
@@ -73,20 +73,19 @@ controller_node:
       max_angular_velocity: 1.0
       transform_tolerance: 1.0
 
-      fallback_goal_pos_tol: 0.20 # Distancia a la que el robot considerará que ha llegado al objetivo.
-      fallback_goal_yaw_tol: 0.50 # Ángulo (en radianes) a la que el robot considerará que ha alcanzado la orientación deseada.
+      fallback_goal_pos_tol: 0.20 
+      fallback_goal_yaw_tol: 0.50
 
 
-# --- SENSOR NODE ---
+# SENSOR NODE
 sensors_node:
   ros__parameters:
     use_sim_time: false
+    update_frequency: 10.0
     forget_time: 1.0
     
-    # 1. LISTA DE IDENTIFICADORES (Nombres arbitrarios que tú das)
     sensors: ["lidar_frontal"]
 
-    # 2. CONFIGURACIÓN DE CADA SENSOR DE LA LISTA
     lidar_frontal:
-      topic: "/scan_bridged"                       # El topic real de tu robot
-      type: "sensor_msgs/msg/LaserScan"    # O "sensor_msgs/msg/PointCloud2" si usas nube
+      topic: "/scan_bridged" 
+      type: "sensor_msgs/msg/LaserScan"

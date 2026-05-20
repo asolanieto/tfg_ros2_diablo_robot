@@ -11,14 +11,14 @@ class JointBridge(Node):
         # QoS para no perder datos
         qos = QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT)
 
-        # 1. Escuchamos el topic "crudo" del simulador
+        # Escuchamos el topic del simulador
         self.sub = self.create_subscription(
             JointState,
-            '/joint_states_webots', # OJO: Remapearemos el driver a este nombre
+            '/joint_states_webots', # Remapeamos el driver a este nombre
             self.joint_callback,
             qos)
             
-        # 2. Publicamos en el topic oficial que escuchan todos (RViz, RSP)
+        # Publicamos en el topic oficial
         self.pub = self.create_publisher(JointState, '/joint_states', 10)
         
     def joint_callback(self, msg):

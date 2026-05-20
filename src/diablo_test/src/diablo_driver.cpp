@@ -20,7 +20,7 @@ using std::placeholders::_1;
 
 // Parámetros del robot Diablo
 const double WHEEL_RADIUS = 0.10;
-const double TRACK_WIDTH = 0.5805; // Ajustado para la simulación mediante tunning
+const double TRACK_WIDTH = 0.5805;
 
 class DiabloDriver : public rclcpp::Node
 {
@@ -53,7 +53,7 @@ public:
             left_sensor_->enable(time_step_);
             right_sensor_->enable(time_step_);
         } else {
-            RCLCPP_ERROR(this->get_logger(), "¡ERROR! No encuentro los sensores de posición (encoders).");
+            RCLCPP_ERROR(this->get_logger(), "ERROR: Not found position sensors for the wheels. Odometry will not work.");
         }
 
         // Motores Patas (Bloqueo)
@@ -78,9 +78,9 @@ public:
             "/cmd_vel", 10, std::bind(&DiabloDriver::cmd_vel_callback, this, _1));
         
         scan_pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("/scan", 10);
-        odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10); // <--- NUEVO
+        odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 10);
 
-        RCLCPP_INFO(this->get_logger(), "DRIVER: Odometría + LiDAR + Motores activos.");
+        RCLCPP_INFO(this->get_logger(), "DRIVER: Odometry and LiDAR interfaces initialized successfully.");
     }
 
     int step() {
@@ -105,7 +105,7 @@ private:
     {
         if (!left_sensor_ || !right_sensor_) return;
 
-        // Leer valores actuales de los encoders (radianes)
+        // Leer valores actuales de los encoders
         double left_pos = left_sensor_->getValue();
         double right_pos = right_sensor_->getValue();
 
@@ -124,7 +124,7 @@ private:
         last_left_pos_ = left_pos;
         last_right_pos_ = right_pos;
 
-        // Cinemática Diferencial (Cuánto nos hemos movido en el centro)
+        // Cinemática Diferencial
         double d_center = (d_right + d_left) / 2.0;       // Avance lineal
         double d_theta = (d_right - d_left) / TRACK_WIDTH; // Giro
 
@@ -138,11 +138,11 @@ private:
         tf2::Quaternion q;
         q.setRPY(0, 0, theta_);
 
-        // PUBLICAR TF (Transformada odom -> base_link)
+        // PUBLICAR TF (Transformada odom -> base_footprint)
         geometry_msgs::msg::TransformStamped odom_tf;
         odom_tf.header.stamp = timestamp;
         odom_tf.header.frame_id = "odom";
-        odom_tf.child_frame_id = "base_link";
+        odom_tf.child_frame_id = "base_footprint";
 
         odom_tf.transform.translation.x = x_;
         odom_tf.transform.translation.y = y_;
@@ -154,11 +154,11 @@ private:
 
         tf_broadcaster_->sendTransform(odom_tf);
 
-        // PUBLICAR MENSAJE /odom (Para Nav2)
+        // PUBLICAR MENSAJE /odom
         auto odom_msg = nav_msgs::msg::Odometry();
         odom_msg.header.stamp = timestamp;
         odom_msg.header.frame_id = "odom";
-        odom_msg.child_frame_id = "base_link";
+        odom_msg.child_frame_id = "base_footprint";
 
         // Posición
         odom_msg.pose.pose.position.x = x_;

@@ -1,0 +1,30 @@
+# Dependencias de terceros SIN modificar.
+#
+# Estas son copias limpias de repositorios externos (sin parches) y por eso
+# NO se versionan dentro de este repositorio. Se descargan con vcstool:
+#
+#     vcs import src < dependencies.repos
+#
+# El campo `version` fija una rama; para reproducibilidad exacta puede
+# sustituirse por el hash de un commit concreto.
+#
+# NOTA: EasyNavigation, easynav_plugins y NavMap NO aparecen aquí porque son
+# forks parcheados que SÍ viven dentro de este repositorio (ver docs/THIRD_PARTY.md).
+
+repositories:
+  webots_ros2:
+    type: git
+    url: https://github.com/cyberbotics/webots_ros2.git
+    version: humble
+  vision_opencv:
+    type: git
+    url: https://github.com/ros-perception/vision_opencv.git
+    version: humble
+  perception_pcl:
+    type: git
+    url: https://github.com/ros-perception/perception_pcl.git
+    version: humble
+  yaets:
+    type: git
+    url: https://github.com/fmrico/yaets.git
+    version: master

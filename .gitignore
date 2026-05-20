@@ -1,6 +1,25 @@
+# --- Artefactos de compilación de ROS 2 / colcon ---
 build/
 install/
 log/
+
+# --- Python ---
 __pycache__/
 *.pyc
+
+# --- Editores ---
 .vscode/
+CLAUDE.md
+
+# --- Caché y archivos temporales de Webots ---
+*.wbproj
+.*.wbproj
+worlds/.*.jpg
+
+# --- Dependencias de terceros sin modificar ---
+# Se descargan con: vcs import src < dependencies.repos
+/src/webots_ros2/
+/src/vision_opencv/
+/src/perception_pcl/
+/src/yaets/
+/src/rplidar_ros/

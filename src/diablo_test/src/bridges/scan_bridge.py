@@ -19,9 +19,6 @@ class AutoScanBridge(Node):
         self.pub = self.create_publisher(LaserScan, '/scan_bridged', qos_out)
         
     def scan_callback(self, msg):
-        # TRUCO SENCILLO Y ROBUSTO:
-        # Ignoramos cuándo se generó en Webots. Decimos que ha ocurrido "AHORA MISMO".
-        # Al usar use_sim_time=False en el launch, esto coge la hora de tu PC.
         msg.header.stamp = self.get_clock().now().to_msg()
         
         # Publicamos
