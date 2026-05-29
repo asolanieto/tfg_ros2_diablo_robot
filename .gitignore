@@ -9,7 +9,6 @@ __pycache__/
 
 # --- Editores ---
 .vscode/
-CLAUDE.md
 
 # --- Caché y archivos temporales de Webots ---
 *.wbproj
