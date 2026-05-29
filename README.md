@@ -45,8 +45,7 @@ las decisiones de diseño, lee [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 │   └── NavMap/             ← Fork parcheado de NavMap
 ├── docs/                   ← Documentación del proyecto
 ├── dependencies.repos      ← Dependencias de terceros SIN modificar (se descargan aparte)
-├── cyclonedds_pc.xml       ← Configuración DDS para visualización remota
-└── debug_monitor.py        ← Utilidad de depuración para PlotJuggler
+└── cyclonedds_pc.xml       ← Configuración DDS para visualización remota
 ```
 
 ### Una nota importante sobre `src/`
@@ -136,6 +135,5 @@ python3 debug_monitor.py
 
 Desarrollado por **Adrián Sola Nieto** como Trabajo de Fin de Grado.
 
-El código propio (`src/diablo_test/`) se distribuye bajo la licencia indicada en
-[`LICENSE`](LICENSE). Los forks de `src/EasyNavigation/`, `src/easynav_plugins/`
+Los forks de `src/EasyNavigation/`, `src/easynav_plugins/`
 y `src/NavMap/` conservan la licencia original de sus proyectos de origen.
